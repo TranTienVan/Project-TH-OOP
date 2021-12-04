@@ -1,0 +1,40 @@
+dancer
+designer
+magician
+teller
+tour guide
+sailor
+commentator
+dentist
+postman
+writer
+pilot
+plumber
+tailor
+copywriter
+journalist
+grocer
+clerk
+assistant
+model
+freelance
+consultant
+self-employed
+supervisor
+sales manager
+production manager
+mechanic
+managing director
+personal assistant
+hairdresser
+architect
+marketing executive
+engineer
+vet
+shoemaker
+translator
+interpreter
+sanitation worker
+business manager
+police officer
+personnel manager

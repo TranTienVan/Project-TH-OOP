@@ -1,0 +1,37 @@
+dishwasher
+dish drainer
+steamer
+colander
+lid
+blender
+pot
+toaster
+dishtowel
+refrigerator
+freezer
+cabinet
+microwave
+bowl
+cutting board
+burner
+stove
+coffee maker
+oven
+oven cleaner
+jar
+sink
+dish
+dish rack
+sponge
+chopstick
+pan
+cooker
+mug
+kettle
+glass
+teapot
+grill
+tray
+whisk
+knife
+spoon

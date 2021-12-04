@@ -1,0 +1,39 @@
+monitor
+mouse pad
+printer
+scanner
+open
+close
+delete
+insert
+merge
+helpline
+harddisk
+software
+CD-ROM
+toolbar
+database
+hacker
+save as
+select
+copy
+computer
+laptop
+speaker
+file
+touchpad
+disk drive
+adapter
+battery
+click
+type
+mouse
+keyboard
+mouse mat
+key
+shut down
+folder
+print
+program
+search
+screen

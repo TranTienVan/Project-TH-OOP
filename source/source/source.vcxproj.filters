@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="app.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jsoncpp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="user\user.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="grammar\grammar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vocabulary\vocabulary.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="topic\topic.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="topic\topic_grammar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="topic\topic_vocabulary.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="process\process.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FormTopicVocabulary.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FormHome.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FormVocabulary.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FormContentVocabulary.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FormTopicGrammar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FormGrammar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FormLogin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Temp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="app.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="user\user.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="vocabulary\vocabulary.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="grammar\grammar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="topic\topic.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="topic\topic_grammar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="topic\topic_vocabulary.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="process\process.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FormTopicVocabulary.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FormHome.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FormVocabulary.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FormContentVocabulary.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FormTopicGrammar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FormGrammar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FormLogin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Temp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="pictureTopic1.Image.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\assets\play.gif">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\data\Vocabulary\Topic\action.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\data\Vocabulary\Topic\activity.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\data\Vocabulary\Topic\christmas.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\data\Vocabulary\Topic\clothes.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\data\Vocabulary\Topic\color.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\data\Vocabulary\Topic\computer.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\data\Vocabulary\Topic\education.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\data\Vocabulary\Topic\entertainment.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\data\Vocabulary\Topic\environment.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\data\Vocabulary\Topic\family.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\data\Vocabulary\Topic\feeling.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\data\Vocabulary\Topic\flower.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\data\Vocabulary\Topic\hospital.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\data\Vocabulary\Topic\housework.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\data\Vocabulary\Topic\job.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\data\Vocabulary\Topic\kitchen.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\data\Vocabulary\Topic\music.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\data\Vocabulary\Topic\restaurant.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\data\Vocabulary\Topic\school.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\data\Vocabulary\Topic\sea.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\data\Vocabulary\Topic\shopping.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\data\Vocabulary\Topic\soccer.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\data\Vocabulary\Topic\transport.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\data\Vocabulary\Topic\travel.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+</Project>

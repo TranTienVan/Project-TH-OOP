@@ -1,0 +1,45 @@
+customer
+cashier
+attendant
+manager
+wallet
+purse
+scale
+counter
+barcode reader
+receipt
+pay
+expensive
+cheap
+discount
+sell
+price
+trolley
+supermarket
+credit card
+cash
+shop
+money
+basket
+bag
+buy
+bar code
+greengrocer
+house-wares
+toy store
+shopping mall
+grocery store
+convenience store
+bargain
+refund
+secondhand
+brochure
+liquor store
+drugstore
+candy store
+gift shop
+pet shop
+shoe shop
+meat shop
+florist
+butcher

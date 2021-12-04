@@ -1,0 +1,26 @@
+#pragma once    
+#include"topic.h"
+#include"../grammar/grammar.h"
+#include<json/json.h>
+#include<json/value.h>
+#include<json/reader.h>
+#include<fstream>
+
+class TopicGrammar : public Topic{
+protected:
+    std::vector<Grammar> grammars;
+public:
+    TopicGrammar(std::string name, std::string definition, std::string image, std::string examples, Process process):
+    Topic(name, definition, image, examples, process) {
+    }
+
+    std::vector<Grammar> getGrammars() {
+        return this->grammars;
+    }
+
+    void readFromDatabase(const std::string path);
+    void updateToDatabase(const std::string path);
+    
+    void scanProcess(Json::Value obj);
+    Json::Value toJsonValue();
+};

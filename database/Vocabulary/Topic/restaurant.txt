@@ -1,0 +1,41 @@
+restaurant
+main course
+napkin
+wine
+cutlery
+drink
+wine list
+combo
+side dish
+meal
+order
+speciality
+dessert
+sald
+menu
+waiter
+guest
+coupon
+neat
+animated
+hotel
+hotel receptionist
+housekeeper
+room service
+hall
+vacancy
+lobby
+concierge
+parking garage
+check in
+desk clerk
+key card
+double bed
+single bed
+doorman
+reception
+elevator
+wake-up call
+reservation
+bellboy
+check out

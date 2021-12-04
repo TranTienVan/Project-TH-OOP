@@ -1,0 +1,20 @@
+play
+circus
+stadium
+orchestra
+scene
+opera
+theater
+applaud
+perform
+exhibit
+art gallery
+comedy
+chamber music
+disco
+puppet show
+casino
+ballet
+pub
+concert hall
+venue

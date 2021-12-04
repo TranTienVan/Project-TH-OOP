@@ -1,0 +1,23 @@
+pen
+pencil
+paper
+eraser
+pencil sharpener
+book
+pack
+crayon
+scissors
+glue
+calculator
+compass
+bag
+ruler
+board
+chalk
+dictionary
+watercolour
+globe
+protractor
+stapler
+paintbrush
+paper clip

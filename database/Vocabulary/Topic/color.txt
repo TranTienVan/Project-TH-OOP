@@ -1,0 +1,20 @@
+red
+cream
+purple
+black
+gray
+gold
+copper
+silver
+green
+pink
+yellow
+brown
+blue
+chestnut
+turquoise
+lime green
+navy blue
+bright red
+vivid
+white

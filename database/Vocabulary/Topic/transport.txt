@@ -1,0 +1,40 @@
+transportation
+fire truck
+boat
+traffic light
+ship
+vehicle
+van
+driver
+police car
+bus
+car
+train
+motorbike
+bicycle
+airplane
+ambulance
+superhighway
+helmet
+cart
+get on
+get off
+line
+exit
+boulevard
+hot air balloon
+hovercraft
+submarine
+scooter
+lorry
+intersection
+track
+helicopter
+cruise ship
+subway
+tricycle
+pull over
+rush hour
+tram
+motorized bicycle
+cable car

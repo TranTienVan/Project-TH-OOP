@@ -1,0 +1,42 @@
+march
+walk
+crawl
+drag
+push
+jump
+leap
+skipping
+hit
+stretch
+lift
+put down
+dive
+lean
+sit
+bend
+pick up
+hold
+carry
+slap
+punch
+kick
+catch
+throw
+pull
+climb
+fall
+point
+rake up
+read
+scrub
+set
+sew
+pat
+shout
+tickle
+tell
+stand
+sneeze
+slip
+sleep
+sing

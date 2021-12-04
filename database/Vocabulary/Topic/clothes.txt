@@ -1,0 +1,40 @@
+skirt
+tank top
+leggings
+overall
+turtleneck
+bow tie
+tie
+polo shirt
+tunic
+vest
+T-shirt
+shirt
+jeans
+dress
+coat
+jacket
+sweater
+jumpsuit
+shorts
+suit
+anorak
+hat
+cap
+glove
+scarf
+sandal
+slipper
+pocket
+sleeve
+collar
+zip
+blouse
+button
+underwear
+bra
+pant
+belt
+high heels
+try on
+size

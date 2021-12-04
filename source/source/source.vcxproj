@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <ProjectGuid>{168B0EFE-B76F-482D-9092-648439F0580C}</ProjectGuid>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <Keyword>ManagedCProj</Keyword>
+    <RootNamespace>source</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Among\Desktop\Code\CPP\OOP\TH\E-learning-OOP\source\source\grammar;C:\Users\Among\Desktop\Code\CPP\OOP\TH\E-learning-OOP\source\source\vocabulary;C:\Users\Among\Desktop\Code\CPP\OOP\TH\E-learning-OOP\source\source\user;C:\Users\Among\Desktop\Code\CPP\OOP\TH\E-learning-OOP\source\source\json;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies />
+      <SubSystem>Windows</SubSystem>
+      <EntryPointSymbol>main</EntryPointSymbol>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies />
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies />
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Among\Desktop\Code\CPP\OOP\TH\E-learning-OOP\source\source\grammar;C:\Users\Among\Desktop\Code\CPP\OOP\TH\E-learning-OOP\source\source\vocabulary;C:\Users\Among\Desktop\Code\CPP\OOP\TH\E-learning-OOP\source\source\user;C:\Users\Among\Desktop\Code\CPP\OOP\TH\E-learning-OOP\source\source\json;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies />
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="app.cpp" />
+    <ClCompile Include="FormContentVocabulary.cpp" />
+    <ClCompile Include="FormGrammar.cpp" />
+    <ClCompile Include="FormHome.cpp" />
+    <ClCompile Include="FormLogin.cpp" />
+    <ClCompile Include="FormTopicGrammar.cpp" />
+    <ClCompile Include="FormTopicVocabulary.cpp" />
+    <ClCompile Include="FormVocabulary.cpp" />
+    <ClCompile Include="grammar\grammar.cpp" />
+    <ClCompile Include="jsoncpp.cpp" />
+    <ClCompile Include="process\process.cpp" />
+    <ClCompile Include="Temp.cpp" />
+    <ClCompile Include="topic\topic.cpp" />
+    <ClCompile Include="topic\topic_grammar.cpp" />
+    <ClCompile Include="topic\topic_vocabulary.cpp" />
+    <ClCompile Include="user\user.cpp" />
+    <ClCompile Include="vocabulary\vocabulary.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="app.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="FormContentVocabulary.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="FormGrammar.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="FormHome.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="FormLogin.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="FormTopicGrammar.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="FormTopicVocabulary.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="FormVocabulary.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="grammar\grammar.h" />
+    <ClInclude Include="process\process.h" />
+    <ClInclude Include="Temp.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="topic\topic.h" />
+    <ClInclude Include="topic\topic_grammar.h" />
+    <ClInclude Include="topic\topic_vocabulary.h" />
+    <ClInclude Include="user\user.h" />
+    <ClInclude Include="vocabulary\vocabulary.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="app.resx">
+      <DependentUpon>app.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormContentVocabulary.resx">
+      <DependentUpon>FormContentVocabulary.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormHome.resx">
+      <DependentUpon>FormHome.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTopicGrammar.resx">
+      <DependentUpon>FormTopicGrammar.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTopicVocabulary.resx">
+      <DependentUpon>FormTopicVocabulary.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormVocabulary.resx">
+      <DependentUpon>FormVocabulary.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Temp.resx">
+      <DependentUpon>Temp.h</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\assets\play.gif" />
+    <Image Include="..\..\data\Vocabulary\Topic\action.png" />
+    <Image Include="..\..\data\Vocabulary\Topic\activity.png" />
+    <Image Include="..\..\data\Vocabulary\Topic\christmas.png" />
+    <Image Include="..\..\data\Vocabulary\Topic\clothes.png" />
+    <Image Include="..\..\data\Vocabulary\Topic\color.png" />
+    <Image Include="..\..\data\Vocabulary\Topic\computer.png" />
+    <Image Include="..\..\data\Vocabulary\Topic\education.png" />
+    <Image Include="..\..\data\Vocabulary\Topic\entertainment.png" />
+    <Image Include="..\..\data\Vocabulary\Topic\environment.png" />
+    <Image Include="..\..\data\Vocabulary\Topic\family.png" />
+    <Image Include="..\..\data\Vocabulary\Topic\feeling.png" />
+    <Image Include="..\..\data\Vocabulary\Topic\flower.png" />
+    <Image Include="..\..\data\Vocabulary\Topic\hospital.png" />
+    <Image Include="..\..\data\Vocabulary\Topic\housework.png" />
+    <Image Include="..\..\data\Vocabulary\Topic\job.png" />
+    <Image Include="..\..\data\Vocabulary\Topic\kitchen.png" />
+    <Image Include="..\..\data\Vocabulary\Topic\music.png" />
+    <Image Include="..\..\data\Vocabulary\Topic\restaurant.png" />
+    <Image Include="..\..\data\Vocabulary\Topic\school.png" />
+    <Image Include="..\..\data\Vocabulary\Topic\sea.png" />
+    <Image Include="..\..\data\Vocabulary\Topic\shopping.png" />
+    <Image Include="..\..\data\Vocabulary\Topic\soccer.png" />
+    <Image Include="..\..\data\Vocabulary\Topic\transport.png" />
+    <Image Include="..\..\data\Vocabulary\Topic\travel.png" />
+    <Image Include="pictureTopic1.Image.png" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

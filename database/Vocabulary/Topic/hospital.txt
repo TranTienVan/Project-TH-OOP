@@ -1,0 +1,24 @@
+radiologist
+obstetrician
+needle
+emergency
+hospital
+laboratory
+pharmacy
+doctor
+nurse
+gurney
+surgeon
+midwife
+injection
+calcium
+crutch
+wheelchair
+paramedic
+stretcher
+rush
+truncatechars_htmlcondition
+recovery suffer
+deteriorate
+coma
+cold

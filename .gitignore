@@ -1,0 +1,7 @@
+data
+source/.vs
+source/x64
+source/source/x64
+*.log
+*.o
+*.exe
