@@ -28,11 +28,9 @@ namespace source {
 			//
 			//TODO: Add the constructor code here
 			//
-			me = new User(obj);
-
-			app^ softeware = gcnew app(*me);
-
-			openChildForm(softeware);
+			
+			app^ software = gcnew app(obj);
+			openChildForm(software);
 
 			
 		}

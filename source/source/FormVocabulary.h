@@ -106,7 +106,7 @@ namespace source {
 			this->listVocabs->HideSelection = false;
 			this->listVocabs->Location = System::Drawing::Point(0, 0);
 			this->listVocabs->Name = L"listVocabs";
-			this->listVocabs->Size = System::Drawing::Size(1827, 897);
+			this->listVocabs->Size = System::Drawing::Size(1827, 883);
 			this->listVocabs->TabIndex = 0;
 			this->listVocabs->UseCompatibleStateImageBehavior = false;
 			this->listVocabs->SelectedIndexChanged += gcnew System::EventHandler(this, &FormVocabulary::listVocabs_SelectedIndexChanged);
@@ -116,14 +116,14 @@ namespace source {
 			this->panelVocabulary->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->panelVocabulary->Location = System::Drawing::Point(0, 0);
 			this->panelVocabulary->Name = L"panelVocabulary";
-			this->panelVocabulary->Size = System::Drawing::Size(1827, 897);
+			this->panelVocabulary->Size = System::Drawing::Size(1827, 883);
 			this->panelVocabulary->TabIndex = 1;
 			// 
 			// FormVocabulary
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(240, 240);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Dpi;
-			this->ClientSize = System::Drawing::Size(1827, 897);
+			this->ClientSize = System::Drawing::Size(1827, 883);
 			this->Controls->Add(this->listVocabs);
 			this->Controls->Add(this->panelVocabulary);
 			this->Name = L"FormVocabulary";

@@ -158,12 +158,12 @@ namespace source {
 			// 
 			// txtContent
 			// 
-			this->txtContent->Dock = System::Windows::Forms::DockStyle::Bottom;
+			this->txtContent->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->txtContent->Font = (gcnew System::Drawing::Font(L"Times New Roman", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->txtContent->Location = System::Drawing::Point(0, 167);
+			this->txtContent->Location = System::Drawing::Point(0, 158);
 			this->txtContent->Name = L"txtContent";
-			this->txtContent->Size = System::Drawing::Size(978, 628);
+			this->txtContent->Size = System::Drawing::Size(978, 637);
 			this->txtContent->TabIndex = 5;
 			this->txtContent->Text = L"";
 			// 
@@ -193,9 +193,10 @@ namespace source {
 			// textWord
 			// 
 			this->textWord->BackColor = System::Drawing::SystemColors::ScrollBar;
+			this->textWord->Dock = System::Windows::Forms::DockStyle::Top;
 			this->textWord->Font = (gcnew System::Drawing::Font(L"Viner Hand ITC", 28, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textWord->Location = System::Drawing::Point(3, 3);
+			this->textWord->Location = System::Drawing::Point(0, 0);
 			this->textWord->Name = L"textWord";
 			this->textWord->Size = System::Drawing::Size(978, 158);
 			this->textWord->TabIndex = 3;

@@ -116,6 +116,9 @@
     <ClInclude Include="Temp.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="component\component.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="pictureTopic1.Image.png">

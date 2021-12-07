@@ -39,10 +39,13 @@ namespace source {
 
 		}
 
-		app(User other) {
-			me = new User(other);
+		app(Json::Value obj) {
+			me = new User(obj);
 
-			me->init("../../database/");
+			appTopics = new Topic("../../database/");
+			appTopics->initTopics("../../database/", obj);
+
+
 
 			InitializeComponent();
 			//
@@ -67,6 +70,7 @@ namespace source {
 		
 		}
 	private: User* me;
+	private: Topic* appTopics;
 	private: System::Windows::Forms::Button^ currentBtn;
 	private: System::Windows::Forms::Button^ btnVocabulary;
 	private: System::Windows::Forms::Button^ btnGrammar;
@@ -323,7 +327,7 @@ namespace source {
 		private: System::Void btnVocabulary_Click(System::Object^ sender, System::EventArgs^ e) {
 			
 			labelApp->Text = btnVocabulary->Text;
-			FormTopicVocabulary^ formTopicVocabulary = gcnew FormTopicVocabulary(me->getTopicVocabulary());
+			FormTopicVocabulary^ formTopicVocabulary = gcnew FormTopicVocabulary(appTopics->getChildren());
 			
 			openChildForm(formTopicVocabulary);
 
@@ -350,14 +354,16 @@ private: System::Void btnDictionary_Click(System::Object^ sender, System::EventA
 }
 private: System::Void btnGrammar_Click(System::Object^ sender, System::EventArgs^ e) {
 	labelApp->Text = btnGrammar->Text;
-	FormTopicGrammar^ formTopicGrammar = gcnew FormTopicGrammar(me->getTopicGrammar());
+	FormTopicGrammar^ formTopicGrammar = gcnew FormTopicGrammar(appTopics->getChildren());
 
 	openChildForm(formTopicGrammar);
 }
 private: System::Void btnSettings_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void btnExit_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->Close();
+	System::Environment::Exit(1);
+
+	
 }
 };
 }

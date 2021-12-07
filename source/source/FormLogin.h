@@ -381,7 +381,7 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 
 	else {
 		if (textPasword->Text != txtRetypePassword->Text) {
-			System::Windows::Forms::MessageBox::Show("Mật khẩu nhập lại sai!");
+			System::Windows::Forms::MessageBox::Show(L"Mật khẩu nhập lại sai!");
 			return;
 		}
 		std::fstream f("../../database/user.json", std::ios::in);
@@ -484,5 +484,7 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 }
 private: System::Void labelRetypePassword_Click(System::Object^ sender, System::EventArgs^ e) {
 }
+
+
 };
 }

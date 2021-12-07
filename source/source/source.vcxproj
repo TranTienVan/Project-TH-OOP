@@ -146,6 +146,7 @@
     <ClInclude Include="app.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="component\component.h" />
     <ClInclude Include="FormContentVocabulary.h">
       <FileType>CppForm</FileType>
     </ClInclude>

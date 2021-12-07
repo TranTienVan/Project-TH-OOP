@@ -25,7 +25,7 @@ namespace source {
 			//TODO: Add the constructor code here
 			//
 		}
-		FormTopicGrammar(std::vector<TopicGrammar> topics) {
+		FormTopicGrammar(std::vector<AppComponent*> topics) {
 			InitializeComponent();
 			//
 			//TODO: Add the constructor code here
@@ -38,12 +38,13 @@ namespace source {
 
 			int i_topic = 0;
 
-			this->topicGrammars = new std::vector<TopicGrammar>();
+			this->topicGrammars = new TopicGrammar*[4];
 			for each (System::Windows::Forms::Panel ^ pn in this->panelTopicVocabulary->Controls)
 			{
+				this->topicGrammars[i_topic] = (TopicGrammar*)topics[i_topic + 12];
 				for each (System::Windows::Forms::Control ^ ctr in pn->Controls) {
-
-					System::String^ s = gcnew System::String(topics[i_topic].getName().c_str());
+					
+					System::String^ s = gcnew System::String(this->topicGrammars[i_topic]->getName().c_str());
 					
 
 					if (ctr->Name->Contains(L"pictureTopic")) {
@@ -64,7 +65,7 @@ namespace source {
 
 
 				}
-				topicGrammars->push_back(topics[i_topic]);
+				
 				++i_topic;
 			}
 
@@ -81,7 +82,7 @@ namespace source {
 				delete components;
 			}
 		}
-	private: std::vector<TopicGrammar>* topicGrammars;
+	private: TopicGrammar** topicGrammars;
 	private: System::Windows::Forms::Panel^ panelTopicVocabulary;
 	protected:
 	private: System::Windows::Forms::Panel^ topic1;
@@ -192,10 +193,10 @@ namespace source {
 			this->panelTopicVocabulary->Controls->Add(this->topic3);
 			this->panelTopicVocabulary->Controls->Add(this->topic4);
 			this->panelTopicVocabulary->Dock = System::Windows::Forms::DockStyle::Bottom;
-			this->panelTopicVocabulary->Location = System::Drawing::Point(0, 137);
+			this->panelTopicVocabulary->Location = System::Drawing::Point(0, 110);
 			this->panelTopicVocabulary->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->panelTopicVocabulary->Name = L"panelTopicVocabulary";
-			this->panelTopicVocabulary->Size = System::Drawing::Size(1859, 851);
+			this->panelTopicVocabulary->Size = System::Drawing::Size(1859, 878);
 			this->panelTopicVocabulary->TabIndex = 3;
 			// 
 			// topic1
@@ -418,7 +419,7 @@ namespace source {
 			this->panelLabelTopic->Dock = System::Windows::Forms::DockStyle::Top;
 			this->panelLabelTopic->Location = System::Drawing::Point(0, 0);
 			this->panelLabelTopic->Name = L"panelLabelTopic";
-			this->panelLabelTopic->Size = System::Drawing::Size(1859, 137);
+			this->panelLabelTopic->Size = System::Drawing::Size(1859, 105);
 			this->panelLabelTopic->TabIndex = 4;
 			// 
 			// nameTopic
@@ -426,7 +427,7 @@ namespace source {
 			this->nameTopic->BackColor = System::Drawing::Color::Linen;
 			this->nameTopic->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->nameTopic->Location = System::Drawing::Point(722, 31);
+			this->nameTopic->Location = System::Drawing::Point(725, 12);
 			this->nameTopic->Name = L"nameTopic";
 			this->nameTopic->Size = System::Drawing::Size(384, 68);
 			this->nameTopic->TabIndex = 0;
@@ -512,8 +513,8 @@ namespace source {
 
 		System::String^ temp = btn->Name->Substring(12);
 		int i_topic = int::Parse(temp);
-		nameTopic->Text = gcnew System::String((*topicGrammars)[i_topic - 1].getName().c_str());
-		FormGrammar^ nextForm = gcnew FormGrammar((*topicGrammars)[i_topic - 1].getGrammars());
+		
+		FormGrammar^ nextForm = gcnew FormGrammar(topicGrammars[i_topic - 1]->getGrammars());
 
 		openChildForm(nextForm);
 	}

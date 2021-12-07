@@ -21,8 +21,7 @@ public:
     std::vector<TopicGrammar> topicGrammars;
 public:
     int score;
-    std::vector<std::vector<std::string>> ALL_TOPICS_VOCABULARY; 
-    std::vector<std::vector<std::string>> ALL_TOPICS_GRAMMAR;
+    
     // Getter and setter
     std::string getId();
     std::string getUserName();
@@ -30,6 +29,9 @@ public:
     std::string getPassword();
     std::vector<TopicVocabulary> getTopicVocabulary(){
         return this->topicVocabularies;
+    }
+    Json::Value getObj(){
+        return obj;
     }
     std::vector<TopicGrammar> getTopicGrammar(){
         return this->topicGrammars;
@@ -45,10 +47,8 @@ public:
     static void updatePasswordByEmail(std::string email, std::string newPassword, std::string path);
 
     void init(std::string path);
-    void initVocabulary(std::string path);  
-    void initGrammar(std::string path);
-    void initALL_TOPICS_VOCABULARY(std::string path); 
-    void initALL_TOPICS_GRAMMAR(std::string path);
+   
+    
     void updateGrammarToDatabase();
     void updateVocabularyToDatabase();
     void updateAllToDatabase(Json::Value &actualJson, int index, std::string path);
