@@ -131,6 +131,8 @@ void User::updateGrammarToDatabase(){
     obj["topicGrammars"] = p;
 }
 
+
+
 void User::updateAllToDatabase(Json::Value &actualJson, int index, std::string path) {
     std::fstream f(path, std::ios::out);
     updateVocabularyToDatabase();

@@ -5,18 +5,21 @@
 #include<json/json.h>
 #include<json/value.h>
 #include<json/reader.h>
+#include<time.h>
 #include"../database/Vocabulary/vocabulary.json"
 #include"../vocabulary/vocabulary.h"
 using namespace std;
 
+
+
 class dict{
 private:
     vector<Vocabulary> _dict;
-    dict(){};
+    vector<pair<Vocabulary, string>> _look_up_history;
 public:
-    static int Instance;
-    dict* CreateNewDict();
+    
+    dict();
     void importData(const string path);
-    Vocabulary* findWord(string word);
+    Vocabulary findWord(string word);
     void sortDict();
 };

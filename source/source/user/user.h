@@ -5,6 +5,7 @@
 #include <json/writer.h>
 #include"../topic/topic_vocabulary.h"
 #include"../topic/topic_grammar.h"
+#include"../dictionary/dictionary.h"
 #include<iostream>
 #include<fstream>
 unsigned SHF(std::string input);
@@ -19,7 +20,7 @@ public:
     std::string password;
     std::vector<TopicVocabulary> topicVocabularies;
     std::vector<TopicGrammar> topicGrammars;
-    std::vector<Vocabulary> look_up_history;
+    dict _myDict;
 public:
     int score;
     
@@ -55,6 +56,7 @@ public:
     
     void updateGrammarToDatabase();
     void updateVocabularyToDatabase();
+    void updateLookUpHistoryToDatabase();
     void updateAllToDatabase(Json::Value &actualJson, int index, std::string path);
 public:
     User(std::string id, std::string username, std::string email, std::string password);

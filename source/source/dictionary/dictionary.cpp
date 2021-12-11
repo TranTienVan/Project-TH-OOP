@@ -2,26 +2,25 @@
 
 int dict::Instance = 0;
 
-dict* dict::CreateNewDict(){
-    dict* p = NULL;
-    if (Instance == 0){
-        p = new dict;
-        Instance += 1;
-    }
-    return p;
+dict::dict(){
+    
 }
 
 void dict::sortDict(){
     sort(_dict.begin(), _dict.end());
 }
 
-Vocabulary* dict::findWord(string word){
+Vocabulary dict::findWord(string word){
     int l = 0;
     int r = _dict.size() - 1;
     while (l < r){
         int mid = (r - l) / 2 + l;
         if (_dict[mid].getWord() == word){
-            return &_dict[mid];
+            time_t now = time(0);
+            tm *ltm = localtime(&now);
+            string date = to_string(ltm->tm_mday)+"/"+to_string(ltm->tm_mon)+"/"+to_string(ltm->tm_year);
+            _look_up_history.push_back(make_pair(_dict[mid], date));
+            return _dict[mid];
         }
         if (_dict[mid].getWord() < word)    l = mid + 1;
         else r = mid - 1;
