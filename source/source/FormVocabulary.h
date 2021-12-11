@@ -165,7 +165,7 @@ namespace source {
 				
 			}
 
-			FormContentVocabulary^ nextForm = gcnew FormContentVocabulary((*vocabs)[i_vocabs]);
+			FormContentVocabulary^ nextForm = gcnew FormContentVocabulary((*vocabs)[i_vocabs], listVocabs);
 
 			openChildForm(nextForm);
 		}

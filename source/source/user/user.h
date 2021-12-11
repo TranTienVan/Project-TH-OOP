@@ -18,9 +18,7 @@ public:
     std::string username;
     std::string email;
     std::string password;
-    std::vector<TopicVocabulary> topicVocabularies;
-    std::vector<TopicGrammar> topicGrammars;
-    dict _myDict;
+    
 public:
     int score;
     
@@ -29,18 +27,7 @@ public:
     std::string getUserName();
     std::string getEmail();
     std::string getPassword();
-    std::vector<TopicVocabulary> getTopicVocabulary(){
-        return this->topicVocabularies;
-    }
-    Json::Value getObj(){
-        return obj;
-    }
-    std::vector<TopicGrammar> getTopicGrammar(){
-        return this->topicGrammars;
-    }
-    std::vector<Vocabulary> getLookUpHistory(){
-        return this->look_up_history;
-    }
+    
     void setPassword(std::string pass);
     
     // operation with database
@@ -51,13 +38,8 @@ public:
     static int getIndexByEmail(Json::Value arrUser, std::string email);
     static void updatePasswordByEmail(std::string email, std::string newPassword, std::string path);
 
-    void init(std::string path);
-   
     
-    void updateGrammarToDatabase();
-    void updateVocabularyToDatabase();
-    void updateLookUpHistoryToDatabase();
-    void updateAllToDatabase(Json::Value &actualJson, int index, std::string path);
+   
 public:
     User(std::string id, std::string username, std::string email, std::string password);
     User(std::string id, std::string username, std::string email, std::string password, int score);

@@ -71,14 +71,14 @@ namespace source {
 			this->panelTemp->Location = System::Drawing::Point(0, 0);
 			this->panelTemp->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->panelTemp->Name = L"panelTemp";
-			this->panelTemp->Size = System::Drawing::Size(3844, 1869);
+			this->panelTemp->Size = System::Drawing::Size(3800, 1900);
 			this->panelTemp->TabIndex = 0;
 			// 
 			// Temp
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(11, 24.444);
+			this->AutoScaleDimensions = System::Drawing::SizeF(11, 22);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(3844, 1869);
+			this->ClientSize = System::Drawing::Size(3800, 1900);
 			this->Controls->Add(this->panelTemp);
 			this->Margin = System::Windows::Forms::Padding(6, 5, 6, 5);
 			this->Name = L"Temp";

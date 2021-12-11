@@ -3,7 +3,8 @@
 #include"./topic/topic_vocabulary.h"
 #include"FormVocabulary.h"
 #include<string>
-
+#include"./game/traditional_game.h"
+#include"FormTraditionalGame.h"
 namespace source {
 
 	using namespace System;
@@ -29,7 +30,7 @@ namespace source {
 			//TODO: Add the constructor code here
 			//
 		}
-		FormTopicVocabulary(std::vector<AppComponent*> topics) {
+		FormTopicVocabulary(std::vector<AppComponent*> topics, std::vector<AppComponent*> traditionalGame) {
 			InitializeComponent();
 
 			//
@@ -42,10 +43,11 @@ namespace source {
 
 			int i_topic = 0;
 			this->topicVocabularies = new TopicVocabulary*[12];
-			
+			this->topicGames = new TraditionalGame * [12];
 			for each (System::Windows::Forms::Panel ^ pn in this->panelTopicVocabulary->Controls)
 			{
 				this->topicVocabularies[i_topic] = (TopicVocabulary*)topics[i_topic];
+				this->topicGames[i_topic] = (TraditionalGame*)traditionalGame[i_topic];
 				for each (System::Windows::Forms::Control ^ ctr in pn->Controls) {
 					
 					System::String^ s = gcnew System::String(this->topicVocabularies[i_topic]->getName().c_str());
@@ -91,6 +93,7 @@ namespace source {
 			}
 		}
 	private: TopicVocabulary** topicVocabularies;
+	private: TraditionalGame** topicGames;
 	private: System::Windows::Forms::TextBox^ nameTopic;
 	private: System::Windows::Forms::Panel^ panelLabelTopic;
 	private: System::Windows::Forms::Panel^ topic12;
@@ -312,7 +315,7 @@ namespace source {
 			// 
 			// textBoxTopic12
 			// 
-			this->textBoxTopic12->Location = System::Drawing::Point(141, 353);
+			this->textBoxTopic12->Location = System::Drawing::Point(141, 335);
 			this->textBoxTopic12->Margin = System::Windows::Forms::Padding(8, 7, 8, 7);
 			this->textBoxTopic12->Name = L"textBoxTopic12";
 			this->textBoxTopic12->Size = System::Drawing::Size(260, 38);
@@ -320,20 +323,21 @@ namespace source {
 			// 
 			// button2Topic12
 			// 
-			this->button2Topic12->Location = System::Drawing::Point(267, 415);
+			this->button2Topic12->Location = System::Drawing::Point(267, 400);
 			this->button2Topic12->Margin = System::Windows::Forms::Padding(8, 7, 8, 7);
 			this->button2Topic12->Name = L"button2Topic12";
-			this->button2Topic12->Size = System::Drawing::Size(200, 55);
+			this->button2Topic12->Size = System::Drawing::Size(200, 70);
 			this->button2Topic12->TabIndex = 3;
 			this->button2Topic12->Text = L"Practice";
 			this->button2Topic12->UseVisualStyleBackColor = true;
+			this->button2Topic12->Click += gcnew System::EventHandler(this, &FormTopicVocabulary::button2Topic12_Click);
 			// 
 			// button1Topic12
 			// 
-			this->button1Topic12->Location = System::Drawing::Point(69, 415);
+			this->button1Topic12->Location = System::Drawing::Point(69, 400);
 			this->button1Topic12->Margin = System::Windows::Forms::Padding(8, 7, 8, 7);
 			this->button1Topic12->Name = L"button1Topic12";
-			this->button1Topic12->Size = System::Drawing::Size(200, 55);
+			this->button1Topic12->Size = System::Drawing::Size(200, 70);
 			this->button1Topic12->TabIndex = 3;
 			this->button1Topic12->Text = L"Learn";
 			this->button1Topic12->UseVisualStyleBackColor = true;
@@ -363,7 +367,7 @@ namespace source {
 			// 
 			// textBoxTopic11
 			// 
-			this->textBoxTopic11->Location = System::Drawing::Point(141, 353);
+			this->textBoxTopic11->Location = System::Drawing::Point(141, 335);
 			this->textBoxTopic11->Margin = System::Windows::Forms::Padding(8, 7, 8, 7);
 			this->textBoxTopic11->Name = L"textBoxTopic11";
 			this->textBoxTopic11->Size = System::Drawing::Size(260, 38);
@@ -371,20 +375,21 @@ namespace source {
 			// 
 			// button2Topic11
 			// 
-			this->button2Topic11->Location = System::Drawing::Point(267, 415);
+			this->button2Topic11->Location = System::Drawing::Point(266, 400);
 			this->button2Topic11->Margin = System::Windows::Forms::Padding(8, 7, 8, 7);
 			this->button2Topic11->Name = L"button2Topic11";
-			this->button2Topic11->Size = System::Drawing::Size(200, 55);
+			this->button2Topic11->Size = System::Drawing::Size(200, 70);
 			this->button2Topic11->TabIndex = 3;
 			this->button2Topic11->Text = L"Practice";
 			this->button2Topic11->UseVisualStyleBackColor = true;
+			this->button2Topic11->Click += gcnew System::EventHandler(this, &FormTopicVocabulary::button2Topic11_Click);
 			// 
 			// button1Topic11
 			// 
-			this->button1Topic11->Location = System::Drawing::Point(69, 415);
+			this->button1Topic11->Location = System::Drawing::Point(68, 400);
 			this->button1Topic11->Margin = System::Windows::Forms::Padding(8, 7, 8, 7);
 			this->button1Topic11->Name = L"button1Topic11";
-			this->button1Topic11->Size = System::Drawing::Size(200, 55);
+			this->button1Topic11->Size = System::Drawing::Size(200, 70);
 			this->button1Topic11->TabIndex = 3;
 			this->button1Topic11->Text = L"Learn";
 			this->button1Topic11->UseVisualStyleBackColor = true;
@@ -414,7 +419,7 @@ namespace source {
 			// 
 			// textBoxTopic10
 			// 
-			this->textBoxTopic10->Location = System::Drawing::Point(141, 353);
+			this->textBoxTopic10->Location = System::Drawing::Point(141, 335);
 			this->textBoxTopic10->Margin = System::Windows::Forms::Padding(8, 7, 8, 7);
 			this->textBoxTopic10->Name = L"textBoxTopic10";
 			this->textBoxTopic10->Size = System::Drawing::Size(260, 38);
@@ -422,20 +427,21 @@ namespace source {
 			// 
 			// button2Topic10
 			// 
-			this->button2Topic10->Location = System::Drawing::Point(267, 415);
+			this->button2Topic10->Location = System::Drawing::Point(267, 400);
 			this->button2Topic10->Margin = System::Windows::Forms::Padding(8, 7, 8, 7);
 			this->button2Topic10->Name = L"button2Topic10";
-			this->button2Topic10->Size = System::Drawing::Size(200, 55);
+			this->button2Topic10->Size = System::Drawing::Size(200, 70);
 			this->button2Topic10->TabIndex = 3;
 			this->button2Topic10->Text = L"Practice";
 			this->button2Topic10->UseVisualStyleBackColor = true;
+			this->button2Topic10->Click += gcnew System::EventHandler(this, &FormTopicVocabulary::button2Topic10_Click);
 			// 
 			// button1Topic10
 			// 
-			this->button1Topic10->Location = System::Drawing::Point(69, 415);
+			this->button1Topic10->Location = System::Drawing::Point(69, 400);
 			this->button1Topic10->Margin = System::Windows::Forms::Padding(8, 7, 8, 7);
 			this->button1Topic10->Name = L"button1Topic10";
-			this->button1Topic10->Size = System::Drawing::Size(200, 55);
+			this->button1Topic10->Size = System::Drawing::Size(200, 70);
 			this->button1Topic10->TabIndex = 3;
 			this->button1Topic10->Text = L"Learn";
 			this->button1Topic10->UseVisualStyleBackColor = true;
@@ -465,7 +471,7 @@ namespace source {
 			// 
 			// textBoxTopic9
 			// 
-			this->textBoxTopic9->Location = System::Drawing::Point(141, 353);
+			this->textBoxTopic9->Location = System::Drawing::Point(141, 334);
 			this->textBoxTopic9->Margin = System::Windows::Forms::Padding(8, 7, 8, 7);
 			this->textBoxTopic9->Name = L"textBoxTopic9";
 			this->textBoxTopic9->Size = System::Drawing::Size(260, 38);
@@ -473,20 +479,21 @@ namespace source {
 			// 
 			// button2Topic9
 			// 
-			this->button2Topic9->Location = System::Drawing::Point(267, 415);
+			this->button2Topic9->Location = System::Drawing::Point(267, 400);
 			this->button2Topic9->Margin = System::Windows::Forms::Padding(8, 7, 8, 7);
 			this->button2Topic9->Name = L"button2Topic9";
-			this->button2Topic9->Size = System::Drawing::Size(200, 55);
+			this->button2Topic9->Size = System::Drawing::Size(200, 70);
 			this->button2Topic9->TabIndex = 3;
 			this->button2Topic9->Text = L"Practice";
 			this->button2Topic9->UseVisualStyleBackColor = true;
+			this->button2Topic9->Click += gcnew System::EventHandler(this, &FormTopicVocabulary::button2Topic9_Click);
 			// 
 			// button1Topic9
 			// 
-			this->button1Topic9->Location = System::Drawing::Point(69, 415);
+			this->button1Topic9->Location = System::Drawing::Point(69, 400);
 			this->button1Topic9->Margin = System::Windows::Forms::Padding(8, 7, 8, 7);
 			this->button1Topic9->Name = L"button1Topic9";
-			this->button1Topic9->Size = System::Drawing::Size(200, 55);
+			this->button1Topic9->Size = System::Drawing::Size(200, 70);
 			this->button1Topic9->TabIndex = 3;
 			this->button1Topic9->Text = L"Learn";
 			this->button1Topic9->UseVisualStyleBackColor = true;
@@ -516,7 +523,7 @@ namespace source {
 			// 
 			// textBoxTopic8
 			// 
-			this->textBoxTopic8->Location = System::Drawing::Point(141, 353);
+			this->textBoxTopic8->Location = System::Drawing::Point(141, 334);
 			this->textBoxTopic8->Margin = System::Windows::Forms::Padding(8, 7, 8, 7);
 			this->textBoxTopic8->Name = L"textBoxTopic8";
 			this->textBoxTopic8->Size = System::Drawing::Size(260, 38);
@@ -524,20 +531,21 @@ namespace source {
 			// 
 			// button2Topic8
 			// 
-			this->button2Topic8->Location = System::Drawing::Point(267, 415);
+			this->button2Topic8->Location = System::Drawing::Point(267, 400);
 			this->button2Topic8->Margin = System::Windows::Forms::Padding(8, 7, 8, 7);
 			this->button2Topic8->Name = L"button2Topic8";
-			this->button2Topic8->Size = System::Drawing::Size(200, 55);
+			this->button2Topic8->Size = System::Drawing::Size(200, 70);
 			this->button2Topic8->TabIndex = 3;
 			this->button2Topic8->Text = L"Practice";
 			this->button2Topic8->UseVisualStyleBackColor = true;
+			this->button2Topic8->Click += gcnew System::EventHandler(this, &FormTopicVocabulary::button2Topic8_Click);
 			// 
 			// button1Topic8
 			// 
-			this->button1Topic8->Location = System::Drawing::Point(69, 415);
+			this->button1Topic8->Location = System::Drawing::Point(69, 400);
 			this->button1Topic8->Margin = System::Windows::Forms::Padding(8, 7, 8, 7);
 			this->button1Topic8->Name = L"button1Topic8";
-			this->button1Topic8->Size = System::Drawing::Size(200, 55);
+			this->button1Topic8->Size = System::Drawing::Size(200, 70);
 			this->button1Topic8->TabIndex = 3;
 			this->button1Topic8->Text = L"Learn";
 			this->button1Topic8->UseVisualStyleBackColor = true;
@@ -567,7 +575,7 @@ namespace source {
 			// 
 			// textBoxTopic7
 			// 
-			this->textBoxTopic7->Location = System::Drawing::Point(141, 353);
+			this->textBoxTopic7->Location = System::Drawing::Point(141, 334);
 			this->textBoxTopic7->Margin = System::Windows::Forms::Padding(8, 7, 8, 7);
 			this->textBoxTopic7->Name = L"textBoxTopic7";
 			this->textBoxTopic7->Size = System::Drawing::Size(260, 38);
@@ -575,20 +583,21 @@ namespace source {
 			// 
 			// button2Topic7
 			// 
-			this->button2Topic7->Location = System::Drawing::Point(267, 415);
+			this->button2Topic7->Location = System::Drawing::Point(267, 400);
 			this->button2Topic7->Margin = System::Windows::Forms::Padding(8, 7, 8, 7);
 			this->button2Topic7->Name = L"button2Topic7";
-			this->button2Topic7->Size = System::Drawing::Size(200, 55);
+			this->button2Topic7->Size = System::Drawing::Size(200, 70);
 			this->button2Topic7->TabIndex = 3;
 			this->button2Topic7->Text = L"Practice";
 			this->button2Topic7->UseVisualStyleBackColor = true;
+			this->button2Topic7->Click += gcnew System::EventHandler(this, &FormTopicVocabulary::button2Topic7_Click);
 			// 
 			// button1Topic7
 			// 
-			this->button1Topic7->Location = System::Drawing::Point(69, 415);
+			this->button1Topic7->Location = System::Drawing::Point(69, 400);
 			this->button1Topic7->Margin = System::Windows::Forms::Padding(8, 7, 8, 7);
 			this->button1Topic7->Name = L"button1Topic7";
-			this->button1Topic7->Size = System::Drawing::Size(200, 55);
+			this->button1Topic7->Size = System::Drawing::Size(200, 70);
 			this->button1Topic7->TabIndex = 3;
 			this->button1Topic7->Text = L"Learn";
 			this->button1Topic7->UseVisualStyleBackColor = true;
@@ -618,7 +627,7 @@ namespace source {
 			// 
 			// textBoxTopic6
 			// 
-			this->textBoxTopic6->Location = System::Drawing::Point(141, 353);
+			this->textBoxTopic6->Location = System::Drawing::Point(141, 335);
 			this->textBoxTopic6->Margin = System::Windows::Forms::Padding(8, 7, 8, 7);
 			this->textBoxTopic6->Name = L"textBoxTopic6";
 			this->textBoxTopic6->Size = System::Drawing::Size(260, 38);
@@ -626,20 +635,21 @@ namespace source {
 			// 
 			// button2Topic6
 			// 
-			this->button2Topic6->Location = System::Drawing::Point(267, 415);
+			this->button2Topic6->Location = System::Drawing::Point(267, 400);
 			this->button2Topic6->Margin = System::Windows::Forms::Padding(8, 7, 8, 7);
 			this->button2Topic6->Name = L"button2Topic6";
-			this->button2Topic6->Size = System::Drawing::Size(200, 55);
+			this->button2Topic6->Size = System::Drawing::Size(200, 70);
 			this->button2Topic6->TabIndex = 3;
 			this->button2Topic6->Text = L"Practice";
 			this->button2Topic6->UseVisualStyleBackColor = true;
+			this->button2Topic6->Click += gcnew System::EventHandler(this, &FormTopicVocabulary::button2Topic6_Click);
 			// 
 			// button1Topic6
 			// 
-			this->button1Topic6->Location = System::Drawing::Point(69, 415);
+			this->button1Topic6->Location = System::Drawing::Point(69, 400);
 			this->button1Topic6->Margin = System::Windows::Forms::Padding(8, 7, 8, 7);
 			this->button1Topic6->Name = L"button1Topic6";
-			this->button1Topic6->Size = System::Drawing::Size(200, 55);
+			this->button1Topic6->Size = System::Drawing::Size(200, 70);
 			this->button1Topic6->TabIndex = 3;
 			this->button1Topic6->Text = L"Learn";
 			this->button1Topic6->UseVisualStyleBackColor = true;
@@ -669,7 +679,7 @@ namespace source {
 			// 
 			// textBoxTopic5
 			// 
-			this->textBoxTopic5->Location = System::Drawing::Point(141, 353);
+			this->textBoxTopic5->Location = System::Drawing::Point(141, 335);
 			this->textBoxTopic5->Margin = System::Windows::Forms::Padding(8, 7, 8, 7);
 			this->textBoxTopic5->Name = L"textBoxTopic5";
 			this->textBoxTopic5->Size = System::Drawing::Size(260, 38);
@@ -677,20 +687,21 @@ namespace source {
 			// 
 			// button2Topic5
 			// 
-			this->button2Topic5->Location = System::Drawing::Point(267, 415);
+			this->button2Topic5->Location = System::Drawing::Point(267, 405);
 			this->button2Topic5->Margin = System::Windows::Forms::Padding(8, 7, 8, 7);
 			this->button2Topic5->Name = L"button2Topic5";
-			this->button2Topic5->Size = System::Drawing::Size(200, 55);
+			this->button2Topic5->Size = System::Drawing::Size(200, 70);
 			this->button2Topic5->TabIndex = 3;
 			this->button2Topic5->Text = L"Practice";
 			this->button2Topic5->UseVisualStyleBackColor = true;
+			this->button2Topic5->Click += gcnew System::EventHandler(this, &FormTopicVocabulary::button2Topic5_Click);
 			// 
 			// button1Topic5
 			// 
-			this->button1Topic5->Location = System::Drawing::Point(69, 415);
+			this->button1Topic5->Location = System::Drawing::Point(69, 405);
 			this->button1Topic5->Margin = System::Windows::Forms::Padding(8, 7, 8, 7);
 			this->button1Topic5->Name = L"button1Topic5";
-			this->button1Topic5->Size = System::Drawing::Size(200, 55);
+			this->button1Topic5->Size = System::Drawing::Size(200, 70);
 			this->button1Topic5->TabIndex = 3;
 			this->button1Topic5->Text = L"Learn";
 			this->button1Topic5->UseVisualStyleBackColor = true;
@@ -720,7 +731,7 @@ namespace source {
 			// 
 			// textBoxTopic4
 			// 
-			this->textBoxTopic4->Location = System::Drawing::Point(141, 353);
+			this->textBoxTopic4->Location = System::Drawing::Point(141, 335);
 			this->textBoxTopic4->Margin = System::Windows::Forms::Padding(8, 7, 8, 7);
 			this->textBoxTopic4->Name = L"textBoxTopic4";
 			this->textBoxTopic4->Size = System::Drawing::Size(260, 38);
@@ -728,20 +739,21 @@ namespace source {
 			// 
 			// button2Topic4
 			// 
-			this->button2Topic4->Location = System::Drawing::Point(267, 415);
+			this->button2Topic4->Location = System::Drawing::Point(267, 400);
 			this->button2Topic4->Margin = System::Windows::Forms::Padding(8, 7, 8, 7);
 			this->button2Topic4->Name = L"button2Topic4";
-			this->button2Topic4->Size = System::Drawing::Size(200, 55);
+			this->button2Topic4->Size = System::Drawing::Size(200, 70);
 			this->button2Topic4->TabIndex = 3;
 			this->button2Topic4->Text = L"Practice";
 			this->button2Topic4->UseVisualStyleBackColor = true;
+			this->button2Topic4->Click += gcnew System::EventHandler(this, &FormTopicVocabulary::button2Topic4_Click);
 			// 
 			// button1Topic4
 			// 
-			this->button1Topic4->Location = System::Drawing::Point(69, 415);
+			this->button1Topic4->Location = System::Drawing::Point(69, 400);
 			this->button1Topic4->Margin = System::Windows::Forms::Padding(8, 7, 8, 7);
 			this->button1Topic4->Name = L"button1Topic4";
-			this->button1Topic4->Size = System::Drawing::Size(200, 55);
+			this->button1Topic4->Size = System::Drawing::Size(200, 70);
 			this->button1Topic4->TabIndex = 3;
 			this->button1Topic4->Text = L"Learn";
 			this->button1Topic4->UseVisualStyleBackColor = true;
@@ -771,7 +783,7 @@ namespace source {
 			// 
 			// textBoxTopic3
 			// 
-			this->textBoxTopic3->Location = System::Drawing::Point(141, 353);
+			this->textBoxTopic3->Location = System::Drawing::Point(141, 340);
 			this->textBoxTopic3->Margin = System::Windows::Forms::Padding(8, 7, 8, 7);
 			this->textBoxTopic3->Name = L"textBoxTopic3";
 			this->textBoxTopic3->Size = System::Drawing::Size(260, 38);
@@ -779,20 +791,21 @@ namespace source {
 			// 
 			// button2Topic3
 			// 
-			this->button2Topic3->Location = System::Drawing::Point(267, 415);
+			this->button2Topic3->Location = System::Drawing::Point(267, 405);
 			this->button2Topic3->Margin = System::Windows::Forms::Padding(8, 7, 8, 7);
 			this->button2Topic3->Name = L"button2Topic3";
-			this->button2Topic3->Size = System::Drawing::Size(200, 55);
+			this->button2Topic3->Size = System::Drawing::Size(200, 70);
 			this->button2Topic3->TabIndex = 3;
 			this->button2Topic3->Text = L"Practice";
 			this->button2Topic3->UseVisualStyleBackColor = true;
+			this->button2Topic3->Click += gcnew System::EventHandler(this, &FormTopicVocabulary::button2Topic3_Click);
 			// 
 			// button1Topic3
 			// 
-			this->button1Topic3->Location = System::Drawing::Point(69, 415);
+			this->button1Topic3->Location = System::Drawing::Point(69, 405);
 			this->button1Topic3->Margin = System::Windows::Forms::Padding(8, 7, 8, 7);
 			this->button1Topic3->Name = L"button1Topic3";
-			this->button1Topic3->Size = System::Drawing::Size(200, 55);
+			this->button1Topic3->Size = System::Drawing::Size(200, 70);
 			this->button1Topic3->TabIndex = 3;
 			this->button1Topic3->Text = L"Learn";
 			this->button1Topic3->UseVisualStyleBackColor = true;
@@ -822,7 +835,7 @@ namespace source {
 			// 
 			// textBoxTopic2
 			// 
-			this->textBoxTopic2->Location = System::Drawing::Point(141, 353);
+			this->textBoxTopic2->Location = System::Drawing::Point(141, 340);
 			this->textBoxTopic2->Margin = System::Windows::Forms::Padding(8, 7, 8, 7);
 			this->textBoxTopic2->Name = L"textBoxTopic2";
 			this->textBoxTopic2->Size = System::Drawing::Size(260, 38);
@@ -830,20 +843,21 @@ namespace source {
 			// 
 			// button2Topic2
 			// 
-			this->button2Topic2->Location = System::Drawing::Point(267, 415);
+			this->button2Topic2->Location = System::Drawing::Point(267, 405);
 			this->button2Topic2->Margin = System::Windows::Forms::Padding(8, 7, 8, 7);
 			this->button2Topic2->Name = L"button2Topic2";
-			this->button2Topic2->Size = System::Drawing::Size(200, 55);
+			this->button2Topic2->Size = System::Drawing::Size(200, 70);
 			this->button2Topic2->TabIndex = 3;
 			this->button2Topic2->Text = L"Practice";
 			this->button2Topic2->UseVisualStyleBackColor = true;
+			this->button2Topic2->Click += gcnew System::EventHandler(this, &FormTopicVocabulary::button2Topic2_Click);
 			// 
 			// button1Topic2
 			// 
-			this->button1Topic2->Location = System::Drawing::Point(69, 415);
+			this->button1Topic2->Location = System::Drawing::Point(69, 405);
 			this->button1Topic2->Margin = System::Windows::Forms::Padding(8, 7, 8, 7);
 			this->button1Topic2->Name = L"button1Topic2";
-			this->button1Topic2->Size = System::Drawing::Size(200, 55);
+			this->button1Topic2->Size = System::Drawing::Size(200, 70);
 			this->button1Topic2->TabIndex = 3;
 			this->button1Topic2->Text = L"Learn";
 			this->button1Topic2->UseVisualStyleBackColor = true;
@@ -890,7 +904,7 @@ namespace source {
 			// 
 			// pictureTopic1
 			// 
-			this->pictureTopic1->Location = System::Drawing::Point(69, 52);
+			this->pictureTopic1->Location = System::Drawing::Point(70, 52);
 			this->pictureTopic1->Margin = System::Windows::Forms::Padding(8, 7, 8, 7);
 			this->pictureTopic1->Name = L"pictureTopic1";
 			this->pictureTopic1->Size = System::Drawing::Size(397, 286);
@@ -899,7 +913,7 @@ namespace source {
 			// 
 			// textBoxTopic1
 			// 
-			this->textBoxTopic1->Location = System::Drawing::Point(141, 353);
+			this->textBoxTopic1->Location = System::Drawing::Point(141, 340);
 			this->textBoxTopic1->Margin = System::Windows::Forms::Padding(8, 7, 8, 7);
 			this->textBoxTopic1->Name = L"textBoxTopic1";
 			this->textBoxTopic1->Size = System::Drawing::Size(260, 38);
@@ -907,20 +921,21 @@ namespace source {
 			// 
 			// button2Topic1
 			// 
-			this->button2Topic1->Location = System::Drawing::Point(267, 415);
+			this->button2Topic1->Location = System::Drawing::Point(267, 405);
 			this->button2Topic1->Margin = System::Windows::Forms::Padding(8, 7, 8, 7);
 			this->button2Topic1->Name = L"button2Topic1";
-			this->button2Topic1->Size = System::Drawing::Size(200, 55);
+			this->button2Topic1->Size = System::Drawing::Size(200, 70);
 			this->button2Topic1->TabIndex = 3;
 			this->button2Topic1->Text = L"Practice";
 			this->button2Topic1->UseVisualStyleBackColor = true;
+			this->button2Topic1->Click += gcnew System::EventHandler(this, &FormTopicVocabulary::button2Topic1_Click);
 			// 
 			// button1Topic1
 			// 
-			this->button1Topic1->Location = System::Drawing::Point(69, 415);
+			this->button1Topic1->Location = System::Drawing::Point(69, 405);
 			this->button1Topic1->Margin = System::Windows::Forms::Padding(8, 7, 8, 7);
 			this->button1Topic1->Name = L"button1Topic1";
-			this->button1Topic1->Size = System::Drawing::Size(200, 55);
+			this->button1Topic1->Size = System::Drawing::Size(200, 70);
 			this->button1Topic1->TabIndex = 3;
 			this->button1Topic1->Text = L"Learn";
 			this->button1Topic1->UseVisualStyleBackColor = true;
@@ -1010,6 +1025,18 @@ namespace source {
 
 		openChildForm(nextForm);
 	}
+	
+	private: void ExecuteButtonPractice(System::Object^ sender) {
+		System::Windows::Forms::Button^ btn = (System::Windows::Forms::Button^)sender;
+		System::String^ temp = btn->Name->Substring(12);
+		int i_topic = int::Parse(temp);
+
+
+		FormTraditionalGame^ nextForm = gcnew FormTraditionalGame(topicGames[i_topic - 1], panelTopicVocabulary);
+
+		openChildForm(nextForm);
+
+	}
 	private: System::Void panel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 	}
 		   
@@ -1051,5 +1078,41 @@ namespace source {
 		ExecuteButtonLearn(sender);
 	}
 
+private: System::Void button2Topic1_Click(System::Object^ sender, System::EventArgs^ e) {
+	ExecuteButtonPractice(sender);
+}
+private: System::Void button2Topic2_Click(System::Object^ sender, System::EventArgs^ e) {
+	ExecuteButtonPractice(sender);
+}
+private: System::Void button2Topic3_Click(System::Object^ sender, System::EventArgs^ e) {
+	ExecuteButtonPractice(sender);
+}
+private: System::Void button2Topic4_Click(System::Object^ sender, System::EventArgs^ e) {
+	ExecuteButtonPractice(sender);
+}
+private: System::Void button2Topic5_Click(System::Object^ sender, System::EventArgs^ e) {
+	ExecuteButtonPractice(sender);
+}
+private: System::Void button2Topic6_Click(System::Object^ sender, System::EventArgs^ e) {
+	ExecuteButtonPractice(sender);
+}
+private: System::Void button2Topic12_Click(System::Object^ sender, System::EventArgs^ e) {
+	ExecuteButtonPractice(sender);
+}
+private: System::Void button2Topic8_Click(System::Object^ sender, System::EventArgs^ e) {
+	ExecuteButtonPractice(sender);
+}
+private: System::Void button2Topic9_Click(System::Object^ sender, System::EventArgs^ e) {
+	ExecuteButtonPractice(sender);
+}
+private: System::Void button2Topic10_Click(System::Object^ sender, System::EventArgs^ e) {
+	ExecuteButtonPractice(sender);
+}
+private: System::Void button2Topic11_Click(System::Object^ sender, System::EventArgs^ e) {
+	ExecuteButtonPractice(sender);
+}
+private: System::Void button2Topic7_Click(System::Object^ sender, System::EventArgs^ e) {
+	ExecuteButtonPractice(sender);
+}
 };
 }
