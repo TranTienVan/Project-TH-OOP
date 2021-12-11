@@ -32,3 +32,7 @@ void showImage(){
 void playAudio(){
     
 }
+
+std::string Vocabulary::showVocab(){
+    
+}

@@ -19,6 +19,7 @@ public:
     std::string password;
     std::vector<TopicVocabulary> topicVocabularies;
     std::vector<TopicGrammar> topicGrammars;
+    std::vector<Vocabulary> look_up_history;
 public:
     int score;
     
@@ -35,6 +36,9 @@ public:
     }
     std::vector<TopicGrammar> getTopicGrammar(){
         return this->topicGrammars;
+    }
+    std::vector<Vocabulary> getLookUpHistory(){
+        return this->look_up_history;
     }
     void setPassword(std::string pass);
     

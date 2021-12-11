@@ -89,4 +89,5 @@ public:
     void showDefinition();
     void showImage();
     void playAudio();
+    std::string showVocab();
 };
