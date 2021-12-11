@@ -17,6 +17,14 @@ protected:
 public:
     std::vector<std::vector<std::string>> ALL_TOPICS_VOCABULARY; 
     std::vector<std::vector<std::string>> ALL_TOPICS_GRAMMAR;
+    Topic(const Topic& other){
+        this->definition = other.definition;
+        this->image = other.image;
+        this->examples = other.examples;
+        this->name = other.name;
+        this->process = other.process;
+        this->children = other.children;
+    }
     Topic(std::string name, std::string definition,std::string image, std::string examples,Process process) {
         this->name = name;
         this->definition = definition;
@@ -53,9 +61,15 @@ public:
         component->SetParent(this);
     }
 
+    virtual Json::Value toJsonValue() {
+        return Json::Value();
+    }
+    
     void initALL_TOPICS_VOCABULARY(std::string path); 
     void initALL_TOPICS_GRAMMAR(std::string path);
     void initVocabulary(std::string path, Json::Value obj);  
     void initGrammar(std::string path, Json::Value obj);
     void initTopics(std::string path, Json::Value obj);
+    void updateGrammar(Json::Value &obj);
+    void updateVocabulary(Json::Value &obj);
 };

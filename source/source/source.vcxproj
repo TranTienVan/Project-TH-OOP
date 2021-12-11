@@ -131,7 +131,9 @@
     <ClCompile Include="FormLogin.cpp" />
     <ClCompile Include="FormTopicGrammar.cpp" />
     <ClCompile Include="FormTopicVocabulary.cpp" />
+    <ClCompile Include="FormTraditionalGame.cpp" />
     <ClCompile Include="FormVocabulary.cpp" />
+    <ClCompile Include="game\game.cpp" />
     <ClCompile Include="grammar\grammar.cpp" />
     <ClCompile Include="jsoncpp.cpp" />
     <ClCompile Include="process\process.cpp" />
@@ -165,9 +167,14 @@
     <ClInclude Include="FormTopicVocabulary.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="FormTraditionalGame.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="FormVocabulary.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="game\game.h" />
+    <ClInclude Include="game\traditional_game.h" />
     <ClInclude Include="grammar\grammar.h" />
     <ClInclude Include="process\process.h" />
     <ClInclude Include="Temp.h">
@@ -197,6 +204,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormTopicVocabulary.resx">
       <DependentUpon>FormTopicVocabulary.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTraditionalGame.resx">
+      <DependentUpon>FormTraditionalGame.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormVocabulary.resx">
       <DependentUpon>FormVocabulary.h</DependentUpon>

@@ -90,3 +90,23 @@ void Topic::initTopics(std::string path, Json::Value obj){
     initVocabulary(path + "Vocabulary/Topic", obj);
     initGrammar(path + "Grammar/Topic", obj);
 }
+
+void Topic::updateVocabulary(Json::Value &obj){
+    Json::Value p;
+
+    for (int i = 0; i < 12; i++){
+        p.append(children[i]->toJsonValue());
+    }
+
+    obj["topicVocabularies"] = p;
+}
+
+void Topic::updateGrammar(Json::Value &obj){
+    Json::Value p;
+
+    for (int i = 12; i < 16; i++){
+        p.append(children[i]->toJsonValue());
+    }
+
+    obj["topicGrammars"] = p;
+}

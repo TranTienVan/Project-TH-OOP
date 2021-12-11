@@ -1,4 +1,6 @@
 #pragma once
+#include<json/value.h>
+
 class AppComponent{
 protected:
     AppComponent* parent;
@@ -19,4 +21,7 @@ public:
         return false;
     }
     
+    virtual Json::Value toJsonValue() {
+        return Json::Value();
+    };
 };

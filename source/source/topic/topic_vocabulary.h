@@ -14,6 +14,15 @@ public:
     Topic(name, definition, image, examples, process) {
 
     }
+    TopicVocabulary() : 
+    Topic("", "", "", "", Process()){
+
+    }
+
+    TopicVocabulary(const TopicVocabulary& other):
+    Topic(other){
+        this->vocabs = other.vocabs;
+    }
 
     std::vector<Vocabulary> getVocabs() {
         return this->vocabs;

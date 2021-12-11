@@ -4,7 +4,7 @@
 #include "FormTopicVocabulary.h"
 #include "FormHome.h"
 #include "FormTopicGrammar.h"
-
+#include"./game/game.h"
 namespace source {
 
 	using namespace System;
@@ -27,9 +27,7 @@ namespace source {
 
 		app(void)
 		{
-			me = new User();
-			me->init("../../database/");
-
+			
 			InitializeComponent();
 			//
 			//TODO: Add the constructor code here
@@ -44,6 +42,9 @@ namespace source {
 
 			appTopics = new Topic("../../database/");
 			appTopics->initTopics("../../database/", obj);
+
+			appGames = new Game();
+			appGames->initGame(appTopics->getChildren());
 
 
 
@@ -71,13 +72,15 @@ namespace source {
 		}
 	private: User* me;
 	private: Topic* appTopics;
+	private: Game* appGames;
 	private: System::Windows::Forms::Button^ currentBtn;
 	private: System::Windows::Forms::Button^ btnVocabulary;
 	private: System::Windows::Forms::Button^ btnGrammar;
 	private: System::Windows::Forms::Button^ btnDictionary;
 	private: System::Windows::Forms::Button^ btnExit;
 	private: System::Windows::Forms::Panel^ options;
-	private: System::Windows::Forms::Button^ btnSettings;
+	private: System::Windows::Forms::Button^ btnExam;
+
 	private: System::Windows::Forms::Panel^ inforUser;
 	private: System::Windows::Forms::Button^ btnHome;
 	
@@ -89,6 +92,7 @@ namespace source {
 	private: System::Windows::Forms::Label^ labelApp;
 	private: System::Windows::Forms::Panel^ panelLabel;
 	private: System::Windows::Forms::Panel^ panelContent;
+	private: System::Windows::Forms::Button^ btnGame;
 
 
 
@@ -112,12 +116,13 @@ namespace source {
 			this->btnDictionary = (gcnew System::Windows::Forms::Button());
 			this->btnExit = (gcnew System::Windows::Forms::Button());
 			this->options = (gcnew System::Windows::Forms::Panel());
-			this->btnSettings = (gcnew System::Windows::Forms::Button());
+			this->btnExam = (gcnew System::Windows::Forms::Button());
 			this->btnHome = (gcnew System::Windows::Forms::Button());
 			this->inforUser = (gcnew System::Windows::Forms::Panel());
 			this->labelApp = (gcnew System::Windows::Forms::Label());
 			this->panelLabel = (gcnew System::Windows::Forms::Panel());
 			this->panelContent = (gcnew System::Windows::Forms::Panel());
+			this->btnGame = (gcnew System::Windows::Forms::Button());
 			this->options->SuspendLayout();
 			this->panelLabel->SuspendLayout();
 			this->SuspendLayout();
@@ -142,7 +147,7 @@ namespace source {
 			this->btnGrammar->Dock = System::Windows::Forms::DockStyle::Top;
 			this->btnGrammar->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnGrammar.Image")));
 			this->btnGrammar->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnGrammar->Location = System::Drawing::Point(0, 549);
+			this->btnGrammar->Location = System::Drawing::Point(0, 418);
 			this->btnGrammar->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btnGrammar->Name = L"btnGrammar";
 			this->btnGrammar->Padding = System::Windows::Forms::Padding(13, 0, 0, 0);
@@ -157,7 +162,7 @@ namespace source {
 			this->btnDictionary->Dock = System::Windows::Forms::DockStyle::Top;
 			this->btnDictionary->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnDictionary.Image")));
 			this->btnDictionary->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnDictionary->Location = System::Drawing::Point(0, 418);
+			this->btnDictionary->Location = System::Drawing::Point(0, 680);
 			this->btnDictionary->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btnDictionary->Name = L"btnDictionary";
 			this->btnDictionary->Padding = System::Windows::Forms::Padding(13, 0, 0, 0);
@@ -172,7 +177,7 @@ namespace source {
 			this->btnExit->Dock = System::Windows::Forms::DockStyle::Top;
 			this->btnExit->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnExit.Image")));
 			this->btnExit->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnExit->Location = System::Drawing::Point(0, 811);
+			this->btnExit->Location = System::Drawing::Point(0, 942);
 			this->btnExit->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btnExit->Name = L"btnExit";
 			this->btnExit->Padding = System::Windows::Forms::Padding(13, 0, 0, 0);
@@ -187,9 +192,10 @@ namespace source {
 			this->options->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(192)),
 				static_cast<System::Int32>(static_cast<System::Byte>(255)));
 			this->options->Controls->Add(this->btnExit);
-			this->options->Controls->Add(this->btnSettings);
-			this->options->Controls->Add(this->btnGrammar);
+			this->options->Controls->Add(this->btnExam);
 			this->options->Controls->Add(this->btnDictionary);
+			this->options->Controls->Add(this->btnGame);
+			this->options->Controls->Add(this->btnGrammar);
 			this->options->Controls->Add(this->btnVocabulary);
 			this->options->Controls->Add(this->btnHome);
 			this->options->Controls->Add(this->inforUser);
@@ -197,23 +203,23 @@ namespace source {
 			this->options->Location = System::Drawing::Point(7, 7);
 			this->options->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->options->Name = L"options";
-			this->options->Size = System::Drawing::Size(312, 1148);
+			this->options->Size = System::Drawing::Size(312, 1248);
 			this->options->TabIndex = 3;
 			// 
-			// btnSettings
+			// btnExam
 			// 
-			this->btnSettings->Dock = System::Windows::Forms::DockStyle::Top;
-			this->btnSettings->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnSettings.Image")));
-			this->btnSettings->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnSettings->Location = System::Drawing::Point(0, 680);
-			this->btnSettings->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->btnSettings->Name = L"btnSettings";
-			this->btnSettings->Padding = System::Windows::Forms::Padding(13, 0, 0, 0);
-			this->btnSettings->Size = System::Drawing::Size(312, 131);
-			this->btnSettings->TabIndex = 2;
-			this->btnSettings->Text = L"Settings";
-			this->btnSettings->UseVisualStyleBackColor = true;
-			this->btnSettings->Click += gcnew System::EventHandler(this, &app::btnSettings_Click);
+			this->btnExam->Dock = System::Windows::Forms::DockStyle::Top;
+			this->btnExam->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnExam.Image")));
+			this->btnExam->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->btnExam->Location = System::Drawing::Point(0, 811);
+			this->btnExam->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->btnExam->Name = L"btnExam";
+			this->btnExam->Padding = System::Windows::Forms::Padding(13, 0, 0, 0);
+			this->btnExam->Size = System::Drawing::Size(312, 131);
+			this->btnExam->TabIndex = 2;
+			this->btnExam->Text = L"Exam";
+			this->btnExam->UseVisualStyleBackColor = true;
+			this->btnExam->Click += gcnew System::EventHandler(this, &app::btnSettings_Click);
 			// 
 			// btnHome
 			// 
@@ -269,15 +275,30 @@ namespace source {
 			this->panelContent->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->panelContent->Location = System::Drawing::Point(319, 163);
 			this->panelContent->Name = L"panelContent";
-			this->panelContent->Size = System::Drawing::Size(1893, 992);
+			this->panelContent->Size = System::Drawing::Size(1893, 1092);
 			this->panelContent->TabIndex = 5;
+			// 
+			// btnGame
+			// 
+			this->btnGame->Dock = System::Windows::Forms::DockStyle::Top;
+			this->btnGame->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnGame.Image")));
+			this->btnGame->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->btnGame->Location = System::Drawing::Point(0, 549);
+			this->btnGame->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->btnGame->Name = L"btnGame";
+			this->btnGame->Padding = System::Windows::Forms::Padding(13, 0, 0, 0);
+			this->btnGame->Size = System::Drawing::Size(312, 131);
+			this->btnGame->TabIndex = 5;
+			this->btnGame->Text = L"Game";
+			this->btnGame->UseVisualStyleBackColor = true;
+			this->btnGame->Click += gcnew System::EventHandler(this, &app::btnGame_Click);
 			// 
 			// app
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(240, 240);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Dpi;
 			this->BackColor = System::Drawing::SystemColors::ButtonFace;
-			this->ClientSize = System::Drawing::Size(2219, 1162);
+			this->ClientSize = System::Drawing::Size(2219, 1262);
 			this->Controls->Add(this->panelContent);
 			this->Controls->Add(this->panelLabel);
 			this->Controls->Add(this->options);
@@ -327,7 +348,7 @@ namespace source {
 		private: System::Void btnVocabulary_Click(System::Object^ sender, System::EventArgs^ e) {
 			
 			labelApp->Text = btnVocabulary->Text;
-			FormTopicVocabulary^ formTopicVocabulary = gcnew FormTopicVocabulary(appTopics->getChildren());
+			FormTopicVocabulary^ formTopicVocabulary = gcnew FormTopicVocabulary(appTopics->getChildren(), appGames->getChildren());
 			
 			openChildForm(formTopicVocabulary);
 
@@ -364,6 +385,9 @@ private: System::Void btnExit_Click(System::Object^ sender, System::EventArgs^ e
 	System::Environment::Exit(1);
 
 	
+}
+private: System::Void btnGame_Click(System::Object^ sender, System::EventArgs^ e) {
+
 }
 };
 }
