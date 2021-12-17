@@ -5,6 +5,8 @@
 #include "FormHome.h"
 #include "FormTopicGrammar.h"
 #include"./game/game.h"
+#include"FormDictionary.h"
+#include"./dictionary/dictionary.h"
 namespace source {
 
 	using namespace System;
@@ -38,14 +40,7 @@ namespace source {
 		}
 
 		app(Json::Value obj) {
-			me = new User(obj);
-
-			appTopics = new Topic("../../database/");
-			appTopics->initTopics("../../database/", obj);
-
-			appGames = new Game();
-			appGames->initGame(appTopics->getChildren());
-
+			
 
 
 			InitializeComponent();
@@ -54,6 +49,24 @@ namespace source {
 			//
 			FormHome^ formHome = gcnew FormHome();
 			openChildForm(formHome);
+
+			me = new User(obj);
+
+			appTopics = new Topic("../../database/");
+			appTopics->initTopics("../../database/", obj);
+
+			appGames = new Game();
+			appGames->initGame(appTopics->getChildren());
+
+			appDictionary = new dict();
+
+			EnToVi* appEnToVi = new EnToVi(obj["dictionary"]);
+			ViToEn* appViToEn = new ViToEn(obj["dictionary"]);
+			itemEnToVi = importData(appEnToVi->_dict, "../../database/Vocabulary/vocabulary.json");
+			itemViToEn = importData(appViToEn->_dict, "../../database/Vocabulary/Word_VN.json");
+			appDictionary->Add(appEnToVi);
+			appDictionary->Add(appViToEn);
+			
 		}
 
 	protected:
@@ -67,12 +80,17 @@ namespace source {
 				delete components;
 			}
 		
-		
+			
 		
 		}
 	private: User* me;
 	private: Topic* appTopics;
 	private: Game* appGames;
+	private: dict* appDictionary;
+	
+	private: cli::array<System::String^>^ itemEnToVi;
+	private: cli::array<System::String^>^ itemViToEn;
+	
 	private: System::Windows::Forms::Button^ currentBtn;
 	private: System::Windows::Forms::Button^ btnVocabulary;
 	private: System::Windows::Forms::Button^ btnGrammar;
@@ -315,7 +333,103 @@ namespace source {
 
 		}
 #pragma endregion
-		
+		std::wstring UTF8ToUnicode(const std::string& str)
+		{
+			int len = 0;
+			len = str.length();
+			int unicodeLen = ::MultiByteToWideChar(CP_UTF8,
+				0,
+				str.c_str(),
+				-1,
+				NULL,
+				0);
+			wchar_t* pUnicode;
+			pUnicode = new wchar_t[unicodeLen + 1];
+			memset(pUnicode, 0, (unicodeLen + 1) * sizeof(wchar_t));
+			::MultiByteToWideChar(CP_UTF8,
+				0,
+				str.c_str(),
+				-1,
+				(LPWSTR)pUnicode,
+				unicodeLen);
+			std::wstring rt;
+			rt = (wchar_t*)pUnicode;
+			delete pUnicode;
+			return rt;
+		}
+		cli::array<System::String^>^ importData(std::vector<Vocabulary> &_dict, const std::string path) {
+
+			std::fstream f(path, std::ios::in);
+			
+
+			Json::Value actualJson;
+			Json::Reader reader;
+			reader.parse(f, actualJson);
+			cli::array<System::String^>^ res = gcnew cli::array<System::String^>(actualJson.size());
+			// std::cout<<name << std::endl;   
+			for (int j = 0; j < actualJson.size(); j++) {
+				// std::cout<<actualJson[j] << std::endl;
+				std::string word = actualJson[j]["word"].asString();
+				std::string image = "";
+				std::string audio = "";
+				std::string definition = "";
+				std::string type = "";
+				std::string spelling = "";
+				std::vector<std::string> examples;
+				std::string topic = "";
+
+
+				if (actualJson[j]["image"].size() > 0) {
+					image = actualJson[j]["image"][0].asString();
+				}
+
+				if (actualJson[j]["definition"].size() > 0) {
+					definition = actualJson[j]["definition"][0].asString();
+				}
+
+				if (actualJson[j]["audio"].isArray() && actualJson[j]["audio"].size() > 0) {
+					audio = actualJson[j]["audio"][0].asString();
+				}
+
+				if (actualJson[j]["audio"].isString()) {
+					audio = actualJson[j]["audio"].asString();
+				}
+
+
+				if (actualJson[j]["order"].size() > 1) {
+					spelling = actualJson[j]["order"][0].asString();
+					type = actualJson[j]["order"][1].asString();
+
+					for (int k = 2; k < actualJson[j]["order"].size(); k++) {
+						examples.push_back(actualJson[j]["order"][k].asString());
+					}
+				}
+
+
+				Vocabulary vocab = Vocabulary(
+					word,
+					definition,
+					image,
+					audio,
+					type,
+					spelling,
+					examples,
+					topic,
+					Process()
+				);
+				_dict.push_back(vocab);
+				res[j] = gcnew System::String(UTF8ToUnicode(word).c_str());
+			}
+
+
+			// sort(_dict.begin(), _dict.end(), [](Vocabulary lhs, Vocabulary rhs )
+			// {
+			//     return lhs.getWord() < rhs.getWord();
+			// });
+
+			return res;
+
+		}
 		System::Windows::Forms::Form^ activeForm;
 		void ActivateButton(System::Object^ sender) {
 			if (sender != NULL) {
@@ -348,7 +462,7 @@ namespace source {
 		private: System::Void btnVocabulary_Click(System::Object^ sender, System::EventArgs^ e) {
 			
 			labelApp->Text = btnVocabulary->Text;
-			FormTopicVocabulary^ formTopicVocabulary = gcnew FormTopicVocabulary(appTopics->getChildren(), appGames->getChildren());
+			FormTopicVocabulary^ formTopicVocabulary = gcnew FormTopicVocabulary(appTopics->getChildren(), appGames->getChildren(), panelContent);
 			
 			openChildForm(formTopicVocabulary);
 
@@ -372,10 +486,13 @@ namespace source {
 
 		}
 private: System::Void btnDictionary_Click(System::Object^ sender, System::EventArgs^ e) {
+	labelApp->Text = btnDictionary->Text;
+	FormDictionary^ formDict = gcnew FormDictionary(appDictionary->getChildren(), itemEnToVi, itemViToEn, panelContent);
+	openChildForm(formDict);
 }
 private: System::Void btnGrammar_Click(System::Object^ sender, System::EventArgs^ e) {
 	labelApp->Text = btnGrammar->Text;
-	FormTopicGrammar^ formTopicGrammar = gcnew FormTopicGrammar(appTopics->getChildren());
+	FormTopicGrammar^ formTopicGrammar = gcnew FormTopicGrammar(appTopics->getChildren(), panelContent);
 
 	openChildForm(formTopicGrammar);
 }

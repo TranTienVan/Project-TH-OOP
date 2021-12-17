@@ -65,7 +65,7 @@ namespace source {
 	private: System::Windows::Forms::Button^ btnAnswer1;
 	private: System::Windows::Forms::Button^ btnQuestion;
 	private: System::Windows::Forms::PictureBox^ audioSource;
-	private: System::Windows::Forms::PictureBox^ pictureBox1;
+
 	private: System::Windows::Forms::TextBox^ txtWord;
 	private: System::Windows::Forms::PictureBox^ pictureCorrect;
 	private: System::Windows::Forms::PictureBox^ pictureIncorrect;
@@ -100,7 +100,6 @@ namespace source {
 			this->pictureCorrect = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureIncorrect = (gcnew System::Windows::Forms::PictureBox());
 			this->txtWord = (gcnew System::Windows::Forms::TextBox());
-			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->audioSource = (gcnew System::Windows::Forms::PictureBox());
 			this->btnAnswer4 = (gcnew System::Windows::Forms::Button());
 			this->btnAnswer3 = (gcnew System::Windows::Forms::Button());
@@ -114,7 +113,6 @@ namespace source {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureAudio))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureCorrect))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureIncorrect))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->audioSource))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -146,7 +144,6 @@ namespace source {
 			this->panel1->Controls->Add(this->pictureCorrect);
 			this->panel1->Controls->Add(this->pictureIncorrect);
 			this->panel1->Controls->Add(this->txtWord);
-			this->panel1->Controls->Add(this->pictureBox1);
 			this->panel1->Controls->Add(this->audioSource);
 			this->panel1->Controls->Add(this->btnAnswer4);
 			this->panel1->Controls->Add(this->btnAnswer3);
@@ -223,18 +220,6 @@ namespace source {
 			this->txtWord->Text = L"hh";
 			this->txtWord->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			this->txtWord->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &FormTraditionalGame::txtWord_KeyDown);
-			// 
-			// pictureBox1
-			// 
-			this->pictureBox1->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(16, 23);
-			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(71, 76);
-			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->pictureBox1->TabIndex = 7;
-			this->pictureBox1->TabStop = false;
-			this->pictureBox1->Click += gcnew System::EventHandler(this, &FormTraditionalGame::pictureBox1_Click);
 			// 
 			// audioSource
 			// 
@@ -323,7 +308,6 @@ namespace source {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureAudio))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureCorrect))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureIncorrect))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->audioSource))->EndInit();
 			this->ResumeLayout(false);
 

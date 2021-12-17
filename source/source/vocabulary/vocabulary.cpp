@@ -34,5 +34,5 @@ void playAudio(){
 }
 
 std::string Vocabulary::showVocab(){
-    
+    return "";
 }

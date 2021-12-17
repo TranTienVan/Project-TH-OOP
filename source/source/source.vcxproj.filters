@@ -72,6 +72,18 @@
     <ClCompile Include="FormTraditionalGame.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FormDictionary.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dictionary\dictionary.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FormGame.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ListWordsGame.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="app.h">
@@ -132,6 +144,24 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="FormTraditionalGame.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FormDictionary.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dictionary\dictionary.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dictionary\EnToVi.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dictionary\ViToEn.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FormGame.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ListWordsGame.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

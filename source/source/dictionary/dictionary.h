@@ -1,3 +1,5 @@
+#pragma once
+
 #include<string>
 #include<vector>
 #include<algorithm>
@@ -6,20 +8,33 @@
 #include<json/value.h>
 #include<json/reader.h>
 #include<time.h>
-#include"../database/Vocabulary/vocabulary.json"
+#include"../component/component.h"
 #include"../vocabulary/vocabulary.h"
-using namespace std;
 
 
 
-class dict{
-private:
-    vector<Vocabulary> _dict;
-    vector<pair<Vocabulary, string>> _look_up_history;
+
+class dict : public AppComponent {
+private: 
+    std::vector<AppComponent*> children;
 public:
     
+    std::vector<Vocabulary> _dict;
+    std::vector<int> _look_up_history_index;
+
+
+    void Add(AppComponent *component) {
+        this->children.push_back(component);
+        component->SetParent(this);
+    }
+
+    std::vector<AppComponent*> getChildren(){
+        return this->children;
+    }
     dict();
-    void importData(const string path);
-    Vocabulary findWord(string word);
-    void sortDict();
+    
+    dict(Json::Value dict);
+    int findWord(std::string word);
+    void updateDictionary(Json::Value &obj);
+    
 };

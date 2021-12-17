@@ -125,7 +125,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="app.cpp" />
+    <ClCompile Include="dictionary\dictionary.cpp" />
     <ClCompile Include="FormContentVocabulary.cpp" />
+    <ClCompile Include="FormDictionary.cpp" />
+    <ClCompile Include="FormGame.cpp" />
     <ClCompile Include="FormGrammar.cpp" />
     <ClCompile Include="FormHome.cpp" />
     <ClCompile Include="FormLogin.cpp" />
@@ -136,6 +139,7 @@
     <ClCompile Include="game\game.cpp" />
     <ClCompile Include="grammar\grammar.cpp" />
     <ClCompile Include="jsoncpp.cpp" />
+    <ClCompile Include="ListWordsGame.cpp" />
     <ClCompile Include="process\process.cpp" />
     <ClCompile Include="Temp.cpp" />
     <ClCompile Include="topic\topic.cpp" />
@@ -149,7 +153,16 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="component\component.h" />
+    <ClInclude Include="dictionary\dictionary.h" />
+    <ClInclude Include="dictionary\EnToVi.h" />
+    <ClInclude Include="dictionary\ViToEn.h" />
     <ClInclude Include="FormContentVocabulary.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="FormDictionary.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="FormGame.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="FormGrammar.h">
@@ -176,6 +189,9 @@
     <ClInclude Include="game\game.h" />
     <ClInclude Include="game\traditional_game.h" />
     <ClInclude Include="grammar\grammar.h" />
+    <ClInclude Include="ListWordsGame.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="process\process.h" />
     <ClInclude Include="Temp.h">
       <FileType>CppForm</FileType>
@@ -192,6 +208,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormContentVocabulary.resx">
       <DependentUpon>FormContentVocabulary.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDictionary.resx">
+      <DependentUpon>FormDictionary.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGame.resx">
+      <DependentUpon>FormGame.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormHome.resx">
       <DependentUpon>FormHome.h</DependentUpon>

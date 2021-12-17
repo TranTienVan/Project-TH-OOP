@@ -5,6 +5,7 @@
 #include<string>
 #include"./game/traditional_game.h"
 #include"FormTraditionalGame.h"
+#include"FormHome.h"
 namespace source {
 
 	using namespace System;
@@ -30,7 +31,7 @@ namespace source {
 			//TODO: Add the constructor code here
 			//
 		}
-		FormTopicVocabulary(std::vector<AppComponent*> topics, std::vector<AppComponent*> traditionalGame) {
+		FormTopicVocabulary(std::vector<AppComponent*> topics, std::vector<AppComponent*> traditionalGame, System::Windows::Forms::Panel^ panelContent) {
 			InitializeComponent();
 
 			//
@@ -77,7 +78,7 @@ namespace source {
 			
 
 			
-
+			this->panelContent = panelContent;
 
 
 		}
@@ -94,6 +95,7 @@ namespace source {
 		}
 	private: TopicVocabulary** topicVocabularies;
 	private: TraditionalGame** topicGames;
+	private: private: System::Windows::Forms::Panel^ panelContent;
 	private: System::Windows::Forms::TextBox^ nameTopic;
 	private: System::Windows::Forms::Panel^ panelLabelTopic;
 	private: System::Windows::Forms::Panel^ topic12;
@@ -157,6 +159,7 @@ namespace source {
 	private: System::Windows::Forms::TextBox^ textBoxTopic1;
 	private: System::Windows::Forms::Button^ button2Topic1;
 	private: System::Windows::Forms::Button^ button1Topic1;
+private: System::Windows::Forms::PictureBox^ pictureBox1;
 
 	protected:
 
@@ -178,6 +181,7 @@ namespace source {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(FormTopicVocabulary::typeid));
 			this->nameTopic = (gcnew System::Windows::Forms::TextBox());
 			this->panelLabelTopic = (gcnew System::Windows::Forms::Panel());
 			this->topic12 = (gcnew System::Windows::Forms::Panel());
@@ -241,6 +245,7 @@ namespace source {
 			this->textBoxTopic1 = (gcnew System::Windows::Forms::TextBox());
 			this->button2Topic1 = (gcnew System::Windows::Forms::Button());
 			this->button1Topic1 = (gcnew System::Windows::Forms::Button());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->panelLabelTopic->SuspendLayout();
 			this->topic12->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureTopic12))->BeginInit();
@@ -267,6 +272,7 @@ namespace source {
 			this->panelTopicVocabulary->SuspendLayout();
 			this->topic1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureTopic1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// nameTopic
@@ -284,6 +290,7 @@ namespace source {
 			// panelLabelTopic
 			// 
 			this->panelLabelTopic->BackColor = System::Drawing::Color::Linen;
+			this->panelLabelTopic->Controls->Add(this->pictureBox1);
 			this->panelLabelTopic->Controls->Add(this->nameTopic);
 			this->panelLabelTopic->Dock = System::Windows::Forms::DockStyle::Top;
 			this->panelLabelTopic->Location = System::Drawing::Point(0, 0);
@@ -941,6 +948,18 @@ namespace source {
 			this->button1Topic1->UseVisualStyleBackColor = true;
 			this->button1Topic1->Click += gcnew System::EventHandler(this, &FormTopicVocabulary::button1Topic1_Click);
 			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
+			this->pictureBox1->Location = System::Drawing::Point(27, 15);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(71, 76);
+			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBox1->TabIndex = 8;
+			this->pictureBox1->TabStop = false;
+			this->pictureBox1->Click += gcnew System::EventHandler(this, &FormTopicVocabulary::pictureBox1_Click);
+			// 
 			// FormTopicVocabulary
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(240, 240);
@@ -991,6 +1010,7 @@ namespace source {
 			this->topic1->ResumeLayout(false);
 			this->topic1->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureTopic1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -1021,7 +1041,7 @@ namespace source {
 		int i_topic = int::Parse(temp);
 		
 		
-		FormVocabulary^ nextForm = gcnew FormVocabulary(topicVocabularies[i_topic - 1]->getVocabs());
+		FormVocabulary^ nextForm = gcnew FormVocabulary(topicVocabularies[i_topic - 1]->getVocabs(), panelTopicVocabulary);
 
 		openChildForm(nextForm);
 	}
@@ -1113,6 +1133,42 @@ private: System::Void button2Topic11_Click(System::Object^ sender, System::Event
 }
 private: System::Void button2Topic7_Click(System::Object^ sender, System::EventArgs^ e) {
 	ExecuteButtonPractice(sender);
+}
+
+	   void turnBackHome(System::Windows::Forms::Form^ form) {
+		   if (activeForm != nullptr) {
+			   activeForm->Close();
+		   }
+
+		   
+		   form->TopLevel = false;
+		   form->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+		   form->Dock = System::Windows::Forms::DockStyle::Fill;
+		   panelContent->Controls->Add(form);
+		   panelContent->Tag = form;
+		   panelContent->AutoScroll = false;
+		   form->BringToFront();
+		   form->Show();
+
+
+	   }
+private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (activeForm != nullptr) {
+		panelTopicVocabulary->AutoScroll = true;
+		this->panelTopicVocabulary->Controls->Remove(activeForm);
+		activeForm->Close();
+		
+		activeForm = nullptr;
+	}
+
+	else {
+		panelContent->Controls->Remove(this);
+		
+		FormHome^ formHome = gcnew FormHome();
+		turnBackHome(formHome);
+
+		this->Close();
+	}
 }
 };
 }

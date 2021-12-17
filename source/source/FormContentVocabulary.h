@@ -26,7 +26,57 @@ namespace source {
 			//TODO: Add the constructor code here
 			//
 		}
+		FormContentVocabulary(Vocabulary vocab, System::Windows::Forms::Panel^ panelDictionary) {
+			InitializeComponent();
+			//
+			//TODO: Add the constructor code here
+			//
+			this->panelDictionary = panelDictionary;
+			
+			System::String^ word = gcnew System::String(vocab.getWord().c_str());
+			System::String^ path = L"../../assets/" + word + L".png";
+			if (vocab.getImage() != "") {
+				pictureContent->Image = gcnew System::Drawing::Bitmap(path);
+			}
 
+			else {
+				pictureContent->Image = gcnew System::Drawing::Bitmap(L"../../assets/ball.png");
+			}
+
+			pictureContent->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			textWord->Text = word;
+
+			this->vocab = &vocab;
+			player = gcnew System::Media::SoundPlayer();
+
+			if (vocab.getAudio() != "") {
+				player->SoundLocation = L"../../assets/wav/" + word + L".wav";
+			}
+
+			else {
+				player->SoundLocation = L"";
+			}
+
+
+
+
+
+
+
+			txtSpelling->Text = gcnew System::String(UTF8ToUnicode(vocab.getSpelling()).c_str());
+
+			System::String^ content = L"# ";
+			content += gcnew System::String(UTF8ToUnicode(vocab.getType()).c_str()) + L"\n\n";
+
+
+			content += "+ " + gcnew System::String(UTF8ToUnicode(vocab.getDefinition()).c_str()) + L"\n\n";
+
+			for (int i = 0; i < vocab.getExamples().size(); ++i) {
+				content += "- " + gcnew System::String(UTF8ToUnicode(vocab.getExamples()[i]).c_str()) + L"\n";
+			}
+
+			txtContent->Text = content;
+		}
 		FormContentVocabulary(Vocabulary vocab, System::Windows::Forms::ListView^ listVocabs) {
 			InitializeComponent();
 			//
@@ -91,6 +141,7 @@ namespace source {
 			}
 		}
 	private: Vocabulary* vocab;
+	private: System::Windows::Forms::Panel^ panelDictionary;
 	private: System::Windows::Forms::ListView^ listVocabs;
 	private: System::Windows::Forms::PictureBox^ pictureContent;
 	protected:
@@ -105,7 +156,9 @@ namespace source {
 
 	private: System::Media::SoundPlayer^ player;
 	private: System::Windows::Forms::RichTextBox^ txtContent;
-	private: System::Windows::Forms::PictureBox^ pictureBox1;
+private: System::Windows::Forms::PictureBox^ pictureBox1;
+
+
 
 
 
@@ -128,17 +181,17 @@ namespace source {
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(FormContentVocabulary::typeid));
 			this->pictureContent = (gcnew System::Windows::Forms::PictureBox());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->txtContent = (gcnew System::Windows::Forms::RichTextBox());
 			this->txtSpelling = (gcnew System::Windows::Forms::TextBox());
 			this->audioSource = (gcnew System::Windows::Forms::PictureBox());
 			this->textWord = (gcnew System::Windows::Forms::TextBox());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureContent))->BeginInit();
 			this->panel1->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->audioSource))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// pictureContent
@@ -146,7 +199,7 @@ namespace source {
 			this->pictureContent->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->pictureContent->Location = System::Drawing::Point(133, 160);
 			this->pictureContent->Name = L"pictureContent";
-			this->pictureContent->Size = System::Drawing::Size(523, 555);
+			this->pictureContent->Size = System::Drawing::Size(523, 554);
 			this->pictureContent->TabIndex = 0;
 			this->pictureContent->TabStop = false;
 			// 
@@ -162,18 +215,6 @@ namespace source {
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(978, 895);
 			this->panel1->TabIndex = 1;
-			// 
-			// pictureBox1
-			// 
-			this->pictureBox1->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(860, 34);
-			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(88, 84);
-			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->pictureBox1->TabIndex = 6;
-			this->pictureBox1->TabStop = false;
-			this->pictureBox1->Click += gcnew System::EventHandler(this, &FormContentVocabulary::pictureBox1_Click);
 			// 
 			// txtContent
 			// 
@@ -234,6 +275,18 @@ namespace source {
 			this->pictureBox2->TabIndex = 2;
 			this->pictureBox2->TabStop = false;
 			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
+			this->pictureBox1->Location = System::Drawing::Point(860, 34);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(88, 84);
+			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBox1->TabIndex = 6;
+			this->pictureBox1->TabStop = false;
+			this->pictureBox1->Click += gcnew System::EventHandler(this, &FormContentVocabulary::pictureBox1_Click);
+			// 
 			// FormContentVocabulary
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(240, 240);
@@ -247,9 +300,9 @@ namespace source {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureContent))->EndInit();
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->audioSource))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -289,7 +342,15 @@ private: System::Void audioSource_Click(System::Object^ sender, System::EventArg
 	
 }
 private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->listVocabs->BringToFront();
+	if (this->listVocabs != nullptr) {
+		this->listVocabs->BringToFront();
+	}
+
+	else {
+		// this->panelDictionary->SendToBack();
+		panelDictionary->Controls->Remove(this);
+	}
+	
 
 	this->Close();
 

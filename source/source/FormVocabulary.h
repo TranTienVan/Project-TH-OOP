@@ -2,6 +2,7 @@
 #include<vector>
 #include"./vocabulary/vocabulary.h"
 #include"FormContentVocabulary.h"
+#include"./dictionary/dictionary.h"
 namespace source {
 
 	using namespace System;
@@ -24,8 +25,7 @@ namespace source {
 			//TODO: Add the constructor code here
 			//
 		}
-
-		FormVocabulary(std::vector<Vocabulary> vocabs) {
+		FormVocabulary(std::vector<int> indexes, dict* dic, System::Windows::Forms::Panel^ panel) {
 			InitializeComponent();
 			//
 			//TODO: Add the constructor code here
@@ -34,7 +34,43 @@ namespace source {
 			this->imgLists->ImageSize = System::Drawing::Size(90, 90);
 
 			listVocabs->LargeImageList = imgLists;
-			this->vocabs = new std::vector<Vocabulary>();
+			this->vocabs = new Vocabulary[indexes.size()];
+			System::Windows::Forms::ListViewItem^ item;
+			for (int i = 0; i < indexes.size(); ++i) {
+				item = gcnew System::Windows::Forms::ListViewItem();
+
+				System::String^ path = L"../../assets/";
+
+				item->Text = gcnew System::String(dic->_dict[indexes[i]].getWord().c_str());
+				System::String^ filename = path + item->Text + L".png";
+
+				if (dic->_dict[indexes[i]].getImage() != "") {
+					imgLists->Images->Add(gcnew Bitmap(filename));
+				}
+
+				else {
+					imgLists->Images->Add(gcnew Bitmap("../../assets/ball.png"));
+				}
+
+
+				item->ImageIndex = i;
+				item->Name = L"itemVocab" + i.ToString();
+
+				listVocabs->Items->Add(item);
+
+				this->vocabs[i] = dic->_dict[indexes[i]];
+			}
+		}
+		FormVocabulary(std::vector<Vocabulary> &vocabs, System::Windows::Forms::Panel^ panel) {
+			InitializeComponent();
+			//
+			//TODO: Add the constructor code here
+			//
+			this->imgLists = gcnew System::Windows::Forms::ImageList();
+			this->imgLists->ImageSize = System::Drawing::Size(90, 90);
+
+			listVocabs->LargeImageList = imgLists;
+			this->vocabs = new Vocabulary[vocabs.size()];
 			System::Windows::Forms::ListViewItem^ item;
 			for (int i = 0; i < vocabs.size(); ++i) {
 				item = gcnew System::Windows::Forms::ListViewItem();
@@ -58,7 +94,7 @@ namespace source {
 
 				listVocabs->Items->Add(item);
 				
-				this->vocabs->push_back(vocabs[i]);
+				this->vocabs[i] = vocabs[i];
 			}
 		}
 	protected:
@@ -73,7 +109,7 @@ namespace source {
 			}
 		}
 
-	private: std::vector<Vocabulary>* vocabs;
+	private: Vocabulary* vocabs;
 	private: System::Windows::Forms::ListView^ listVocabs;
 	private: System::Windows::Forms::ImageList^ imgLists;
 	private: System::Windows::Forms::Panel^ panelVocabulary;
@@ -160,12 +196,12 @@ namespace source {
 		if (lsv->SelectedItems->Count > 0) {
 			System::Windows::Forms::ListViewItem^ item = lsv->SelectedItems[0];
 			
-			while (gcnew System::String((*vocabs)[i_vocabs].getWord().c_str()) != item->Text) {
+			while (gcnew System::String(vocabs[i_vocabs].getWord().c_str()) != item->Text) {
 				++i_vocabs;
 				
 			}
 
-			FormContentVocabulary^ nextForm = gcnew FormContentVocabulary((*vocabs)[i_vocabs], listVocabs);
+			FormContentVocabulary^ nextForm = gcnew FormContentVocabulary(vocabs[i_vocabs], listVocabs);
 
 			openChildForm(nextForm);
 		}
