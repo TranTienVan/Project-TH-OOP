@@ -2,6 +2,8 @@
 #include"../topic/topic_vocabulary.h"
 #include"game.h"
 #include<random>
+#include<vector>
+
 class TraditionalGame : public Game{    
 public:
     std::string Question1;

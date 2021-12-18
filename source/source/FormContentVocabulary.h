@@ -25,6 +25,18 @@ namespace source {
 			//
 			//TODO: Add the constructor code here
 			//
+
+			
+		}
+
+		FormContentVocabulary(Vocabulary vocab, System::Windows::Forms::Panel^ panel1, System::Windows::Forms::Panel^ panel2) {
+			InitializeComponent();
+			//
+			//TODO: Add the constructor code here
+			//
+			this->panelListWordGame1 = panel1;
+			this->panelListWordGame2 = panel2;
+			LoadVocabulary(vocab);
 		}
 		FormContentVocabulary(Vocabulary vocab, System::Windows::Forms::Panel^ panelDictionary) {
 			InitializeComponent();
@@ -33,6 +45,31 @@ namespace source {
 			//
 			this->panelDictionary = panelDictionary;
 			
+			LoadVocabulary(vocab);
+		}
+		FormContentVocabulary(Vocabulary vocab, System::Windows::Forms::ListView^ listVocabs) {
+			InitializeComponent();
+			//
+			//TODO: Add the constructor code here
+			//
+			this->listVocabs = listVocabs;
+			
+			LoadVocabulary(vocab);
+		}
+
+	protected:
+		/// <summary>
+		/// Clean up any resources being used.
+		/// </summary>
+		~FormContentVocabulary()
+		{
+			if (components)
+			{
+				delete components;
+			}
+		}
+
+		void LoadVocabulary(Vocabulary& vocab) {
 			System::String^ word = gcnew System::String(vocab.getWord().c_str());
 			System::String^ path = L"../../assets/" + word + L".png";
 			if (vocab.getImage() != "") {
@@ -56,13 +93,6 @@ namespace source {
 			else {
 				player->SoundLocation = L"";
 			}
-
-
-
-
-
-
-
 			txtSpelling->Text = gcnew System::String(UTF8ToUnicode(vocab.getSpelling()).c_str());
 
 			System::String^ content = L"# ";
@@ -76,71 +106,10 @@ namespace source {
 			}
 
 			txtContent->Text = content;
-		}
-		FormContentVocabulary(Vocabulary vocab, System::Windows::Forms::ListView^ listVocabs) {
-			InitializeComponent();
-			//
-			//TODO: Add the constructor code here
-			//
-			this->listVocabs = listVocabs;
-			System::String ^word = gcnew System::String(vocab.getWord().c_str());
-			System::String^ path = L"../../assets/" + word + L".png";
-			if (vocab.getImage() != "") {
-				pictureContent->Image = gcnew System::Drawing::Bitmap(path);
-			}
-
-			else {
-				pictureContent->Image = gcnew System::Drawing::Bitmap(L"../../assets/ball.png");
-			}
-			
-			pictureContent->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			textWord->Text = word;
-
-			this->vocab = &vocab;
-			player = gcnew System::Media::SoundPlayer();
-			
-			if (vocab.getAudio() != "") {
-				player->SoundLocation = L"../../assets/wav/" + word + L".wav";
-			}
-
-			else {
-				player->SoundLocation = L"";
-			}
-			
-
-			
-			
-			
-			
-
-			txtSpelling->Text = gcnew System::String(UTF8ToUnicode(vocab.getSpelling()).c_str());
-
-			System::String^ content = L"# ";
-			content += gcnew System::String(UTF8ToUnicode(vocab.getType()).c_str()) + L"\n\n";
-
-
-			content += "+ " + gcnew System::String(UTF8ToUnicode(vocab.getDefinition()).c_str()) + L"\n\n";
-
-			for (int i = 0; i < vocab.getExamples().size(); ++i) {
-				content += "- " + gcnew System::String(UTF8ToUnicode(vocab.getExamples()[i]).c_str()) + L"\n";
-			}
-
-			txtContent->Text = content;
-			
-		}
-
-	protected:
-		/// <summary>
-		/// Clean up any resources being used.
-		/// </summary>
-		~FormContentVocabulary()
-		{
-			if (components)
-			{
-				delete components;
-			}
 		}
 	private: Vocabulary* vocab;
+	private: System::Windows::Forms::Panel^ panelListWordGame1;
+	private: System::Windows::Forms::Panel^ panelListWordGame2;
 	private: System::Windows::Forms::Panel^ panelDictionary;
 	private: System::Windows::Forms::ListView^ listVocabs;
 	private: System::Windows::Forms::PictureBox^ pictureContent;
@@ -346,9 +315,15 @@ private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArg
 		this->listVocabs->BringToFront();
 	}
 
-	else {
+	if (this->panelDictionary != nullptr) {
 		// this->panelDictionary->SendToBack();
 		panelDictionary->Controls->Remove(this);
+	}
+
+	if (this->panelListWordGame1 != nullptr && this->panelListWordGame2 != nullptr) {
+		this->panelListWordGame1->Visible = true;
+		this->panelListWordGame2->Visible = true;
+		
 	}
 	
 

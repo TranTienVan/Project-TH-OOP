@@ -29,7 +29,7 @@ namespace source {
 			//TODO: Add the constructor code here
 			//
 		}
-		FormDictionary(std::vector<AppComponent*> appDict, cli::array<System::String^>^ arrEnToVi, cli::array<System::String^>^ arrViToEn, System::Windows::Forms::Panel^ panelContent)
+		FormDictionary(std::vector<AppComponent*> &appDict, cli::array<System::String^>^ arrEnToVi, cli::array<System::String^>^ arrViToEn, System::Windows::Forms::Panel^ panelContent)
 		{
 			InitializeComponent();
 			//
@@ -44,7 +44,7 @@ namespace source {
 			
 
 			this->comboBoxDictionary->DataSource = this->arrEnToVi;
-			this->comboBoxDictionary->Text = L"";
+			
 
 			
 			this->typeTranslate = 1;
@@ -52,6 +52,7 @@ namespace source {
 			this->btnTypeTranslate1->BackColor = System::Drawing::Color::Yellow;
 			this->btnTypeTranslate2->BackColor = System::Drawing::Color::Azure;
 			this->panelContent = panelContent;
+			this->comboBoxDictionary->Text = L" ";
 			
 		}
 	protected:
@@ -91,7 +92,7 @@ namespace source {
 	private: System::Windows::Forms::ComboBox^ comboBoxDictionary;
 	private: System::Windows::Forms::Button^ btnTypeSearch2;
 
-	private: System::Windows::Forms::Button^ btnTypeSearch1;
+
 
 	private: System::Windows::Forms::Button^ btnTypeTranslate2;
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
@@ -119,19 +120,18 @@ namespace source {
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(FormDictionary::typeid));
 			this->nameDictionary = (gcnew System::Windows::Forms::TextBox());
 			this->panelLabelTopic = (gcnew System::Windows::Forms::Panel());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->panelDictionary = (gcnew System::Windows::Forms::Panel());
 			this->btnTypeTranslate2 = (gcnew System::Windows::Forms::Button());
 			this->btnTypeSearch2 = (gcnew System::Windows::Forms::Button());
-			this->btnTypeSearch1 = (gcnew System::Windows::Forms::Button());
 			this->comboBoxDictionary = (gcnew System::Windows::Forms::ComboBox());
 			this->btnSearch = (gcnew System::Windows::Forms::Button());
 			this->btnTypeTranslate1 = (gcnew System::Windows::Forms::Button());
 			this->pictureBackground = (gcnew System::Windows::Forms::PictureBox());
-			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->panelLabelTopic->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->panelDictionary->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBackground))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// nameDictionary
@@ -157,6 +157,18 @@ namespace source {
 			this->panelLabelTopic->Size = System::Drawing::Size(1859, 104);
 			this->panelLabelTopic->TabIndex = 6;
 			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
+			this->pictureBox1->Location = System::Drawing::Point(23, 12);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(71, 76);
+			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBox1->TabIndex = 8;
+			this->pictureBox1->TabStop = false;
+			this->pictureBox1->Click += gcnew System::EventHandler(this, &FormDictionary::pictureBox1_Click);
+			// 
 			// panelDictionary
 			// 
 			this->panelDictionary->AutoScroll = true;
@@ -167,7 +179,6 @@ namespace source {
 			this->panelDictionary->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->panelDictionary->Controls->Add(this->btnTypeTranslate2);
 			this->panelDictionary->Controls->Add(this->btnTypeSearch2);
-			this->panelDictionary->Controls->Add(this->btnTypeSearch1);
 			this->panelDictionary->Controls->Add(this->comboBoxDictionary);
 			this->panelDictionary->Controls->Add(this->btnSearch);
 			this->panelDictionary->Controls->Add(this->btnTypeTranslate1);
@@ -202,28 +213,13 @@ namespace source {
 			this->btnTypeSearch2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btnTypeSearch2->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnTypeSearch2->Location = System::Drawing::Point(668, 447);
+			this->btnTypeSearch2->Location = System::Drawing::Point(671, 404);
 			this->btnTypeSearch2->Name = L"btnTypeSearch2";
-			this->btnTypeSearch2->Size = System::Drawing::Size(240, 85);
+			this->btnTypeSearch2->Size = System::Drawing::Size(240, 100);
 			this->btnTypeSearch2->TabIndex = 7;
 			this->btnTypeSearch2->Text = L"Từ đã tra";
 			this->btnTypeSearch2->UseVisualStyleBackColor = false;
 			this->btnTypeSearch2->Click += gcnew System::EventHandler(this, &FormDictionary::btnTypeSearch2_Click);
-			// 
-			// btnTypeSearch1
-			// 
-			this->btnTypeSearch1->BackColor = System::Drawing::Color::Azure;
-			this->btnTypeSearch1->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->btnTypeSearch1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->btnTypeSearch1->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnTypeSearch1->Location = System::Drawing::Point(668, 356);
-			this->btnTypeSearch1->Name = L"btnTypeSearch1";
-			this->btnTypeSearch1->Size = System::Drawing::Size(240, 85);
-			this->btnTypeSearch1->TabIndex = 6;
-			this->btnTypeSearch1->Text = L"Tra cứu";
-			this->btnTypeSearch1->UseVisualStyleBackColor = false;
-			this->btnTypeSearch1->Click += gcnew System::EventHandler(this, &FormDictionary::btnTypeSearch1_Click);
 			// 
 			// comboBoxDictionary
 			// 
@@ -246,7 +242,7 @@ namespace source {
 				static_cast<System::Byte>(0)));
 			this->btnSearch->Location = System::Drawing::Point(1479, 403);
 			this->btnSearch->Name = L"btnSearch";
-			this->btnSearch->Size = System::Drawing::Size(240, 85);
+			this->btnSearch->Size = System::Drawing::Size(240, 100);
 			this->btnSearch->TabIndex = 4;
 			this->btnSearch->Text = L"Tìm kiếm";
 			this->btnSearch->UseVisualStyleBackColor = false;
@@ -280,18 +276,6 @@ namespace source {
 			this->pictureBackground->TabStop = false;
 			this->pictureBackground->Click += gcnew System::EventHandler(this, &FormDictionary::pictureBackground_Click);
 			// 
-			// pictureBox1
-			// 
-			this->pictureBox1->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(23, 12);
-			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(71, 76);
-			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->pictureBox1->TabIndex = 8;
-			this->pictureBox1->TabStop = false;
-			this->pictureBox1->Click += gcnew System::EventHandler(this, &FormDictionary::pictureBox1_Click);
-			// 
 			// FormDictionary
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(240, 240);
@@ -303,9 +287,9 @@ namespace source {
 			this->Text = L"FormDictionary";
 			this->panelLabelTopic->ResumeLayout(false);
 			this->panelLabelTopic->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->panelDictionary->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBackground))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -354,12 +338,16 @@ namespace source {
 		
 		
 		if (this->typeTranslate == 1) {
-			int index = appEnToVi->findWord(toStandardString(this->comboBoxDictionary->Text));
+			int index = System::Array::IndexOf(arrEnToVi, this->comboBoxDictionary->Text);
 
 			if (index != -1) {
 				this->comboBoxDictionary->Text = L"";
 				FormContentVocabulary^ formContent = gcnew FormContentVocabulary(appEnToVi->_dict[index], panelDictionary);
 				openChildForm(formContent);
+				if (find(appEnToVi->_look_up_history_index.begin(), appEnToVi->_look_up_history_index.end(), index) == appEnToVi->_look_up_history_index.end()) {
+					appEnToVi->_look_up_history_index.push_back(index);
+
+				}
 
 				
 			}
@@ -370,12 +358,17 @@ namespace source {
 		}
 
 		else {
-			int index = appViToEn->findWord(toStandardString(this->comboBoxDictionary->Text));
+			int index = System::Array::IndexOf(arrViToEn, this->comboBoxDictionary->Text);
 
 			if (index != -1) {
 				this->comboBoxDictionary->Text = L"";
+				if (find(appViToEn->_look_up_history_index.begin(), appViToEn->_look_up_history_index.end(), index) == appViToEn->_look_up_history_index.end()) {
+					appViToEn->_look_up_history_index.push_back(index);
+
+				}
 				FormContentVocabulary^ formContent = gcnew FormContentVocabulary(appViToEn->_dict[index], panelDictionary);
 				openChildForm(formContent);
+				
 			}
 
 			else {
@@ -415,9 +408,7 @@ private: System::Void btnTypeTranslate2_Click(System::Object^ sender, System::Ev
 	this->btnTypeTranslate1->BackColor = System::Drawing::Color::Azure;
 	this->comboBoxDictionary->DataSource = this->arrViToEn;
 }
-private: System::Void btnTypeSearch1_Click(System::Object^ sender, System::EventArgs^ e) {
-	
-}
+
 private: System::Void btnTypeSearch2_Click(System::Object^ sender, System::EventArgs^ e) {
 	if (typeTranslate == 1) {
 

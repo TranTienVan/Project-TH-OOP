@@ -1,6 +1,7 @@
 #pragma once
 #include"../component/component.h"
 #include"../process/process.h"
+#include"../dictionary/dictionary.h"
 class Game : public AppComponent{
 protected:
     
@@ -23,6 +24,7 @@ public:
     }
 
     void scanProcess(const Json::Value obj);
-    void initGame(std::vector<AppComponent*> topics);
+    void initGame(std::vector<AppComponent*> topics, dict* enToVi);
     void initTraditionalGame(std::vector<AppComponent*> topics);
+    void initListWordGame(dict* enToVi);
 };

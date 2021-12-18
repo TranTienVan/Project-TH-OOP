@@ -9,15 +9,15 @@ void TopicGrammar::readFromDatabase(const std::string path){
     
     for (int j = 0; j < actualJson.size(); j++){
         std::string category = actualJson[j]["category"].asString();
-        std::string grammar_name = "";
+        std::string grammar_name = actualJson[j]["name"].asString();
         std::vector<std::string> structure;
         std::vector<std::string> explanation;
         std::vector<std::string> example;
         
         
-        if (actualJson[j]["grammar_name"].size() > 0){
-            grammar_name = actualJson[j]["grammar_name"][0].asString();
-        }
+        
+        
+        
 
         if (actualJson[j]["structure"].size() > 0){
             for (int i = 0; i < actualJson[j]["structure"].size(); i++)

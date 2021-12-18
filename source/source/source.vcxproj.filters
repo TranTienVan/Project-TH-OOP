@@ -84,11 +84,14 @@
     <ClCompile Include="ListWordsGame.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FormContentGrammar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FormMatrixWordGame.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="app.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="user\user.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -162,6 +165,21 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ListWordsGame.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="app.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="game\list_word_game.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FormContentGrammar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FormMatrixWordGame.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="game\matrix_word_game.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

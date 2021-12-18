@@ -41,7 +41,7 @@ namespace source {
 
 				System::String^ path = L"../../assets/";
 
-				item->Text = gcnew System::String(dic->_dict[indexes[i]].getWord().c_str());
+				item->Text = gcnew System::String(UTF8ToUnicode(dic->_dict[indexes[i]].getWord()).c_str());
 				System::String^ filename = path + item->Text + L".png";
 
 				if (dic->_dict[indexes[i]].getImage() != "") {
@@ -169,6 +169,30 @@ namespace source {
 		}
 #pragma endregion
 	System::Windows::Forms::Form^ activeForm;
+	std::wstring UTF8ToUnicode(const std::string& str)
+	{
+		int len = 0;
+		len = str.length();
+		int unicodeLen = ::MultiByteToWideChar(CP_UTF8,
+			0,
+			str.c_str(),
+			-1,
+			NULL,
+			0);
+		wchar_t* pUnicode;
+		pUnicode = new wchar_t[unicodeLen + 1];
+		memset(pUnicode, 0, (unicodeLen + 1) * sizeof(wchar_t));
+		::MultiByteToWideChar(CP_UTF8,
+			0,
+			str.c_str(),
+			-1,
+			(LPWSTR)pUnicode,
+			unicodeLen);
+		std::wstring rt;
+		rt = (wchar_t*)pUnicode;
+		delete pUnicode;
+		return rt;
+	}
 	private: void openChildForm(System::Windows::Forms::Form^ form) {
 		if (activeForm != nullptr) {
 			activeForm->Close();

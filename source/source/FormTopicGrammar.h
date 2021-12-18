@@ -4,6 +4,7 @@
 #include<stringapiset.h>
 #include"FormGrammar.h"
 #include"FormHome.h"
+#include"FormContentGrammar.h"
 namespace source {
 
 	using namespace System;
@@ -40,7 +41,7 @@ namespace source {
 			int i_topic = 0;
 
 			this->topicGrammars = new TopicGrammar*[4];
-			for each (System::Windows::Forms::Panel ^ pn in this->panelTopicVocabulary->Controls)
+			for each (System::Windows::Forms::Panel ^ pn in this->panelTopicGrammar->Controls)
 			{
 				this->topicGrammars[i_topic] = (TopicGrammar*)topics[i_topic + 12];
 				for each (System::Windows::Forms::Control ^ ctr in pn->Controls) {
@@ -85,7 +86,8 @@ namespace source {
 			}
 		}
 	private: TopicGrammar** topicGrammars;
-	private: System::Windows::Forms::Panel^ panelTopicVocabulary;
+	private: System::Windows::Forms::Panel^ panelTopicGrammar;
+
 	private: System::Windows::Forms::Panel^ panelContent;
 	protected:
 	private: System::Windows::Forms::Panel^ topic1;
@@ -98,45 +100,17 @@ namespace source {
 	private: System::Windows::Forms::Panel^ topic4;
 	private: System::Windows::Forms::PictureBox^ pictureTopic4;
 	private: System::Windows::Forms::TextBox^ textBoxTopic4;
-
-
-
-
-
 	private: System::Windows::Forms::Button^ button1Topic4;
-
 	private: System::Windows::Forms::Panel^ topic3;
 	private: System::Windows::Forms::PictureBox^ pictureTopic3;
 	private: System::Windows::Forms::TextBox^ textBoxTopic3;
-
-
-
-
-
 	private: System::Windows::Forms::Button^ button1Topic3;
 
 	private: System::Windows::Forms::Panel^ topic2;
 	private: System::Windows::Forms::PictureBox^ pictureTopic2;
 	private: System::Windows::Forms::TextBox^ textBoxTopic2;
-
-
-
-
-
 	private: System::Windows::Forms::Button^ button1Topic2;
 private: System::Windows::Forms::PictureBox^ pictureBox1;
-
-
-
-
-
-
-
-
-
-
-
-
 	private:
 		/// <summary>
 		/// Required designer variable.
@@ -151,7 +125,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox1;
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(FormTopicGrammar::typeid));
-			this->panelTopicVocabulary = (gcnew System::Windows::Forms::Panel());
+			this->panelTopicGrammar = (gcnew System::Windows::Forms::Panel());
 			this->topic1 = (gcnew System::Windows::Forms::Panel());
 			this->pictureTopic1 = (gcnew System::Windows::Forms::PictureBox());
 			this->textBoxTopic1 = (gcnew System::Windows::Forms::TextBox());
@@ -169,9 +143,9 @@ private: System::Windows::Forms::PictureBox^ pictureBox1;
 			this->textBoxTopic4 = (gcnew System::Windows::Forms::TextBox());
 			this->button1Topic4 = (gcnew System::Windows::Forms::Button());
 			this->panelLabelTopic = (gcnew System::Windows::Forms::Panel());
-			this->nameTopic = (gcnew System::Windows::Forms::TextBox());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
-			this->panelTopicVocabulary->SuspendLayout();
+			this->nameTopic = (gcnew System::Windows::Forms::TextBox());
+			this->panelTopicGrammar->SuspendLayout();
 			this->topic1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureTopic1))->BeginInit();
 			this->topic2->SuspendLayout();
@@ -184,23 +158,23 @@ private: System::Windows::Forms::PictureBox^ pictureBox1;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
-			// panelTopicVocabulary
+			// panelTopicGrammar
 			// 
-			this->panelTopicVocabulary->AutoScroll = true;
-			this->panelTopicVocabulary->AutoScrollMargin = System::Drawing::Size(10, 10);
-			this->panelTopicVocabulary->AutoScrollMinSize = System::Drawing::Size(10, 10);
-			this->panelTopicVocabulary->BackColor = System::Drawing::SystemColors::InactiveBorder;
-			this->panelTopicVocabulary->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->panelTopicVocabulary->Controls->Add(this->topic1);
-			this->panelTopicVocabulary->Controls->Add(this->topic2);
-			this->panelTopicVocabulary->Controls->Add(this->topic3);
-			this->panelTopicVocabulary->Controls->Add(this->topic4);
-			this->panelTopicVocabulary->Dock = System::Windows::Forms::DockStyle::Bottom;
-			this->panelTopicVocabulary->Location = System::Drawing::Point(0, 110);
-			this->panelTopicVocabulary->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->panelTopicVocabulary->Name = L"panelTopicVocabulary";
-			this->panelTopicVocabulary->Size = System::Drawing::Size(1859, 878);
-			this->panelTopicVocabulary->TabIndex = 3;
+			this->panelTopicGrammar->AutoScroll = true;
+			this->panelTopicGrammar->AutoScrollMargin = System::Drawing::Size(10, 10);
+			this->panelTopicGrammar->AutoScrollMinSize = System::Drawing::Size(10, 10);
+			this->panelTopicGrammar->BackColor = System::Drawing::SystemColors::InactiveBorder;
+			this->panelTopicGrammar->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->panelTopicGrammar->Controls->Add(this->topic1);
+			this->panelTopicGrammar->Controls->Add(this->topic2);
+			this->panelTopicGrammar->Controls->Add(this->topic3);
+			this->panelTopicGrammar->Controls->Add(this->topic4);
+			this->panelTopicGrammar->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->panelTopicGrammar->Location = System::Drawing::Point(0, 105);
+			this->panelTopicGrammar->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->panelTopicGrammar->Name = L"panelTopicGrammar";
+			this->panelTopicGrammar->Size = System::Drawing::Size(1859, 880);
+			this->panelTopicGrammar->TabIndex = 3;
 			// 
 			// topic1
 			// 
@@ -244,6 +218,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox1;
 			this->button1Topic1->TabIndex = 3;
 			this->button1Topic1->Text = L"Learn";
 			this->button1Topic1->UseVisualStyleBackColor = true;
+			this->button1Topic1->Click += gcnew System::EventHandler(this, &FormTopicGrammar::button1Topic1_Click);
 			// 
 			// topic2
 			// 
@@ -286,6 +261,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox1;
 			this->button1Topic2->TabIndex = 3;
 			this->button1Topic2->Text = L"Learn";
 			this->button1Topic2->UseVisualStyleBackColor = true;
+			this->button1Topic2->Click += gcnew System::EventHandler(this, &FormTopicGrammar::button1Topic2_Click);
 			// 
 			// topic3
 			// 
@@ -328,6 +304,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox1;
 			this->button1Topic3->TabIndex = 3;
 			this->button1Topic3->Text = L"Learn";
 			this->button1Topic3->UseVisualStyleBackColor = true;
+			this->button1Topic3->Click += gcnew System::EventHandler(this, &FormTopicGrammar::button1Topic3_Click);
 			// 
 			// topic4
 			// 
@@ -370,6 +347,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox1;
 			this->button1Topic4->TabIndex = 3;
 			this->button1Topic4->Text = L"Learn";
 			this->button1Topic4->UseVisualStyleBackColor = true;
+			this->button1Topic4->Click += gcnew System::EventHandler(this, &FormTopicGrammar::button1Topic4_Click);
 			// 
 			// panelLabelTopic
 			// 
@@ -381,18 +359,6 @@ private: System::Windows::Forms::PictureBox^ pictureBox1;
 			this->panelLabelTopic->Name = L"panelLabelTopic";
 			this->panelLabelTopic->Size = System::Drawing::Size(1859, 105);
 			this->panelLabelTopic->TabIndex = 4;
-			// 
-			// nameTopic
-			// 
-			this->nameTopic->BackColor = System::Drawing::Color::Linen;
-			this->nameTopic->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->nameTopic->Location = System::Drawing::Point(725, 12);
-			this->nameTopic->Name = L"nameTopic";
-			this->nameTopic->Size = System::Drawing::Size(384, 68);
-			this->nameTopic->TabIndex = 0;
-			this->nameTopic->Text = L"Topic";
-			this->nameTopic->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			// 
 			// pictureBox1
 			// 
@@ -406,17 +372,29 @@ private: System::Windows::Forms::PictureBox^ pictureBox1;
 			this->pictureBox1->TabStop = false;
 			this->pictureBox1->Click += gcnew System::EventHandler(this, &FormTopicGrammar::pictureBox1_Click);
 			// 
+			// nameTopic
+			// 
+			this->nameTopic->BackColor = System::Drawing::Color::Linen;
+			this->nameTopic->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->nameTopic->Location = System::Drawing::Point(725, 12);
+			this->nameTopic->Name = L"nameTopic";
+			this->nameTopic->Size = System::Drawing::Size(384, 68);
+			this->nameTopic->TabIndex = 0;
+			this->nameTopic->Text = L"Topic";
+			this->nameTopic->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			// 
 			// FormTopicGrammar
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(240, 240);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Dpi;
-			this->ClientSize = System::Drawing::Size(1859, 988);
+			this->ClientSize = System::Drawing::Size(1859, 985);
+			this->Controls->Add(this->panelTopicGrammar);
 			this->Controls->Add(this->panelLabelTopic);
-			this->Controls->Add(this->panelTopicVocabulary);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"FormTopicGrammar";
 			this->Text = L"FormTopicGrammar";
-			this->panelTopicVocabulary->ResumeLayout(false);
+			this->panelTopicGrammar->ResumeLayout(false);
 			this->topic1->ResumeLayout(false);
 			this->topic1->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureTopic1))->EndInit();
@@ -472,9 +450,9 @@ private: System::Windows::Forms::PictureBox^ pictureBox1;
 		form->TopLevel = false;
 		form->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 		form->Dock = System::Windows::Forms::DockStyle::Fill;
-		panelTopicVocabulary->Controls->Add(form);
-		panelTopicVocabulary->Tag = form;
-		panelTopicVocabulary->AutoScroll = false;
+		panelTopicGrammar->Controls->Add(form);
+		panelTopicGrammar->Tag = form;
+		panelTopicGrammar->AutoScroll = false;
 		form->BringToFront();
 		form->Show();
 
@@ -487,7 +465,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox1;
 		System::String^ temp = btn->Name->Substring(12);
 		int i_topic = int::Parse(temp);
 		
-		FormGrammar^ nextForm = gcnew FormGrammar(topicGrammars[i_topic - 1]->getGrammars());
+		FormContentGrammar^ nextForm = gcnew FormContentGrammar(topicGrammars[i_topic - 1]->getGrammars(), panelTopicGrammar);
 
 		openChildForm(nextForm);
 	}
@@ -513,8 +491,8 @@ private: System::Windows::Forms::PictureBox^ pictureBox1;
 private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
 	if (activeForm != nullptr) {
 		activeForm->Close();
-		this->panelTopicVocabulary->AutoScroll = true;
-		this->panelTopicVocabulary->Controls->Remove(activeForm);
+		this->panelTopicGrammar->AutoScroll = true;
+		this->panelTopicGrammar->Controls->Remove(activeForm);
 		activeForm = nullptr;
 	}
 
@@ -524,6 +502,18 @@ private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArg
 		turnBackHome(formHome);
 		this->Close();
 	}
+}
+private: System::Void button1Topic1_Click(System::Object^ sender, System::EventArgs^ e) {
+	ExecuteButtonLearn(sender);
+}
+private: System::Void button1Topic2_Click(System::Object^ sender, System::EventArgs^ e) {
+	ExecuteButtonLearn(sender);
+}
+private: System::Void button1Topic3_Click(System::Object^ sender, System::EventArgs^ e) {
+	ExecuteButtonLearn(sender);
+}
+private: System::Void button1Topic4_Click(System::Object^ sender, System::EventArgs^ e) {
+	ExecuteButtonLearn(sender);
 }
 };
 }

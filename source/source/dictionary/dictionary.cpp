@@ -19,10 +19,6 @@ int dict::findWord(std::string word){
             // time_t now = time(0);
             // tm *ltm = localtime(&now);
             // std::string date = std::to_string(ltm->tm_mday)+"/"+std::to_string(ltm->tm_mon)+"/"+std::to_string(ltm->tm_year);
-            if (find(_look_up_history_index.begin(), _look_up_history_index.end(), mid) == _look_up_history_index.end()){
-                _look_up_history_index.push_back(mid);
-
-            }
             return mid;
         }
         if (_dict[mid].getWord() < word)    

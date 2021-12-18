@@ -1,5 +1,12 @@
 #pragma once
-
+#include"./component/component.h"
+#include"ListWordsGame.h"
+#include"FormTraditionalGame.h"
+#include"./game/list_word_game.h"
+#include"./game/traditional_game.h"
+#include"./game/matrix_word_game.h"
+#include"FormMatrixWordGame.h"
+#include"FormHome.h"
 namespace source {
 
 	using namespace System;
@@ -23,6 +30,20 @@ namespace source {
 			//
 		}
 
+		FormGame(std::vector<AppComponent*> games, System::Windows::Forms::Panel^ panelContent) {
+			InitializeComponent();
+			//
+			//TODO: Add the constructor code here
+			//
+			this->traditional_games = new TraditionalGame * [12];
+			this->panelContent = panelContent;
+			for (int i = 0; i < 12; ++i) {
+				this->traditional_games[i] = (TraditionalGame*)games[i];
+			}
+
+			this->list_words_game = (ListWordGame*)games[12];
+
+		}
 	protected:
 		/// <summary>
 		/// Clean up any resources being used.
@@ -34,6 +55,9 @@ namespace source {
 				delete components;
 			}
 		}
+	private: System::Windows::Forms::Panel^ panelContent;
+	private: TraditionalGame** traditional_games;
+	private: ListWordGame* list_words_game;
 	private: System::Windows::Forms::TextBox^ nameTopic;
 	protected:
 	private: System::Windows::Forms::Panel^ topic1;
@@ -54,7 +78,8 @@ namespace source {
 	private: System::Windows::Forms::Button^ button1Topic3;
 	private: System::Windows::Forms::Panel^ topic3;
 	private: System::Windows::Forms::Panel^ topic4;
-	private: System::Windows::Forms::Panel^ panelTopicVocabulary;
+	private: System::Windows::Forms::Panel^ panelTopicGames;
+
 
 	private:
 		/// <summary>
@@ -89,7 +114,7 @@ namespace source {
 			this->button1Topic3 = (gcnew System::Windows::Forms::Button());
 			this->topic3 = (gcnew System::Windows::Forms::Panel());
 			this->topic4 = (gcnew System::Windows::Forms::Panel());
-			this->panelTopicVocabulary = (gcnew System::Windows::Forms::Panel());
+			this->panelTopicGames = (gcnew System::Windows::Forms::Panel());
 			this->topic1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureTopic1))->BeginInit();
 			this->panelLabelTopic->SuspendLayout();
@@ -100,7 +125,7 @@ namespace source {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureTopic3))->BeginInit();
 			this->topic3->SuspendLayout();
 			this->topic4->SuspendLayout();
-			this->panelTopicVocabulary->SuspendLayout();
+			this->panelTopicGames->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// nameTopic
@@ -159,6 +184,7 @@ namespace source {
 			this->button1Topic1->TabIndex = 3;
 			this->button1Topic1->Text = L"Play";
 			this->button1Topic1->UseVisualStyleBackColor = true;
+			this->button1Topic1->Click += gcnew System::EventHandler(this, &FormGame::button1Topic1_Click);
 			// 
 			// panelLabelTopic
 			// 
@@ -181,6 +207,7 @@ namespace source {
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox1->TabIndex = 8;
 			this->pictureBox1->TabStop = false;
+			this->pictureBox1->Click += gcnew System::EventHandler(this, &FormGame::pictureBox1_Click);
 			// 
 			// textBoxTopic4
 			// 
@@ -217,10 +244,12 @@ namespace source {
 			// 
 			// pictureTopic2
 			// 
+			this->pictureTopic2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureTopic2.Image")));
 			this->pictureTopic2->Location = System::Drawing::Point(50, 54);
 			this->pictureTopic2->Margin = System::Windows::Forms::Padding(8, 7, 8, 7);
 			this->pictureTopic2->Name = L"pictureTopic2";
 			this->pictureTopic2->Size = System::Drawing::Size(596, 451);
+			this->pictureTopic2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureTopic2->TabIndex = 5;
 			this->pictureTopic2->TabStop = false;
 			// 
@@ -233,6 +262,7 @@ namespace source {
 			this->textBoxTopic2->Name = L"textBoxTopic2";
 			this->textBoxTopic2->Size = System::Drawing::Size(596, 53);
 			this->textBoxTopic2->TabIndex = 4;
+			this->textBoxTopic2->Text = L"Matrix Word";
 			this->textBoxTopic2->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			// 
 			// button1Topic2
@@ -244,6 +274,7 @@ namespace source {
 			this->button1Topic2->TabIndex = 3;
 			this->button1Topic2->Text = L"Play";
 			this->button1Topic2->UseVisualStyleBackColor = true;
+			this->button1Topic2->Click += gcnew System::EventHandler(this, &FormGame::button1Topic2_Click);
 			// 
 			// pictureTopic4
 			// 
@@ -308,31 +339,32 @@ namespace source {
 			this->topic4->Size = System::Drawing::Size(700, 700);
 			this->topic4->TabIndex = 3;
 			// 
-			// panelTopicVocabulary
+			// panelTopicGames
 			// 
-			this->panelTopicVocabulary->AutoScroll = true;
-			this->panelTopicVocabulary->AutoScrollMargin = System::Drawing::Size(10, 10);
-			this->panelTopicVocabulary->AutoScrollMinSize = System::Drawing::Size(10, 10);
-			this->panelTopicVocabulary->BackColor = System::Drawing::SystemColors::InactiveBorder;
-			this->panelTopicVocabulary->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->panelTopicVocabulary->Controls->Add(this->topic1);
-			this->panelTopicVocabulary->Controls->Add(this->topic2);
-			this->panelTopicVocabulary->Controls->Add(this->topic3);
-			this->panelTopicVocabulary->Controls->Add(this->topic4);
-			this->panelTopicVocabulary->Dock = System::Windows::Forms::DockStyle::Bottom;
-			this->panelTopicVocabulary->Location = System::Drawing::Point(0, 110);
-			this->panelTopicVocabulary->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->panelTopicVocabulary->Name = L"panelTopicVocabulary";
-			this->panelTopicVocabulary->Size = System::Drawing::Size(1859, 878);
-			this->panelTopicVocabulary->TabIndex = 5;
+			this->panelTopicGames->AutoScroll = true;
+			this->panelTopicGames->AutoScrollMargin = System::Drawing::Size(10, 10);
+			this->panelTopicGames->AutoScrollMinSize = System::Drawing::Size(10, 10);
+			this->panelTopicGames->BackColor = System::Drawing::SystemColors::InactiveBorder;
+			this->panelTopicGames->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->panelTopicGames->Controls->Add(this->topic1);
+			this->panelTopicGames->Controls->Add(this->topic2);
+			this->panelTopicGames->Controls->Add(this->topic3);
+			this->panelTopicGames->Controls->Add(this->topic4);
+			this->panelTopicGames->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->panelTopicGames->Location = System::Drawing::Point(0, 105);
+			this->panelTopicGames->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->panelTopicGames->Name = L"panelTopicGames";
+			this->panelTopicGames->Size = System::Drawing::Size(1859, 880);
+			this->panelTopicGames->TabIndex = 5;
 			// 
 			// FormGame
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(16, 31);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1859, 988);
+			this->AutoScaleDimensions = System::Drawing::SizeF(240, 240);
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Dpi;
+			this->ClientSize = System::Drawing::Size(1859, 985);
+			this->Controls->Add(this->panelTopicGames);
 			this->Controls->Add(this->panelLabelTopic);
-			this->Controls->Add(this->panelTopicVocabulary);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"FormGame";
 			this->Text = L"FormGame";
 			this->topic1->ResumeLayout(false);
@@ -350,10 +382,74 @@ namespace source {
 			this->topic3->PerformLayout();
 			this->topic4->ResumeLayout(false);
 			this->topic4->PerformLayout();
-			this->panelTopicVocabulary->ResumeLayout(false);
+			this->panelTopicGames->ResumeLayout(false);
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
-	};
+		System::Windows::Forms::Form^ activeForm;
+
+		private: void openChildForm(System::Windows::Forms::Form^ form) {
+			if (activeForm != nullptr) {
+				activeForm->Close();
+			}
+
+			activeForm = form;
+			form->TopLevel = false;
+			form->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			form->Dock = System::Windows::Forms::DockStyle::Fill;
+			panelTopicGames->Controls->Add(form);
+			panelTopicGames->Tag = form;
+			panelTopicGames->AutoScroll = false;
+
+			form->BringToFront();
+			form->Show();
+
+
+		}
+
+	void turnBackHome(System::Windows::Forms::Form^ form) {
+		if (activeForm != nullptr) {
+			activeForm->Close();
+		}
+
+
+		form->TopLevel = false;
+		form->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+		form->Dock = System::Windows::Forms::DockStyle::Fill;
+		panelTopicGames->Controls->Add(form);
+		panelTopicGames->Tag = form;
+		panelTopicGames->AutoScroll = false;
+		form->AutoScroll = false;
+		
+		form->BringToFront();
+		form->Show();
+
+
+	}
+	private: System::Void button1Topic1_Click(System::Object^ sender, System::EventArgs^ e) {
+		ListWordsGame^ next = gcnew ListWordsGame(this->list_words_game);
+		openChildForm(next);
+	}
+private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (activeForm != nullptr) {
+		activeForm->Close();
+		this->panelTopicGames->AutoScroll = true;
+		this->panelTopicGames->Controls->Remove(activeForm);
+		activeForm = nullptr;
+	}
+
+	else {
+		panelContent->Controls->Remove(this);
+		FormHome^ formHome = gcnew FormHome();
+		turnBackHome(formHome);
+		this->Close();
+	}
+}
+private: System::Void button1Topic2_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	FormMatrixWordGame^ next = gcnew FormMatrixWordGame();
+	openChildForm(next);
+}
+};
 }

@@ -6,3 +6,4 @@ source/source/x64
 *.o
 *.exe
 .vscode
+assets
