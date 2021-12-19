@@ -738,6 +738,7 @@ namespace source {
 	}
 	void LoadPage() {
 		int i = 0;
+		num = 0;
 		std::string temp;
 		for each (System::Windows::Forms::Control ^ pn in this->panelCharacter->Controls) {
 			if (pn->Name != L"pictureReload") {
@@ -753,6 +754,14 @@ namespace source {
 			}
 
 
+		}
+
+		if (this->game->result.size() < 18) {
+			this->labelQuestion->Text = L"Tìm " + this->game->result.size().ToString() + L" từ được tạo bởi các ký tự sau";
+		}
+
+		else {
+			this->labelQuestion->Text = L"Tìm 18 từ được tạo bởi các ký tự sau";
 		}
 
 		for each (System::Windows::Forms::Control ^ pn in this->panelAnswer->Controls) {

@@ -42,7 +42,7 @@ namespace source {
 			}
 
 			this->list_words_game = (ListWordGame*)games[12];
-
+			this->matrix_words_game = (MatrixWordGame*)games[13];
 		}
 	protected:
 		/// <summary>
@@ -58,6 +58,7 @@ namespace source {
 	private: System::Windows::Forms::Panel^ panelContent;
 	private: TraditionalGame** traditional_games;
 	private: ListWordGame* list_words_game;
+	private: MatrixWordGame* matrix_words_game;
 	private: System::Windows::Forms::TextBox^ nameTopic;
 	protected:
 	private: System::Windows::Forms::Panel^ topic1;
@@ -448,7 +449,7 @@ private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArg
 }
 private: System::Void button1Topic2_Click(System::Object^ sender, System::EventArgs^ e) {
 
-	FormMatrixWordGame^ next = gcnew FormMatrixWordGame();
+	FormMatrixWordGame^ next = gcnew FormMatrixWordGame(matrix_words_game);
 	openChildForm(next);
 }
 };

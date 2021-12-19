@@ -1,6 +1,8 @@
 #pragma once    
 #include"game.h"
 #include"../dictionary/dictionary.h"
+#include<iostream>
+#include<algorithm>
 class ListWordGame : public Game{
 public:
     std::vector<char> vowels = {'a', 'e', 'i', 'o', 'u'};
@@ -14,12 +16,14 @@ public:
     dict* enToVi;
     std::vector<char> character;
     std::vector<std::string> result;
-
+    int MIN(int a, int b){
+        return a < b ? a : b;
+    }
     ListWordGame(dict* enToVi){
         srand(time(0));
         this->enToVi = enToVi;
-        int num_vowels = rand() % 2 +2;
-        int num_consonants = rand() % 4 + 3;
+        int num_vowels = 2;
+        int num_consonants = MIN(rand() % 3 + 4, 8 - num_vowels);
         int v = rand() % vowels.size(), c = rand() % consonants.size();
         bool isMatch = 1;
         for (int i = 0; i < num_vowels; ++i){

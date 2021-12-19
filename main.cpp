@@ -72,12 +72,34 @@ void demoDictionary(){
     }
 
     // 2 3
-    // 3 4 5 6
+    // 4 5 6
     f.close();
 
 
 }
 
+void lengthALlWord(){
+    std::fstream f("./database/Vocabulary/AllVocabulary.json", std::ios::in);
+    Json::Value actualJson;
+    Json::Reader reader;
+    
+    reader.parse(f, actualJson);
+    int a[100] ={0}, b[100] = {0}, count_vowels = 0, count_consonants = 0;
+    std::vector<char> vowel = {'a', 'e', 'i', 'o', 'u'}, temp_vowel, temp_consonant;
+    std::string temp;
+
+    for (int i = 0; i < actualJson.size(); ++i){
+        a[actualJson[i]["word"].asString().size()]++;
+    }
+
+    for (int i = 0; i < 100; ++i){
+        if (a[i] != 0){
+            std::cout<<i<<" "<<a[i]<< std::endl;
+        }
+    }
+
+}
+
 int main(){
-    demoDictionary();
+    std::cout<<("j" == "king");
 }

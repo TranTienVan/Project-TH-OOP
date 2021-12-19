@@ -27,4 +27,5 @@ public:
     void initGame(std::vector<AppComponent*> topics, dict* enToVi);
     void initTraditionalGame(std::vector<AppComponent*> topics);
     void initListWordGame(dict* enToVi);
+    void initMatrixWordGame(dict* enToVi);
 };
