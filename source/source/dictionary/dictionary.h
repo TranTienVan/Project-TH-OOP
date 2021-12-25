@@ -33,8 +33,10 @@ public:
     }
     dict();
     
-    dict(Json::Value dict);
+    
     int findWord(std::string word);
-    void updateDictionary(Json::Value &obj);
+    void updateToDatabase(Json::Value &obj);
+    Json::Value toJsonValue();
+    void initDictionary(Json::Value obj);
     
 };

@@ -67,18 +67,18 @@ namespace source {
 	private: System::Windows::Forms::Button^ button1Topic1;
 	private: System::Windows::Forms::Panel^ panelLabelTopic;
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
-	private: System::Windows::Forms::TextBox^ textBoxTopic4;
-	private: System::Windows::Forms::Button^ button1Topic4;
+
+
 	private: System::Windows::Forms::Panel^ topic2;
 	private: System::Windows::Forms::PictureBox^ pictureTopic2;
 	private: System::Windows::Forms::TextBox^ textBoxTopic2;
 	private: System::Windows::Forms::Button^ button1Topic2;
-	private: System::Windows::Forms::PictureBox^ pictureTopic4;
-	private: System::Windows::Forms::PictureBox^ pictureTopic3;
-	private: System::Windows::Forms::TextBox^ textBoxTopic3;
-	private: System::Windows::Forms::Button^ button1Topic3;
-	private: System::Windows::Forms::Panel^ topic3;
-	private: System::Windows::Forms::Panel^ topic4;
+
+
+
+
+
+
 	private: System::Windows::Forms::Panel^ panelTopicGames;
 
 
@@ -103,18 +103,10 @@ namespace source {
 			this->button1Topic1 = (gcnew System::Windows::Forms::Button());
 			this->panelLabelTopic = (gcnew System::Windows::Forms::Panel());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
-			this->textBoxTopic4 = (gcnew System::Windows::Forms::TextBox());
-			this->button1Topic4 = (gcnew System::Windows::Forms::Button());
 			this->topic2 = (gcnew System::Windows::Forms::Panel());
 			this->pictureTopic2 = (gcnew System::Windows::Forms::PictureBox());
 			this->textBoxTopic2 = (gcnew System::Windows::Forms::TextBox());
 			this->button1Topic2 = (gcnew System::Windows::Forms::Button());
-			this->pictureTopic4 = (gcnew System::Windows::Forms::PictureBox());
-			this->pictureTopic3 = (gcnew System::Windows::Forms::PictureBox());
-			this->textBoxTopic3 = (gcnew System::Windows::Forms::TextBox());
-			this->button1Topic3 = (gcnew System::Windows::Forms::Button());
-			this->topic3 = (gcnew System::Windows::Forms::Panel());
-			this->topic4 = (gcnew System::Windows::Forms::Panel());
 			this->panelTopicGames = (gcnew System::Windows::Forms::Panel());
 			this->topic1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureTopic1))->BeginInit();
@@ -122,10 +114,6 @@ namespace source {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->topic2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureTopic2))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureTopic4))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureTopic3))->BeginInit();
-			this->topic3->SuspendLayout();
-			this->topic4->SuspendLayout();
 			this->panelTopicGames->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -210,27 +198,6 @@ namespace source {
 			this->pictureBox1->TabStop = false;
 			this->pictureBox1->Click += gcnew System::EventHandler(this, &FormGame::pictureBox1_Click);
 			// 
-			// textBoxTopic4
-			// 
-			this->textBoxTopic4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->textBoxTopic4->Location = System::Drawing::Point(50, 517);
-			this->textBoxTopic4->Margin = System::Windows::Forms::Padding(8, 7, 8, 7);
-			this->textBoxTopic4->Name = L"textBoxTopic4";
-			this->textBoxTopic4->Size = System::Drawing::Size(596, 53);
-			this->textBoxTopic4->TabIndex = 4;
-			this->textBoxTopic4->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-			// 
-			// button1Topic4
-			// 
-			this->button1Topic4->Location = System::Drawing::Point(253, 604);
-			this->button1Topic4->Margin = System::Windows::Forms::Padding(8, 7, 8, 7);
-			this->button1Topic4->Name = L"button1Topic4";
-			this->button1Topic4->Size = System::Drawing::Size(200, 70);
-			this->button1Topic4->TabIndex = 3;
-			this->button1Topic4->Text = L"Play";
-			this->button1Topic4->UseVisualStyleBackColor = true;
-			// 
 			// topic2
 			// 
 			this->topic2->BackColor = System::Drawing::SystemColors::GradientInactiveCaption;
@@ -277,69 +244,6 @@ namespace source {
 			this->button1Topic2->UseVisualStyleBackColor = true;
 			this->button1Topic2->Click += gcnew System::EventHandler(this, &FormGame::button1Topic2_Click);
 			// 
-			// pictureTopic4
-			// 
-			this->pictureTopic4->Location = System::Drawing::Point(50, 41);
-			this->pictureTopic4->Margin = System::Windows::Forms::Padding(8, 7, 8, 7);
-			this->pictureTopic4->Name = L"pictureTopic4";
-			this->pictureTopic4->Size = System::Drawing::Size(596, 451);
-			this->pictureTopic4->TabIndex = 5;
-			this->pictureTopic4->TabStop = false;
-			// 
-			// pictureTopic3
-			// 
-			this->pictureTopic3->Location = System::Drawing::Point(55, 41);
-			this->pictureTopic3->Margin = System::Windows::Forms::Padding(8, 7, 8, 7);
-			this->pictureTopic3->Name = L"pictureTopic3";
-			this->pictureTopic3->Size = System::Drawing::Size(596, 451);
-			this->pictureTopic3->TabIndex = 5;
-			this->pictureTopic3->TabStop = false;
-			// 
-			// textBoxTopic3
-			// 
-			this->textBoxTopic3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->textBoxTopic3->Location = System::Drawing::Point(55, 517);
-			this->textBoxTopic3->Margin = System::Windows::Forms::Padding(8, 7, 8, 7);
-			this->textBoxTopic3->Name = L"textBoxTopic3";
-			this->textBoxTopic3->Size = System::Drawing::Size(596, 53);
-			this->textBoxTopic3->TabIndex = 4;
-			this->textBoxTopic3->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-			// 
-			// button1Topic3
-			// 
-			this->button1Topic3->Location = System::Drawing::Point(256, 604);
-			this->button1Topic3->Margin = System::Windows::Forms::Padding(8, 7, 8, 7);
-			this->button1Topic3->Name = L"button1Topic3";
-			this->button1Topic3->Size = System::Drawing::Size(200, 70);
-			this->button1Topic3->TabIndex = 3;
-			this->button1Topic3->Text = L"Play";
-			this->button1Topic3->UseVisualStyleBackColor = true;
-			// 
-			// topic3
-			// 
-			this->topic3->BackColor = System::Drawing::SystemColors::GradientInactiveCaption;
-			this->topic3->Controls->Add(this->pictureTopic3);
-			this->topic3->Controls->Add(this->textBoxTopic3);
-			this->topic3->Controls->Add(this->button1Topic3);
-			this->topic3->Location = System::Drawing::Point(114, 829);
-			this->topic3->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->topic3->Name = L"topic3";
-			this->topic3->Size = System::Drawing::Size(700, 700);
-			this->topic3->TabIndex = 2;
-			// 
-			// topic4
-			// 
-			this->topic4->BackColor = System::Drawing::SystemColors::GradientInactiveCaption;
-			this->topic4->Controls->Add(this->pictureTopic4);
-			this->topic4->Controls->Add(this->textBoxTopic4);
-			this->topic4->Controls->Add(this->button1Topic4);
-			this->topic4->Location = System::Drawing::Point(991, 829);
-			this->topic4->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->topic4->Name = L"topic4";
-			this->topic4->Size = System::Drawing::Size(700, 700);
-			this->topic4->TabIndex = 3;
-			// 
 			// panelTopicGames
 			// 
 			this->panelTopicGames->AutoScroll = true;
@@ -349,8 +253,6 @@ namespace source {
 			this->panelTopicGames->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->panelTopicGames->Controls->Add(this->topic1);
 			this->panelTopicGames->Controls->Add(this->topic2);
-			this->panelTopicGames->Controls->Add(this->topic3);
-			this->panelTopicGames->Controls->Add(this->topic4);
 			this->panelTopicGames->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->panelTopicGames->Location = System::Drawing::Point(0, 105);
 			this->panelTopicGames->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
@@ -377,12 +279,6 @@ namespace source {
 			this->topic2->ResumeLayout(false);
 			this->topic2->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureTopic2))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureTopic4))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureTopic3))->EndInit();
-			this->topic3->ResumeLayout(false);
-			this->topic3->PerformLayout();
-			this->topic4->ResumeLayout(false);
-			this->topic4->PerformLayout();
 			this->panelTopicGames->ResumeLayout(false);
 			this->ResumeLayout(false);
 

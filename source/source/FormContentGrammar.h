@@ -1,6 +1,7 @@
 ﻿#pragma once
 #include"./grammar/grammar.h"
 #include<Windows.h>
+#include"./topic/topic_grammar.h"
 namespace source {
 
 	using namespace System;
@@ -24,20 +25,21 @@ namespace source {
 			//
 		}
 
-		FormContentGrammar(std::vector<Grammar> &grammars, System::Windows::Forms::Panel^ panel) {
+		FormContentGrammar(TopicGrammar* topic, System::Windows::Forms::Panel^ panel) {
 			InitializeComponent();
 			//
 			//TODO: Add the constructor code here
 			//
 
-			this->grammars = new Grammar[grammars.size()];
-			for (int i = 0; i < grammars.size(); ++i) {
-				this->grammars[i] = grammars[i];
+			this->grammars = new Grammar*[topic->grammars.size()];
+			for (int i = 0; i < topic->grammars.size(); ++i) {
+				this->grammars[i] = &topic->grammars[i];
 			}
 
 			activeGrammar = 0;
-			this->sizeGrammars = grammars.size();
-			this->btnName->Text = gcnew System::String(UTF8ToUnicode(this->grammars[activeGrammar].getName()).c_str());
+			this->grammars[activeGrammar]->addProcess();
+			this->sizeGrammars = topic->grammars.size();
+			this->btnName->Text = gcnew System::String(UTF8ToUnicode(this->grammars[activeGrammar]->getName()).c_str());
 			this->panelContent = panel;
 			this->btnExplanation->BackColor = System::Drawing::Color::White;
 			this->btnStructure->BackColor = System::Drawing::Color::White;
@@ -54,7 +56,7 @@ namespace source {
 				delete components;
 			}
 		}
-		Grammar* grammars;
+		Grammar** grammars;
 
 		int activeGrammar;
 		int sizeGrammars;
@@ -240,28 +242,29 @@ namespace source {
 		this->btnExample->BackColor = System::Drawing::Color::White;
 	}
 	private: System::Void btnStructure_Click(System::Object^ sender, System::EventArgs^ e) {
-		showContent(this->grammars[activeGrammar].getStructure());
+		showContent(this->grammars[activeGrammar]->getStructure());
 		
 		this->btnStructure->BackColor = System::Drawing::Color::LightBlue;
 		
 
 	}
 private: System::Void btnExplanation_Click(System::Object^ sender, System::EventArgs^ e) {
-	showContent(this->grammars[activeGrammar].getExplanation());
+	showContent(this->grammars[activeGrammar]->getExplanation());
 	this->btnExplanation->BackColor = System::Drawing::Color::LightBlue;
 	
 	
 }
 private: System::Void btnExample_Click(System::Object^ sender, System::EventArgs^ e) {
-	showContent(this->grammars[activeGrammar].getExample());
+	showContent(this->grammars[activeGrammar]->getExample());
 	
 	this->btnExample->BackColor = System::Drawing::Color::LightBlue;
 }
 private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
 	if (activeGrammar < sizeGrammars - 1) {
 		activeGrammar++;
+		this->grammars[activeGrammar]->addProcess();
 		this->richTextContent->Text = L"";
-		this->btnName->Text = gcnew System::String(UTF8ToUnicode(this->grammars[activeGrammar].getName()).c_str());
+		this->btnName->Text = gcnew System::String(UTF8ToUnicode(this->grammars[activeGrammar]->getName()).c_str());
 		this->btnExplanation->BackColor = System::Drawing::Color::White;
 		this->btnStructure->BackColor = System::Drawing::Color::White;
 		this->btnExample->BackColor = System::Drawing::Color::White;
@@ -271,8 +274,9 @@ private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArg
 private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArgs^ e) {
 	if (activeGrammar >= 1) {
 		activeGrammar--;
+		this->grammars[activeGrammar]->addProcess();
 		this->richTextContent->Text = L"";
-		this->btnName->Text = gcnew System::String(UTF8ToUnicode(this->grammars[activeGrammar].getName()).c_str());
+		this->btnName->Text = gcnew System::String(UTF8ToUnicode(this->grammars[activeGrammar]->getName()).c_str());
 		this->btnExplanation->BackColor = System::Drawing::Color::White;
 		this->btnStructure->BackColor = System::Drawing::Color::White;
 		this->btnExample->BackColor = System::Drawing::Color::White;

@@ -8,6 +8,7 @@
 #include"FormDictionary.h"
 #include"./dictionary/dictionary.h"
 #include"FormGame.h"
+#include"./exam/exam.h"
 namespace source {
 
 	using namespace System;
@@ -57,16 +58,22 @@ namespace source {
 			appTopics->initTopics("../../database/", obj);
 
 			appDictionary = new dict();
+			appDictionary->initDictionary(obj["dictionary"]);
 
-			EnToVi* appEnToVi = new EnToVi(obj["dictionary"]);
-			ViToEn* appViToEn = new ViToEn(obj["dictionary"]);
+			EnToVi* appEnToVi = (EnToVi*)appDictionary->getChildren()[0];
+			ViToEn* appViToEn = (ViToEn*)appDictionary->getChildren()[1];
 			itemEnToVi = importData(appEnToVi->_dict, "../../database/Vocabulary/vocabulary.json");
 			itemViToEn = importData(appViToEn->_dict, "../../database/Vocabulary/Word_VN.json");
-			appDictionary->Add(appEnToVi);
-			appDictionary->Add(appViToEn);
 
 			appGames = new Game();
-			appGames->initGame(appTopics->getChildren(), appEnToVi);
+			appGames->initGame(appTopics->getChildren(), appEnToVi, obj["game"]);
+
+			appExams = new Exam*[2];
+
+			for (int i = 0; i < 2; ++i) {
+				appExams[i] = new Exam("../../database/", i + 1);
+			}
+			
 
 		}
 
@@ -88,7 +95,7 @@ namespace source {
 	private: Topic* appTopics;
 	private: Game* appGames;
 	private: dict* appDictionary;
-
+	private: Exam** appExams;
 	private: cli::array<System::String^>^ itemEnToVi;
 	private: cli::array<System::String^>^ itemViToEn;
 
@@ -238,7 +245,7 @@ namespace source {
 			   this->btnExam->TabIndex = 2;
 			   this->btnExam->Text = L"Exam";
 			   this->btnExam->UseVisualStyleBackColor = true;
-			   this->btnExam->Click += gcnew System::EventHandler(this, &app::btnSettings_Click);
+			   this->btnExam->Click += gcnew System::EventHandler(this, &app::btnExam_Click);
 			   // 
 			   // btnGame
 			   // 
@@ -484,7 +491,6 @@ namespace source {
 		form->BringToFront();
 		form->Show();
 
-
 	}
 	private: System::Void btnDictionary_Click(System::Object^ sender, System::EventArgs^ e) {
 		labelApp->Text = btnDictionary->Text;
@@ -497,9 +503,20 @@ namespace source {
 
 		openChildForm(formTopicGrammar);
 	}
-	private: System::Void btnSettings_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
+	
 	private: System::Void btnExit_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->appDictionary->updateToDatabase(me->obj);
+		this->appTopics->updateTopic(me->obj);
+		this->appGames->updateGame(me->obj);
+		this->me->updateScore(this->appTopics, this->appGames);
+
+
+		this->me->obj["score"] = this->me->score;
+
+
+		this->me->updateToDatabase("../../database/user.json");
+		
+
 		System::Environment::Exit(1);
 
 
@@ -510,5 +527,9 @@ namespace source {
 		
 		openChildForm(formTopicGame);
 	}
-	};
+	private: System::Void btnExam_Click(System::Object^ sender, System::EventArgs^ e) {
+		
+
+	}
+};
 }

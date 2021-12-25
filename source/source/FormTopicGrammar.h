@@ -465,7 +465,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox1;
 		System::String^ temp = btn->Name->Substring(12);
 		int i_topic = int::Parse(temp);
 		
-		FormContentGrammar^ nextForm = gcnew FormContentGrammar(topicGrammars[i_topic - 1]->getGrammars(), panelTopicGrammar);
+		FormContentGrammar^ nextForm = gcnew FormContentGrammar(topicGrammars[i_topic - 1], panelTopicGrammar);
 
 		openChildForm(nextForm);
 	}

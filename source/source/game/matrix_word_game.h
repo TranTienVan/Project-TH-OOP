@@ -38,7 +38,7 @@ public:
     MatrixWordGame(dict* dic){
         srand(time(0));
         this->enToVi = dic;
-
+        score = 0;
         matrix.resize(13);
         for (int i = 0; i < 13; ++i){
             matrix[i].resize(17);
@@ -66,45 +66,50 @@ public:
 
                     // Forward
                     if (no.find(temp) != no.end()){
-                        continue;
+                        
                     }
 
-                    if (yes.find(temp) != yes.end()){
+                    else if (yes.find(temp) != yes.end()){
                         result.push_back(MatrixAnswer(i, j, i, k, temp));
-                        continue;
+                        
                     }
-
-                    index = enToVi->findWord(temp);
-
-                    if (index == -1){
-                        no[temp] = 1;
-                    }
+                    
                     else {
-                        yes[temp] = 1;
-                        result.push_back(MatrixAnswer(i, j, i, k, temp));
+                        index = enToVi->findWord(temp);
+
+                        if (index == -1){
+                            no[temp] = 1;
+                        }
+                        else {
+                            yes[temp] = 1;
+                            result.push_back(MatrixAnswer(i, j, i, k, temp));
+                        }
                     }
+                    
 
                     // Backward
                     temp_reverse = std::string(temp.rbegin(),temp.rend());
 
                     if (no.find(temp_reverse) != no.end()){
-                        continue;
+                        
                     }
 
-                    if (yes.find(temp_reverse) != yes.end()){
+                    else if (yes.find(temp_reverse) != yes.end()){
                         result.push_back(MatrixAnswer(i, j, i, k, temp_reverse));
-                        continue;
-                    }
-
-                    index = enToVi->findWord(temp_reverse);
-
-                    if (index == -1){
-                        no[temp_reverse] = 1;
+                        
                     }
                     else {
-                        yes[temp_reverse] = 1;
-                        result.push_back(MatrixAnswer(i, j, i, k, temp_reverse));
+                        index = enToVi->findWord(temp_reverse);
+
+                        if (index == -1){
+                            no[temp_reverse] = 1;
+                        }
+                        else {
+                            yes[temp_reverse] = 1;
+                            result.push_back(MatrixAnswer(i, j, i, k, temp_reverse));
+                        }
                     }
+                    
                 }
 
                 temp = "";
@@ -113,45 +118,50 @@ public:
 
                     // Forward
                     if (no.find(temp) != no.end()){
-                        continue;
+                        
                     }
 
-                    if (yes.find(temp) != yes.end()){
+                    else if (yes.find(temp) != yes.end()){
                         result.push_back(MatrixAnswer(i, j, k, j, temp));
-                        continue;
-                    }
-
-                    index = enToVi->findWord(temp);
-
-                    if (index == -1){
-                        no[temp] = 1;
+                        
                     }
                     else {
-                        yes[temp] = 1;
-                        result.push_back(MatrixAnswer(i, j, k, j, temp));
+                        index = enToVi->findWord(temp);
+
+                        if (index == -1){
+                            no[temp] = 1;
+                        }
+                        else {
+                            yes[temp] = 1;
+                            result.push_back(MatrixAnswer(i, j, k, j, temp));
+                        }
                     }
+                    
 
                     // Backward
                     temp_reverse = std::string(temp.rbegin(),temp.rend());
 
                     if (no.find(temp_reverse) != no.end()){
-                        continue;
+                        
                     }
 
-                    if (yes.find(temp_reverse) != yes.end()){
+                    else if (yes.find(temp_reverse) != yes.end()){
                         result.push_back(MatrixAnswer(i, j, k, j, temp_reverse));
-                        continue;
+                        
                     }
 
-                    index = enToVi->findWord(temp_reverse);
-
-                    if (index == -1){
-                        no[temp_reverse] = 1;
-                    }
                     else {
-                        yes[temp_reverse] = 1;
-                        result.push_back(MatrixAnswer(i, j, k, j, temp_reverse));
+                        index = enToVi->findWord(temp_reverse);
+
+                        if (index == -1){
+                            no[temp_reverse] = 1;
+                        }
+                        else {
+                            yes[temp_reverse] = 1;
+                            result.push_back(MatrixAnswer(i, j, k, j, temp_reverse));
+                        }
                     }
+                    
                 }
             }
         }
@@ -162,6 +172,143 @@ public:
 
 
         
+    }
+
+    void ReLoad(){
+        srand(time(0));
+        
+        result = {};
+        
+        matrix.resize(13);
+        for (int i = 0; i < 13; ++i){
+            matrix[i].resize(17);
+
+            for (int j = 0; j < 17; ++j){
+                
+                matrix[i][j] = alphabet[rand() % 26];
+                
+            }
+        }
+
+        std::string temp, temp_reverse;
+        int index;
+        std::unordered_map<std::string, int> no;
+        std::unordered_map<std::string, int> yes;
+
+        for (int i = 0; i < 13; ++i){
+            
+
+            for (int j = 0; j < 17; ++j){
+                temp = "";
+
+                for (int k = j; k < 17; ++k){
+                    temp += matrix[i][k];
+
+                    // Forward
+                    if (no.find(temp) != no.end()){
+                        
+                    }
+
+                    else if (yes.find(temp) != yes.end()){
+                        result.push_back(MatrixAnswer(i, j, i, k, temp));
+                        
+                    }
+                    
+                    else {
+                        index = enToVi->findWord(temp);
+
+                        if (index == -1){
+                            no[temp] = 1;
+                        }
+                        else {
+                            yes[temp] = 1;
+                            result.push_back(MatrixAnswer(i, j, i, k, temp));
+                        }
+                    }
+                    
+
+                    // Backward
+                    temp_reverse = std::string(temp.rbegin(),temp.rend());
+
+                    if (no.find(temp_reverse) != no.end()){
+                        
+                    }
+
+                    else if (yes.find(temp_reverse) != yes.end()){
+                        result.push_back(MatrixAnswer(i, j, i, k, temp_reverse));
+                        
+                    }
+                    else {
+                        index = enToVi->findWord(temp_reverse);
+
+                        if (index == -1){
+                            no[temp_reverse] = 1;
+                        }
+                        else {
+                            yes[temp_reverse] = 1;
+                            result.push_back(MatrixAnswer(i, j, i, k, temp_reverse));
+                        }
+                    }
+                    
+                }
+
+                temp = "";
+                for (int k = i; k < 13; ++k){
+                    temp += matrix[k][j];
+
+                    // Forward
+                    if (no.find(temp) != no.end()){
+                        
+                    }
+
+                    else if (yes.find(temp) != yes.end()){
+                        result.push_back(MatrixAnswer(i, j, k, j, temp));
+                        
+                    }
+                    else {
+                        index = enToVi->findWord(temp);
+
+                        if (index == -1){
+                            no[temp] = 1;
+                        }
+                        else {
+                            yes[temp] = 1;
+                            result.push_back(MatrixAnswer(i, j, k, j, temp));
+                        }
+                    }
+                    
+
+                    // Backward
+                    temp_reverse = std::string(temp.rbegin(),temp.rend());
+
+                    if (no.find(temp_reverse) != no.end()){
+                        
+                    }
+
+                    else if (yes.find(temp_reverse) != yes.end()){
+                        result.push_back(MatrixAnswer(i, j, k, j, temp_reverse));
+                        
+                    }
+
+                    else {
+                        index = enToVi->findWord(temp_reverse);
+
+                        if (index == -1){
+                            no[temp_reverse] = 1;
+                        }
+                        else {
+                            yes[temp_reverse] = 1;
+                            result.push_back(MatrixAnswer(i, j, k, j, temp_reverse));
+                        }
+                    }
+                    
+                }
+            }
+        }
+        
+        std::sort(result.begin(), result.end(), [](const MatrixAnswer& a, const MatrixAnswer& b){
+            return a.word < b.word;
+        });
     }
 
     int findResult(std::string s){

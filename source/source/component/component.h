@@ -1,6 +1,6 @@
 #pragma once
 #include<json/value.h>
-
+#include"../process/process.h"
 class AppComponent{
 protected:
     AppComponent* parent;
@@ -24,4 +24,20 @@ public:
     virtual Json::Value toJsonValue() {
         return Json::Value();
     };
+
+    virtual void updateToDatabase(Json::Value &obj) {
+        return;
+    }
+
+    virtual void updateProcess(){
+        return;
+    }
+
+    virtual int getScore(){
+        return 0;
+    }
+
+    virtual Process getProcess(){
+        return Process();
+    }
 };

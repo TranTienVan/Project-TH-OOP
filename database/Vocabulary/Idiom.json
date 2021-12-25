@@ -1,0 +1,777 @@
+[
+   {
+      "Idiom": "A bird in the hand is worth two in the bush",
+      "Meaning": "What you have is worth more than what you might have later",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "A blessing in disguise",
+      "Meaning": "a good thing that seemed bad at first",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "A dime a dozen",
+      "Meaning": "Something common",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "A little learning is a dangerous thing",
+      "Meaning": "People who don't understand something fully are dangerous",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "A penny for your thoughts",
+      "Meaning": "Tell me what you're thinking",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "A penny saved is a penny earned",
+      "Meaning": "Money you save today you can spend later",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "A perfect storm",
+      "Meaning": "the worst possible situation",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "A picture is worth 1000 words",
+      "Meaning": "Better to show than tell",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "A snowball effect",
+      "Meaning": "Events have momentum and build upon each other",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "A snowball's chance in hell",
+      "Meaning": "No chance at all",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "A stitch in time saves nine",
+      "Meaning": "Fix the problem now because it will get worse later",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "A storm in a teacup",
+      "Meaning": "A big fuss about a small problem",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "Actions speak louder than words",
+      "Meaning": "Believe what people do and not what they say",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "Add insult to injury",
+      "Meaning": "To make a bad situation worse",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "An apple a day keeps the doctor away",
+      "Meaning": "Apples are good for you",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "An ounce of prevention is worth a pound of cure",
+      "Meaning": "You can prevent a problem with little effort. Fixing it later is harder.",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "As right as rain",
+      "Meaning": "Perfect",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "Barking up the wrong tree",
+      "Meaning": "To be mistaken, to be looking for solutions in the wrong place",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "Beat around the bush",
+      "Meaning": "Avoid saying what you mean, usually because it is uncomfortable",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "Better late than never",
+      "Meaning": "Better to arrive late than not to come at all",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "Birds of a feather flock together",
+      "Meaning": "People who are alike are often friends (usually used negatively)",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "Bite off more than you can chew",
+      "Meaning": "Take on a project that you cannot finish",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "Bite the bullet",
+      "Meaning": "To get something over with because it is inevitable",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "Bolt from the blue",
+      "Meaning": "Something that happened without warning",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "Break a leg",
+      "Meaning": "Good luck",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "Break the ice",
+      "Meaning": "Make people feel more comfortable",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "Burn bridges",
+      "Meaning": "Destroy relationships",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "By the skin of your teeth",
+      "Meaning": "Just barely",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "Call it a day",
+      "Meaning": "Stop working on something",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "Calm before the storm",
+      "Meaning": "Something bad is coming, but right now it's calm",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "Come rain or shine",
+      "Meaning": "No matter what",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "Comparing apples to oranges",
+      "Meaning": "Comparing two things that cannot be compared",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "Costs an arm and a leg",
+      "Meaning": "Very expensive",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "Curiosity killed the cat",
+      "Meaning": "Stop asking questions",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "Cut somebody some slack",
+      "Meaning": "Don't be so critical",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "Cut the mustard",
+      "Meaning": "Do a good job",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "Cutting corners",
+      "Meaning": "Doing something poorly in order to save time or money",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "Do something at the drop of a hat",
+      "Meaning": "Do something without having planned beforehand",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "Do unto others as you would have them do unto you",
+      "Meaning": "Treat people fairly. Also known as \"The Golden Rule\"",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "Don't beat a dead horse",
+      "Meaning": "Move on, this subject is over",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "Don't count your chickens before they hatch",
+      "Meaning": "Don't count on something good happening until it's happened.",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "Don't cry over spilt milk",
+      "Meaning": "There's no reason to complain about something that can't be fixed",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "Don't give up your day job",
+      "Meaning": "You're not very good at this",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "Don't put all your eggs in one basket",
+      "Meaning": "What you're doing is too risky",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "Easy does it",
+      "Meaning": "Slow down",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "Every cloud has a silver lining",
+      "Meaning": "Good things come after bad things",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "Every dog has his day",
+      "Meaning": "Everyone gets a chance at least once",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "Familiarity breeds contempt",
+      "Meaning": "The better you know someone the less you like him",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "Fit as a fiddle",
+      "Meaning": "In good health",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "Fortune favours the bold",
+      "Meaning": "Take risks",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "Get a second wind",
+      "Meaning": "Have more energy after having been tired",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "Get a taste of your own medicine",
+      "Meaning": "Get treated the way you've been treating others (negative)",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "Get out of hand",
+      "Meaning": "Get out of control",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "Get something out of your system",
+      "Meaning": "Do the thing you've been wanting to do so you can move on",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "Get wind of something",
+      "Meaning": "Hear news of something secret",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "Get your act together",
+      "Meaning": "Work better or leave",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "Give someone the benefit of the doubt",
+      "Meaning": "Trust what someone says",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "Give someone the cold shoulder",
+      "Meaning": "Ignore someone",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "Go back to the drawing board",
+      "Meaning": "Start over",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "Go down in flames",
+      "Meaning": "Fail spectacularly",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "Go on a wild goose chase",
+      "Meaning": "To do something pointless",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "Good things come to those who wait",
+      "Meaning": "Be patient",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "Hang in there",
+      "Meaning": "Don't give up",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "Haste makes waste",
+      "Meaning": "You'll make mistakes if you rush through something",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "Have your head in the clouds",
+      "Meaning": "Not be concentrating",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "He has bigger fish to fry",
+      "Meaning": "He has bigger things to take care of than what we are talking about now",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "He who laughs last laughs loudest",
+      "Meaning": "I'll get you back for what you did",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "He's a chip off the old block",
+      "Meaning": "The son is like the father",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "He's not playing with a full deck",
+      "Meaning": "He's dumb",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "He's off his rocker",
+      "Meaning": "He's crazy",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "He's sitting on the fence",
+      "Meaning": "He can't make up his mind",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "Hear something straight from the horse's mouth",
+      "Meaning": "Hear something from the person involved",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "Hit the nail on the head",
+      "Meaning": "Get something exactly right",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "Hit the sack",
+      "Meaning": "Go to sleep",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "Ignorance is bliss",
+      "Meaning": "You're better off not knowing",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "It ain't over till the fat lady sings",
+      "Meaning": "This isn't over yet",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "It is a poor workman who blames his tools",
+      "Meaning": "If you can't do the job, don't blame it on others",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "It is always darkest before the dawn",
+      "Meaning": "Things are going to get better",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "It takes one to know one",
+      "Meaning": "You're just as bad as I am",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "It takes two to tango",
+      "Meaning": "One person alone isn't responsible. Both people are involved.",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "It's a piece of cake",
+      "Meaning": "It's easy",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "It's not rocket science",
+      "Meaning": "It's not complicated",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "It's raining cats and dogs",
+      "Meaning": "It's raining hard",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "Jump on the bandwagon",
+      "Meaning": "Follow a trend, do what everyone else is doing",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "Kill two birds with one stone",
+      "Meaning": "Get two things done with a single action",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "Know which way the wind is blowing",
+      "Meaning": "Understand the situation (usually negative)",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "Leave no stone unturned",
+      "Meaning": "Look everywhere",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "Let sleeping dogs lie",
+      "Meaning": "Stop discussing an issue",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "Let someone off the hook",
+      "Meaning": "To not hold someone responsible for something",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "Let the cat out of the bag",
+      "Meaning": "Give away a secret",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "Like riding a bicycle",
+      "Meaning": "Something you never forget how to do",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "Like two peas in a pod",
+      "Meaning": "They're always together",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "Live and learn",
+      "Meaning": "I made a mistake",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "Look before you leap",
+      "Meaning": "Take only calculated risks",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "Make a long story short",
+      "Meaning": "Tell something briefly",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "Make hay while the sun shines",
+      "Meaning": "Take advantage of a good situation",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "Miss the boat",
+      "Meaning": "It's too late",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "No pain, no gain",
+      "Meaning": "You have to work for what you want",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "On cloud nine",
+      "Meaning": "Very happy",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "On the ball",
+      "Meaning": "Doing a good job",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "On thin ice",
+      "Meaning": "On probation. If you make another mistake, there will be trouble.",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "Once bitten, twice shy",
+      "Meaning": "You're more cautious when you've been hurt before",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "Once in a blue moon",
+      "Meaning": "Rarely",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "Out of the frying pan and into the fire",
+      "Meaning": "Things are going from bad to worse",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "Play devil's advocate",
+      "Meaning": "To argue the opposite, just for the sake of argument",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "Pull someone's leg",
+      "Meaning": "To joke with someone",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "Pull yourself together",
+      "Meaning": "Calm down",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "Put something on ice",
+      "Meaning": "Put a projet on hold",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "Rain on someone's parade",
+      "Meaning": "To spoil something",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "Run like the wind",
+      "Meaning": "Run fast",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "Saving for a rainy day",
+      "Meaning": "Saving money for later",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "Shape up or ship out",
+      "Meaning": "Work better or leave",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "Slow and steady wins the race",
+      "Meaning": "Reliability is more important than speed",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "Snowed under",
+      "Meaning": "Busy",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "So far so good",
+      "Meaning": "Things are going well so far",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "Speak of the devil",
+      "Meaning": "The person we were just talking about showed up!",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "Spill the beans",
+      "Meaning": "Give away a secret",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "Take a rain check",
+      "Meaning": "Postpone a plan",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "Take it with a grain of salt",
+      "Meaning": "Don\u2019t take it too seriously",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "That ship has sailed",
+      "Meaning": "It's too late",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "That's the last straw",
+      "Meaning": "My patience has run out",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "The ball is in your court",
+      "Meaning": "It's your decision",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "The best of both worlds",
+      "Meaning": "An ideal situation",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "The best thing since sliced bread",
+      "Meaning": "A really good invention",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "The devil is in the details",
+      "Meaning": "It looks good from a distance, but when you look closer, there are problems",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "The early bird gets the worm",
+      "Meaning": "The first people who arrive will get the best stuff",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "The elephant in the room",
+      "Meaning": "The big issue, the problem people are avoiding",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "The pot calling the kettle black",
+      "Meaning": "Someone criticizing someone else he is just as bad",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "The whole nine yards",
+      "Meaning": "Everything, all the way.",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "There are clouds on the horizon",
+      "Meaning": "Trouble is coming",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "There are other fish in the sea",
+      "Meaning": "It's ok to miss this opportunity. Others will arise.",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "There's a method to his madness",
+      "Meaning": "He seems crazy but actually he's clever",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "There's no such thing as a free lunch",
+      "Meaning": "Nothing is entirely free",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "Those who live in glass houses shouldn't throw stones",
+      "Meaning": "People who are morally questionable shouldn't criticize others",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "Through thick and thin",
+      "Meaning": "In good times and in bad times",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "Throw caution to the wind",
+      "Meaning": "Take a risk",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "Time flies when you're having fun",
+      "Meaning": "You don't notice how long something lasts when it's fun",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "Time is money",
+      "Meaning": "Work quickly",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "To get bent out of shape",
+      "Meaning": "To get upset",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "To make matters worse",
+      "Meaning": "Make a problem worse",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "Under the weather",
+      "Meaning": "Sick",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "Waste not, want not",
+      "Meaning": "Don't waste things and you'll always have enough",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "We see eye to eye",
+      "Meaning": "We agree",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "We'll cross that bridge when we come to it",
+      "Meaning": "Let's not talk about that problem right now",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "Weather the storm",
+      "Meaning": "Go through something difficult",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "Well begun is half done",
+      "Meaning": "Getting a good start is important",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "When it rains it pours",
+      "Meaning": "Everything is going wrong at once",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "Wrap your head around something",
+      "Meaning": "Understand something complicated",
+      "Usage": "as part of a sentence"
+   },
+   {
+      "Idiom": "You can catch more flies with honey than you can with vinegar",
+      "Meaning": "You'll get what you want by being nice",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "You can lead a horse to water, but you can't make him drink",
+      "Meaning": "You can't force someone to make the right decision",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "You can say that again",
+      "Meaning": "That's true, I agree",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "You can't have your cake and eat it too",
+      "Meaning": "You can't have everything",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "You can't judge a book by its cover",
+      "Meaning": "This person or thing may look bad, but it's good inside",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "You can't make an omelet without breaking some eggs",
+      "Meaning": "There's always a cost to doing something",
+      "Usage": "by itself"
+   },
+   {
+      "Idiom": "Your guess is as good as mine",
+      "Meaning": "I have no idea",
+      "Usage": "by itself"
+   }
+]

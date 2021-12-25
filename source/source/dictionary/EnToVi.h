@@ -5,8 +5,10 @@ class EnToVi : public dict{
 public:
     int id;
 
-    EnToVi(Json::Value dict):
-    dict(dict){
+    EnToVi()
+    {
         this->id = 1;
     }
+
+    
 };

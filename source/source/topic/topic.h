@@ -54,6 +54,10 @@ public:
     std::vector<AppComponent*> getChildren(){
         return children;
     }
+
+    Process getProcess(){
+        return this->process;
+    }
     void scanProcess(const Json::Value obj);
     
     void Add(AppComponent *component) {
@@ -65,11 +69,18 @@ public:
         return Json::Value();
     }
     
+    virtual void updateProcess() {
+
+    }
+
+    int getScore();
     void initALL_TOPICS_VOCABULARY(std::string path); 
     void initALL_TOPICS_GRAMMAR(std::string path);
     void initVocabulary(std::string path, Json::Value obj);  
     void initGrammar(std::string path, Json::Value obj);
     void initTopics(std::string path, Json::Value obj);
+    void updateAllProcess();
     void updateGrammar(Json::Value &obj);
     void updateVocabulary(Json::Value &obj);
+    void updateTopic(Json::Value &obj);
 };

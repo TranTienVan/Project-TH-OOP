@@ -1,7 +1,7 @@
 #include"FormLogin.h"
 #include"FormDictionary.h"
 #include"FormMatrixWordGame.h"
-
+#include"FormExam.h"
 using namespace System;
 using namespace System::Windows::Forms;
 
@@ -12,7 +12,7 @@ using namespace System::Windows::Forms;
 int main(array<String^>^ args) {
 	Application::EnableVisualStyles();
 	Application::SetCompatibleTextRenderingDefault(false);
-	source::FormLogin form;
+	source::FormExam form;
     
 	
 	

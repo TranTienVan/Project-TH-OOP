@@ -15,7 +15,7 @@ User::User(std::string id, std::string username, std::string email, std::string 
     this->score = score;
 }
 
-User::User(Json::Value obj){
+User::User(Json::Value obj) {
     id = obj["id"].asString();
     username = obj["username"].asString();
     password = obj["password"].asString();
@@ -23,13 +23,6 @@ User::User(Json::Value obj){
     score = obj["score"].asInt();
 
     this->obj = obj;
-}
-User::User(){
-    id = "";
-    username = "";
-    email = "";
-    password = "";
-    
 }
 
 std::string User::getId(){
@@ -108,4 +101,35 @@ void User::updatePasswordByEmail(std::string email, std::string newPassword, std
     f << arrUser.toStyledString();
     
     f.close();
+}
+
+void User::updateToDatabase(std::string path){
+    std::fstream f1(path, std::ios::in);
+    Json::Value arrUser;
+    Json::Reader reader;
+    
+    reader.parse(f1, arrUser);
+    f1.close();
+
+    int index = getIndexByEmail(arrUser, obj["email"].asString());
+    if (index != -1){
+        arrUser[index] = obj;
+    }
+
+    std::fstream f(path, std::ios::out);
+    f << arrUser.toStyledString();
+    
+    f.close();
+}
+
+void User::updateScore(Topic* topics, Game* games){
+    this->score = 0;
+    
+    for (int i = 0; i < 16; ++i) {
+        this->score += topics->getChildren()[i]->getProcess().getIsCompleted();
+    }
+
+    for (int i = 0; i < 14; ++i) {
+        this->score += games->getChildren()[i]->getScore();
+    }
 }

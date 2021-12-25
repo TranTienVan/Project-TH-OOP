@@ -58,3 +58,13 @@ std::string Grammar::showGrammar(){
     }
     return res;
 }
+
+void Grammar::addProcess(){
+    auto start = std::chrono::system_clock::now();
+    // Some computation here
+    auto end = std::chrono::system_clock::now();
+
+    std::chrono::duration<double> elapsed_seconds = end-start;
+    std::time_t end_time = std::chrono::system_clock::to_time_t(end);
+    this->process.add(1, std::ctime(&end_time));
+}

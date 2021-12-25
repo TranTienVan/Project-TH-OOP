@@ -1041,7 +1041,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox1;
 		int i_topic = int::Parse(temp);
 		
 		
-		FormVocabulary^ nextForm = gcnew FormVocabulary(topicVocabularies[i_topic - 1]->getVocabs(), panelTopicVocabulary);
+		FormVocabulary^ nextForm = gcnew FormVocabulary(topicVocabularies[i_topic - 1], panelTopicVocabulary);
 
 		openChildForm(nextForm);
 	}

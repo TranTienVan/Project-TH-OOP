@@ -14,12 +14,14 @@ public:
     };
 public:
     dict* enToVi;
+    
     std::vector<char> character;
     std::vector<std::string> result;
     int MIN(int a, int b){
         return a < b ? a : b;
     }
     ListWordGame(dict* enToVi){
+        score = 0;
         srand(time(0));
         this->enToVi = enToVi;
         int num_vowels = 2;
@@ -64,7 +66,7 @@ public:
         }
     }
 
-    void reLoad(){
+    void ReLoad(){
         srand(time(0));
         character = {};
         result = {};

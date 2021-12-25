@@ -17,6 +17,11 @@ void Process::update(int isCom, std::string date){
     dateCompleted = date;
 }
 
+void Process::add(int isCom, std::string date){
+    this->isCompleted += isCom;
+    this->dateCompleted += date;
+}
+
 Json::Value Process::toJsonValue(){
     Json::Value root;
     root.append(isCompleted);

@@ -1,0 +1,478 @@
+[
+   {
+      "type": "part 1",
+      "instruction": "Directions: For each question in this part, you will hear four statements about a picture in your test book. When you hear the statements, you must select the one statement that best describes what you see in the picture. Then find the number of the question on your answer sheet and mark your answer. The statements will not be printed in your test book and will be spoken only one time.",
+      "question": [
+         "1.",
+         "2."
+      ],
+      "image": [
+         "1.png",
+         "2.png"
+      ],
+      "result": [
+         "B",
+         "C"
+      ],
+      "audio": [
+          "Part 1.wav"
+      ]
+   },
+   {
+      "type": "part 2",
+      "instruction": "Directions: You will hear a question or statement and three responses spoken in English. They will not be printed in your test book and will be spoken only one time. Select the best response to the question or statement and mark the letter (A), (B) or (C) on your answer sheet.",
+      "question": [
+         "3. Mark your answer on your answer sheet.",
+         "4. Mark your answer on your answer sheet.",
+         "5. Mark your answer on your answer sheet.",
+         "6. Mark your answer on your answer sheet.",
+         "7. Mark your answer on your answer sheet."
+      ],
+      "result": [
+         "C",
+         "A",
+         "B",
+         "A",
+         "C"
+      ],
+      "audio": [
+        "Part 2.wav"
+      ]
+   },
+   {
+      "type": "part 3",
+      "instruction": "Directions: You will hear some conversations between two or more people. You will be asked to answer three questions about what the speakers say in each conversation. Select the best response to each question and mark the letter (A), (B) or (C). The conversations will be not printed in your test book and will be spoken only one time.",
+      "question": [
+         "8. What are the speakers mainly discussing?",
+         "9. What is the problem?",
+         "10. What most likely will the man do first tomorrow?",
+         "11. What position is the man applying for?",
+         "12. What makes the man qualified for the position?",
+         "13. What extra benefit does the woman mention?",
+         "14. What are the speakers mainly discussing?",
+         "15. What does the man say about the dining room?",
+         "16. What does the man suggest the woman do?"
+      ],
+      "answer": [
+         [
+            "(A) A training seminar.",
+            "(B) The installation of a television.",
+            "(C) The date of a presentation.",
+            "(D) A software upgrade."
+         ],
+         [
+            "(A) The necessary tools are unavailable.",
+            "(B) The office is closed.",
+            "(C) The wall is too weak.",
+            "(D) The phone number was wrong."
+         ],
+         [
+            "(A) Order a replacement part.",
+            "(B) Consult an instruction manual.",
+            "(C) Contact the woman.",
+            "(D) Fill out a work order."
+         ],
+         [
+            "(A) Lecturer",
+            "(B) Editor",
+            "(C) Journalist",
+            "(D) superintendent"
+         ],
+         [
+            "(A) His academic background",
+            "(B) His previous work experience",
+            "(C) His public popularity",
+            "(D) His eloquence"
+         ],
+         [
+            "(A) Health insurance",
+            "(B) Flexible hours",
+            "(C) A lot of free time",
+            "(D) Regular incentives"
+         ],
+         [
+            "(A) An interior renovation",
+            "(B) A product launch",
+            "(C) A luncheon reservation",
+            "(D) A budget proposal"
+         ],
+         [
+            "(A) It needs more lighting.",
+            "(B)  It is quite cold.",
+            "(C) It is spacious.",
+            "(D)  It is too loud."
+         ],
+         [
+            "(A) Repaint the walls a brighter color",
+            "(B) Compensate guests who have reservations",
+            "(C) Draft a budget proposal",
+            "(D) Open a bank account"
+         ]
+      ],
+      "result": [
+         "B",
+         "A",
+         "C",
+         "A",
+         "B",
+         "C",
+         "A",
+         "C",
+         "B"
+      ],
+      "audio": [
+        "Part 3 8-10.wav",
+        "Part 3 11-13.wav",
+        "Part 3 14-16.wav"
+      ]
+   },
+   {
+      "type": "part 4",
+      "instruction": "Directions: You will hear some talks given by a single speaker. You will be asked to answer three questions about what the speaker says in each talk. Select the best response to each question and mark the letter (A), (B), (C), or (D) on your answer sheet. The talks will not be printed in your test book and will be spoken only one time.",
+      "question": [
+         "17. What is the reason for the cancellation?",
+         "18. What are some listeners instructed to do?",
+         "19 What will be given to some listeners?",
+         "20.  What company is the listener calling?",
+         "21. What change has recently occurred?",
+         "22. Who is Rosita Acuff?",
+         "23. What is the advertisement about?",
+         "24.  Why should listeners call the business?",
+         "25. What will happen at the end of June?"
+      ],
+      "answer": [
+         [
+            "(A)  The weather caused unsafe conditions.",
+            "(B)  A piece of machinery is malfunctioning.",
+            "(C)  A member of staff is absent.",
+            "(D)  Road repairs are being made."
+         ],
+         [
+            "(A) Store their belongings in a locker",
+            "(B) Go to the ticket counter",
+            "(C) Contact the station supervisor",
+            "(D) Wait at the ticket barriers"
+         ],
+         [
+            "(A) A station map",
+            "(B) A luggage accessory",
+            "(C) A seat upgrade",
+            "(D) A discount on future travel"
+         ],
+         [
+            "(A) An instrument store",
+            "(B) A concert venue",
+            "(C) A voice recording studio",
+            "(D) A record shop"
+         ],
+         [
+            "(A) A new-director has been chosen",
+            "(B) Prices have increased",
+            "(C) The business has moved",
+            "(D) A cafe has been added"
+         ],
+         [
+            "(A) A music critic",
+            "(B) An artistic director",
+            "(C) A musical artist",
+            "(D) A customer representative"
+         ],
+         [
+            "(A) Kitchen appliance repair",
+            "(B) Sustainable energy options",
+            "(C) Property management",
+            "(D) Heating system performance"
+         ],
+         [
+            "(A) To arrange an inspection",
+            "(B) To receive a catalog",
+            "(C) To enroll in a course",
+            "(D) To request an itemized bill"
+         ],
+         [
+            "(A) A technician will visit.",
+            "(B) A payment will be made.",
+            "(C) A promotion will end.",
+            "(D) A project will begin."
+         ]
+      ],
+      "result": [
+         "B",
+         "B",
+         "D",
+         "B",
+         "D",
+         "C",
+         "D",
+         "A",
+         "C"
+      ],
+      "audio": [
+        "Part 4 17-19.wav",
+        "Part 4 20-22.wav",
+        "Part 4 23-25.wav"
+      ]
+
+   },
+   {
+      "type": "part 5:",
+      "instruction": "Directions: A word or phrase is missing in each of the sentences below. Four answer choices are given below each sentence. Select the best answer to complete the sentence. Then mark the letter (A), (B), (C), or (D) on your answer sheet.",
+      "question": [
+         "26. Please e-mail Ms. Matthews to let ------- know when you arrive in Birmingham.",
+         "27. Attendees who participate in this year's trade fair will be asked ------- a survey.",
+         "28. The position offered to Mr. Abraham includes attractive ------- such as stock options and flexible hours.",
+         "29. Employees hired this year are invited to a lunch ------- the president of the company this upcoming Friday.",
+         "30. Due to a computer malfunction, financial \\statements issued ------- the week of March first to seventh may contain errors . .",
+         "31. Christie Corporation shareholders have been pleased with the------- rate of return on their investment over the past ten years.",
+         "32. Giamatti's presentation lasted ------- three hours, so he was unable to answer any questions.",
+         "33. Mr. Liu will achieve his goal of utilizing Field Data technology, ------- will revolutionize the measurement programs.",
+         "34. All employees are ------- that the payment of union dues may be submitted at any time."
+      ],
+      "answer": [
+         [
+            "(A)she",
+            "(B) her",
+            "(C) herself",
+            "(D) her own"
+         ],
+         [
+            "(8) completion",
+            "(A) be completed",
+            "(C) completing",
+            "(D) to complete"
+         ],
+         [
+            "(8) benefits",
+            "(A) benefit",
+            "(C) beneficial",
+            "(D) beneficially"
+         ],
+         [
+            "(8) throughout",
+            "(A) off",
+            "(C) with",
+            "(D) among"
+         ],
+         [
+            "(8) during",
+            "(A) among",
+            "(C) under",
+            "(D)above"
+         ],
+         [
+            "(A) steady",
+            "(B) steadily",
+            "(C) steadies",
+            "(D) steadiness"
+         ],
+         [
+            "(A) variously",
+            "(B) nearly",
+            "(C) finely",
+            "(D) openly"
+         ],
+         [
+            "(A) what",
+            "(B) where",
+            "(C) who",
+            "(D) which"
+         ],
+         [
+            "(A) recognized",
+            "(B) respected",
+            "(C) reacted",
+            "(D) reminded"
+         ]
+      ],
+      "result": [
+         "B",
+         "D",
+         "B",
+         "C",
+         "B",
+         "A",
+         "B",
+         "D",
+         "D"
+      ]
+   },
+   {
+      "type": "Part 6:",
+      "instruction": "Directions: Read the texts that follow. A word, phrase, or sentence is missing in parts of each text. Four answer choices for each question are given below the text. Select the best answer to complete the text. Then mark the letter (A), (B), (C), or (D) on your answer sheet.",
+      "question": [
+         "35. ",
+         "36. ",
+         "37. ",
+         "38. ",
+         "39. ",
+         "40. ",
+         "41. ",
+         "42. "
+      ],
+      "answer": [
+         [
+            "(A) stock",
+            "(B) equipment",
+            "(C) property",
+            "(D) revenue"
+         ],
+         [
+            "(A) requires",
+            "(B) required",
+            "(C) are required",
+            "(D) were required"
+         ],
+         [
+            "(A) early",
+            "(B) again",
+            "(C) more",
+            "(D) instead"
+         ],
+         [
+            "(A) Folding bicycles have become more common.",
+            "(B) Additional service fees may apply.",
+            "(C) You can obtain route maps at most stations.",
+            "(D) You must also supply your own bike lock."
+         ],
+         [
+            "(A) actual",
+            "(B) future",
+            "(C) practical",
+            "(D) effective"
+         ],
+         [
+            "(A) Similarly",
+            "(B) Therefore",
+            "(C) However",
+            "(D) Accordingly"
+         ],
+         [
+            "(A) We believe you will see that our products are still a great value.",
+            "(B) Our efforts to stay profitable have not been successful.",
+            "(C) We hope our competitors will raise their prices too.",
+            "(D) Our products are healthier than traditional baked goods."
+         ],
+         [
+            "(A) supportive",
+            "(B) support",
+            "(C) supporter",
+            "(D) supports"
+         ]
+      ],
+      "text": [
+         "Questions 35-38 refer to the following notice. \n Lakeview Railway Onboard Bicycle Policy \n Would you like to use your bicycle to explore the Lakeview Corridor Scenic Area? Our trains have the -------(35) you need to safely transport your bike. When booking your ticket, just remember  that reservations -------(36) for both you and your bicycle. Reserve your bicycle spot-------(37). There are a limited number of storage racks on each train. You are responsible for stowing your bike securely.-------(38). Lakeview Railway does not take responsibility for bicycles lost or damaged aboard our trains. \n ",
+         "Questions 39--42 refer to the following letter: \n Corelli's Bakery \n 15 Middlemass Street \n Youngstown, Ohio 44515 \n Dear Valued Customer: \n For the last three years we have charged the same wholesale prices for our baked goods, \n including cakes, pies, cookies, and brownies. We regret that sharply rising prices for our raw ingredients, such as sugar and fruit, have forced us to raise our prices by 5 percent \n -----(39) on August 1. We have made every attempt to avoid this price increase. -----(40) \n , we refuse to compromise on the quality of our products. Using the best ingredients available will allow us to provide the delicious desserts your restaurant guests have come to expect. -------(41) We appreciate your-------(42) and look forward to continuing to serve you. \n Sincerely, \n Tony Corelli, Owner \n "
+      ],
+      "number": [
+         4,
+         4
+      ],
+      "result": [
+         "B",
+         "C",
+         "A",
+         "D",
+         "C",
+         "A",
+         "B",
+         "B"
+      ]
+   },
+   {
+      "type": "Part 7:",
+      "instruction": "Directions: In this part you will read a selection of texts, such as magazine and newspaper articles, e-mails, and instant messages. Each text or set of texts is followed by several questions. Select the best answer for each question and mark the letter (A), (B), (C), or (D) on your answer sheet.",
+      "question": [
+         "43. What is NOT a stated requirement for the job?",
+         "44. How long will the job last?",
+         "45.At 1 :03 P.M., what does Ms. Kalama mean when she writes, \"Absolutely\"?",
+         "46. For what type of business does Mr. Higa most likely work?",
+         "47. Why did Ms. Saito send the e-mail?",
+         "48. What is suggested about Ms. Saito?",
+         "49. What type of car does Ms. Saito drive?",
+         "50. When should Ms. Saito go to Lanti Auto?",
+         "51. What is indicated about month-to-month agreements?"
+      ],
+      "answer": [
+         [
+            "(A) Experience working at a financial institution",
+            "(B) Ability to speak more than one language",
+            "(C) Willingness to travel internationally",
+            "(D) Public speaking skills"
+         ],
+         [
+            "(A) Two weeks",
+            "(B) One month",
+            "(C) Six months",
+            "(D) One year"
+         ],
+         [
+            "(A) She is happy that Mr. Higa contacted her.",
+            "(B) She is willing to assist Mr. Higa.",
+            "(C) She is certain that Mr. Higa is correct.",
+            "(D) She is leaving her meeting now."
+         ],
+         [
+            "(A) A publishing company",
+            "(B) A hotel chain",
+            "(C) A travel agency",
+            "(D) An office supply store"
+         ],
+         [
+            "(A) To request a car rental",
+            "(B) To resign from a position",
+            "(C) To get information about a lease",
+            "(D) To inquire about available parking"
+         ],
+         [
+            "(A) She wants to sell her car.",
+            "(B) She lives near a train station.",
+            "(C) She has recently moved to a new city.",
+            "(D) She currently drives to work."
+         ],
+         [
+            "(A) A Cartif",
+            "(B) A Sylvon",
+            "(C) A Thundee",
+            "(D) A Grayley"
+         ],
+         [
+            "(A) On September 7",
+            "(B) On September 14",
+            "(C) On September 25",
+            "(D) On September 28"
+         ],
+         [
+            "(A) They may expire at 4 P.M. on the final contract date.",
+            "(B) They are available for one year at most.",
+            "(C) They all cost $199 per month.",
+            "(D) They include the cost of maintenance."
+         ]
+      ],
+      "text": [
+         "Questions 43-44 refer to the following job announcement. \n CORPORATE TRAINER WANTED \n San Francisco-based Logistos Advisors, Inc. is seeking an energetic person with strong \n public-speaking skills to serve as a temporary replacement for an employee who is away on leave. Logistos delivers training classes on Internet security to large financial institutions and retail businesses worldwide. The successful applicant will be responsible for assisting with training sessions throughout Latin America. Although the sessions are delivered in English, proficiency in Spanish is necessary for the job. At least one year of experience as a corporate trainer in any field is highly desirable. The work assignment is for six months, the first two weeks to be spent at the Logistos headquarters for initial training. Interested candidates should submit a cover letter and resume to hr@logistosadvisors.com by March 1. \n ",
+         "Questions 45-46 refer to the following text message chain \n ",
+         "Questions 47-51 refer to the following e-mail and document. \n "
+      ],
+      "image": [
+         "",
+         "3.png",
+         ["4.png", "5.png"]
+      ],
+      "number": [
+         2,
+         2,
+         5
+      ],
+      "result": [
+         "A",
+         "C",
+         "B",
+         "A",
+         "C",
+         "D",
+         "B",
+         "C",
+         "A"
+      ]
+   }
+]

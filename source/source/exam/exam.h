@@ -1,43 +1,47 @@
 #pragma once
-#include "..\component\component.h"
-#include "..\process\process.h"
-#include "question.h"
 
-class Exam : public AppComponent  {
-private:
-    std::vector<Question*> _questions;  //questions array
-    unsigned int _numOfQues;            //number of questions
-    unsigned int _timeLimit;            //time limit for the exam (in seconds), if timeLimit = 0 -> no limit time
-    std::vector<std::string> _instructions; //Instructions for the test;
-    unsigned int _score;
+#include"../component/component.h"
+#include"part.h"
+#include<fstream>
+
+class Exam : public AppComponent{
 public:
-    Exam() : _numOfQues(0), _timeLimit(0), _score(0) {}
-    void ShowTest();
-    
-    Exam(unsigned int numQues, unsigned int timeL) : _numOfQues(numQues), _timeLimit(timeL), _score(0) {
-        _questions.resize(numQues);
+    std::vector<Part> parts;
+    Exam() {
+
     }
+    Exam(std::string path, int i){
+        path += "Exam/";
 
-    //another constructor initialize test from database...
-    //Exam(...);
-
-    void ShowInstructions();
-    void Start();
-
-    void Show(){
-        this->ShowInstructions();
-        for (int i = 0; i < _numOfQues; ++i){
-            this->_questions[i]->ShowQuestion();
-        }
-    }
-
-    void End();
-    
-    ~Exam(){
-        for (unsigned int i = 0; i < _questions.size(); ++i){
-            delete _questions[i];
+        std::fstream f(path+ "Exam" + std::to_string(i) + "/Exam" + std::to_string(i) + ".json", std::ios::in);
+        Json::Value actualJson;
+        Json::Reader reader;
+        
+        reader.parse(f, actualJson);
+        parts.resize(actualJson.size());
+        for (int i = 0; i < actualJson.size(); ++i){
+            parts[i] = Part(actualJson[i]);
         }
     }
 
 
+    int getScore(){
+        int score = 0;
+
+        for (int i = 0; i < parts.size(); ++i){
+            score += parts[i].getScore();
+        }
+
+        return score;
+    }
+
+    int getNumberOfQuestion(){
+        int nums = 0;
+
+        for (int i = 0; i < parts.size(); ++i){
+            nums += parts[i].getNumberOfQuestion();
+        }
+
+        return nums;
+    }
 };

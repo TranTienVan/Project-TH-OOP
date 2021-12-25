@@ -72,3 +72,21 @@ Json::Value TopicGrammar::toJsonValue(){
 
     return p;
 }
+
+void TopicGrammar::updateProcess(){
+    int score = 0;
+
+    for (int i = 0; i < grammars.size(); i++){
+        score += this->grammars[i].getProcess().getIsCompleted();    
+    }
+
+    auto start = std::chrono::system_clock::now();
+    // Some computation here
+    auto end = std::chrono::system_clock::now();
+
+    std::chrono::duration<double> elapsed_seconds = end-start;
+    std::time_t end_time = std::chrono::system_clock::to_time_t(end);
+    
+
+    this->process.update(score,std::ctime(&end_time));
+}

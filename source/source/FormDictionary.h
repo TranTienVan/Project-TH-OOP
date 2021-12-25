@@ -342,7 +342,7 @@ namespace source {
 
 			if (index != -1) {
 				this->comboBoxDictionary->Text = L"";
-				FormContentVocabulary^ formContent = gcnew FormContentVocabulary(appEnToVi->_dict[index], panelDictionary);
+				FormContentVocabulary^ formContent = gcnew FormContentVocabulary(&appEnToVi->_dict[index], panelDictionary);
 				openChildForm(formContent);
 				if (find(appEnToVi->_look_up_history_index.begin(), appEnToVi->_look_up_history_index.end(), index) == appEnToVi->_look_up_history_index.end()) {
 					appEnToVi->_look_up_history_index.push_back(index);
@@ -366,7 +366,7 @@ namespace source {
 					appViToEn->_look_up_history_index.push_back(index);
 
 				}
-				FormContentVocabulary^ formContent = gcnew FormContentVocabulary(appViToEn->_dict[index], panelDictionary);
+				FormContentVocabulary^ formContent = gcnew FormContentVocabulary(&appViToEn->_dict[index], panelDictionary);
 				openChildForm(formContent);
 				
 			}

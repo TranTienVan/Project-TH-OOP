@@ -4,6 +4,8 @@
 #include"../process/process.h"
 #include<json/json.h>
 #include<json/value.h>
+#include <chrono>
+#include <ctime> 
 class Vocabulary {
 private:
     // 
@@ -90,4 +92,6 @@ public:
     void showImage();
     void playAudio();
     std::string showVocab();
+    void addProcess();
+
 };

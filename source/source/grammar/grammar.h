@@ -3,7 +3,8 @@
 #include<vector>
 #include <json/json.h>
 #include"../process/process.h"
-
+#include<chrono>
+#include<ctime>
 class Grammar{
 private:
     std::string category;
@@ -30,4 +31,6 @@ public:
     void scanProcessGrammar(int value, std::string data){
         process.update(value, data);
     }
+
+    void Grammar::addProcess();
 };

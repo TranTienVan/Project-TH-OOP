@@ -7,7 +7,7 @@
 #include<fstream>
 
 class TopicVocabulary : public Topic{
-protected:
+public:
     std::vector<Vocabulary> vocabs;
 public:
     TopicVocabulary(std::string name, std::string definition, std::string image, std::string examples, Process process):
@@ -27,7 +27,7 @@ public:
     std::vector<Vocabulary> getVocabs() {
         return this->vocabs;
     }
-
+    void updateProcess();
     void readFromDatabase(const std::string path);
     void updateToDatabase(const std::string path);
     

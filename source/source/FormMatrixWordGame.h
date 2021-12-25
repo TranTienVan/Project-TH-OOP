@@ -204,6 +204,7 @@ namespace source {
 			this->button1->TabIndex = 2;
 			this->button1->Text = L"Tìm";
 			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &FormMatrixWordGame::button1_Click);
 			// 
 			// btnShowAnswer
 			// 
@@ -278,8 +279,10 @@ namespace source {
 				}
 				
 			}
-			if (this->comboBoxWord->Items->IndexOf(this->comboBoxWord->Text) == -1)
-				this->comboBoxWord->Items->Add(gcnew System::String(ans.word.c_str()));
+
+			System::String^ temp = gcnew System::String(ans.word.c_str());
+			if (this->comboBoxWord->Items->IndexOf(temp) == -1)
+				this->comboBoxWord->Items->Add(temp);
 		}
 
 		this->comboBoxWord->Text = L"";
@@ -359,7 +362,7 @@ private: System::Void pictureReload_Click(System::Object^ sender, System::EventA
 		   int r = l;
 
 		   if (l != -1) {
-			   
+			   ++this->game->score;
 			   while (l >= 0 && this->game->result[l].word == s) {
 				   --l;
 			   }
@@ -419,10 +422,11 @@ private: System::Void btnLearn_Click(System::Object^ sender, System::EventArgs^ 
 	std::string s = toStandardString(this->comboBoxWord->Text);
 	int index = this->game->enToVi->findWord(s);
 	if (index != -1) {
-		FormContentVocabulary^ cnt = gcnew FormContentVocabulary(this->game->enToVi->_dict[index], panelLeft, panelPlay);
+		FormContentVocabulary^ cnt = gcnew FormContentVocabulary(&this->game->enToVi->_dict[index], panelLeft, panelPlay);
 		openChildForm(cnt);
 	}
 	
 }
+
 };
 }

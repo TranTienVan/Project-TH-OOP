@@ -90,3 +90,21 @@ Json::Value TopicVocabulary::toJsonValue(){
 
     return p;
 }
+
+void TopicVocabulary::updateProcess(){
+    int score = 0;
+
+    for (int i = 0; i < vocabs.size(); i++){
+        score += this->vocabs[i].getProcess().getIsCompleted();    
+    }
+
+    auto start = std::chrono::system_clock::now();
+    // Some computation here
+    auto end = std::chrono::system_clock::now();
+
+    std::chrono::duration<double> elapsed_seconds = end-start;
+    std::time_t end_time = std::chrono::system_clock::to_time_t(end);
+    
+
+    this->process.update(score,std::ctime(&end_time));
+}

@@ -1,13 +1,25 @@
 #include"dictionary.h"
+#include"EnToVi.h"
+#include"ViToEn.h"
 
 dict::dict(){
 
 }
 
-dict::dict(Json::Value dict){
-    for (int i = 0; i < dict.size(); i++){
-        _look_up_history_index.push_back(dict[i].asInt());
+void dict::initDictionary(Json::Value obj){
+    EnToVi* appEnToVi = new EnToVi();
+	ViToEn* appViToEn = new ViToEn();
+
+    for (int i = 0; i < obj[0].size(); ++i){
+        appEnToVi->_look_up_history_index.push_back(obj[0][i].asInt());
     }
+
+    for (int i = 0; i < obj[1].size(); ++i){
+        appViToEn->_look_up_history_index.push_back(obj[1][i].asInt());
+    }
+
+    this->Add(appEnToVi);
+    this->Add(appViToEn);
 }
 
 int dict::findWord(std::string word){
@@ -31,14 +43,20 @@ int dict::findWord(std::string word){
 
 }
 
-
-
-void dict::updateDictionary(Json::Value &obj){
-    Json::Value p;
-    for (int i = 0; i < _look_up_history_index.size(); i++){
-        p.append(_look_up_history_index[i]);
-        
+Json::Value dict::toJsonValue(){
+    Json::Value result = Json::Value(Json::arrayValue);
+    for (int i = 0; i < _look_up_history_index.size(); ++i){
+        result.append(_look_up_history_index[i]);
     }
 
-    obj["En-Vi"] = p;
+    return result;
+};
+
+void dict::updateToDatabase(Json::Value &obj){
+    Json::Value result;
+    for (int i = 0; i < children.size(); ++i){
+        result.append(children[i]->toJsonValue());
+    }
+    
+    obj["dictionary"] = result;
 }

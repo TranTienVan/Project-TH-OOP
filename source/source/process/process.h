@@ -10,10 +10,13 @@ protected:
 public:
     Process();
     
-    
+    int getIsCompleted(){
+        return this->isCompleted;
+    }
     Process& operator=(const Process& other); 
     
     void update(int isCom, std::string date);
 
     Json::Value toJsonValue();
+    void add(int isCom, std::string date);
 };

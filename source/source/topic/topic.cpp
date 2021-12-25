@@ -96,6 +96,7 @@ void Topic::updateVocabulary(Json::Value &obj){
 
     for (int i = 0; i < 12; i++){
         p.append(children[i]->toJsonValue());
+        
     }
 
     obj["topicVocabularies"] = p;
@@ -109,4 +110,25 @@ void Topic::updateGrammar(Json::Value &obj){
     }
 
     obj["topicGrammars"] = p;
+}
+
+void Topic::updateTopic(Json::Value &obj){
+    updateAllProcess();
+    updateVocabulary(obj);
+    updateGrammar(obj);
+}
+
+void Topic::updateAllProcess(){
+    for (int i = 0; i < children.size(); i++){
+        children[i]->updateProcess();
+    }
+}
+
+int Topic::getScore(){
+    int score;
+    for (int i = 0; i < children.size(); ++i){
+        score += children[i]->getProcess().getIsCompleted();
+    }
+
+    return score;
 }

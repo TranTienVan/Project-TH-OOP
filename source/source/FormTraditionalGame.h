@@ -396,6 +396,7 @@ namespace source {
 			this->pictureCorrect->Visible = true;
 			this->pictureIncorrect->Visible = false;
 			++Score;
+			++this->game->score;
 			this->labelScore->Text = L"Score : " + System::Convert::ToString(Score) + L"   ";
 		}
 

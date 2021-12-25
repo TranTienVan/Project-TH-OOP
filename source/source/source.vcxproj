@@ -129,6 +129,7 @@
     <ClCompile Include="FormContentGrammar.cpp" />
     <ClCompile Include="FormContentVocabulary.cpp" />
     <ClCompile Include="FormDictionary.cpp" />
+    <ClCompile Include="FormExam.cpp" />
     <ClCompile Include="FormGame.cpp" />
     <ClCompile Include="FormGrammar.cpp" />
     <ClCompile Include="FormHome.cpp" />
@@ -158,6 +159,8 @@
     <ClInclude Include="dictionary\dictionary.h" />
     <ClInclude Include="dictionary\EnToVi.h" />
     <ClInclude Include="dictionary\ViToEn.h" />
+    <ClInclude Include="exam\exam.h" />
+    <ClInclude Include="exam\part.h" />
     <ClInclude Include="FormContentGrammar.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -165,6 +168,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="FormDictionary.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="FormExam.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="FormGame.h">
@@ -225,6 +231,9 @@
     <EmbeddedResource Include="FormDictionary.resx">
       <DependentUpon>FormDictionary.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormExam.resx">
+      <DependentUpon>FormExam.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormGame.resx">
       <DependentUpon>FormGame.h</DependentUpon>
     </EmbeddedResource>
@@ -283,6 +292,26 @@
     <Image Include="..\..\data\Vocabulary\Topic\transport.png" />
     <Image Include="..\..\data\Vocabulary\Topic\travel.png" />
     <Image Include="pictureTopic1.Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="WMPLib.1.0">
+      <VersionMinor>0</VersionMinor>
+      <VersionMajor>1</VersionMajor>
+      <Guid>6bf52a50-394a-11d3-b153-00c04f79faa6</Guid>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>false</Isolated>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AxWMPLib.1.0">
+      <WrapperTool>aximp</WrapperTool>
+      <VersionMinor>0</VersionMinor>
+      <VersionMajor>1</VersionMajor>
+      <Guid>6bf52a50-394a-11d3-b153-00c04f79faa6</Guid>
+      <Lcid>0</Lcid>
+      <Isolated>false</Isolated>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -8,7 +8,7 @@
 #include<fstream>
 
 class TopicGrammar : public Topic{
-protected:
+public:
     std::vector<Grammar> grammars;
 public:
     TopicGrammar(std::string name, std::string definition, std::string image, std::string examples, Process process):
@@ -26,4 +26,6 @@ public:
     
     void scanProcess(Json::Value obj);
     Json::Value toJsonValue();
+
+    void updateProcess();
 };

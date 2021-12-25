@@ -719,6 +719,7 @@ namespace source {
 			   int index = this->game->findResult(temp);
 
 			   if (index < this->game->result.size()) {
+				   ++this->game->score;
 				   panelAnswer->Controls[num]->Text = textWord->Text;
 				   panelAnswer->Controls[num]->BackColor = System::Drawing::Color::LightGreen;
 				   num++;
@@ -818,7 +819,7 @@ namespace source {
 		int index = this->game->enToVi->findWord(toStandardString(btn->Text));
 
 		if (index != -1) {
-			FormContentVocabulary^ vocab = gcnew FormContentVocabulary(this->game->enToVi->_dict[index], panel1, panel2);
+			FormContentVocabulary^ vocab = gcnew FormContentVocabulary(&this->game->enToVi->_dict[index], panel1, panel2);
 			openChildForm(vocab);
 		}
 		

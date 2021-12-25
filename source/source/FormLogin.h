@@ -412,6 +412,7 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 		newUser["topicGrammars"] = Json::arrayValue;
 		newUser["dictionary"] = Json::arrayValue;
 		newUser["score"] = 0;
+		newUser["game"] = Json::arrayValue;
 		newUser["id"] = actualJson.size() + 1;
 
 		actualJson.append(newUser);

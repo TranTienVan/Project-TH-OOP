@@ -1,0 +1,475 @@
+[
+   {
+      "type": "part 1",
+      "instruction": "Directions: For each question in this part, you will hear four statements about a picture in your test book. When you hear the statements, you must select the one statement that best describes what you see in the picture. Then find the number of the question on your answer sheet and mark your answer. The statements will not be printed in your test book and will be spoken only one time.",
+      "question": [
+         "1.",
+         "2."
+      ],
+      "image": [
+         "1.png",
+         "2.png"
+      ],
+      "result": [
+         "D",
+         "C"
+      ],
+      "audio": [
+        "Part 1.wav"
+      ]
+
+   },
+   {
+      "type": "part 2",
+      "instruction": "Directions: You will hear a question or statement and three responses spoken in English. They will not be printed in your test book and will be spoken only one time. Select the best response to the question or statement and mark the letter (A), (B) or (C) on your answer sheet.",
+      "question": [
+         "3. Mark your answer on your answer sheet",
+         "4. Mark your answer on your answer sheet",
+         "5. Mark your answer on your answer sheet",
+         "6. Mark your answer on your answer sheet",
+         "7. Mark your answer on your answer sheet",
+         "8. Mark your answer on your answer sheet",
+         "9. Mark your answer on your answer sheet",
+         "10. Mark your answer on your answer sheet",
+         "11. Mark your answer on your answer sheet"
+      ],
+      "result": [
+         "A",
+         "C",
+         "A",
+         "A",
+         "B",
+         "B",
+         "C",
+         "C",
+         "B"
+      ],
+      "audio": [
+        "Part 2.wav"
+      ]
+   },
+   {
+      "type": "part 3",
+      "instruction": "Directions: You will hear some conversations between two or more people. You will be asked to answer three questions about what the speakers say in each conversation. Select the best response to each question and mark the letter (A), (B) or (C). The conversations will be not printed in your test book and will be spoken only one time.",
+      "question": [
+         "12. What are the speakers discussing?",
+         "13. Why does the man mention when the supply company closes?",
+         "14. What does the woman offer to do?",
+         "15. What is the problem?",
+         "16: Which part of the business trip will be postponed?",
+         "17. What does the man mean when he says \"That's not a bad idea\"?",
+         "18. What was the woman doing in Australia?",
+         "19. What does the woman imply when she says \"Is this Robert Wilder's application\"?",
+         "20. How does the woman know Robert Wilder?"
+      ],
+      "answer": [
+         [
+            "(A) Orders for office supplies",
+            "(B) Equipment for a conference",
+            "(C) The budget reports",
+            "(D) Their colleague"
+         ],
+         [
+            "(A) To inform her of the business hours",
+            "(B) To let her know she can't order anything",
+            "(C) To explain that the second order would be late",
+            "(D) To imply that new equipment can't be ordered"
+         ],
+         [
+            "(A) Pay for the new order",
+            "(B) Order the supplies herself",
+            "(C) Cancel a meeting",
+            "(D) Speak to their colleague"
+         ],
+         [
+            "(A) The plane tickets were not booked",
+            "(B) A meeting had to be rescheduled",
+            "(C) The meeting was a success",
+            "(D) A deadline has been changed"
+         ],
+         [
+            "(A) The meeting in New York",
+            "(B) The meeting in Wisconsin",
+            "(C) The meeting in Washington",
+            "(D) The meeting in Westboro"
+         ],
+         [
+            "(A) He thinks it is a bad idea.",
+            "(B) He agrees with the proposed solution.",
+            "(C) He wants to hear other ideas.",
+            "(D) He disagrees with the solution."
+         ],
+         [
+            "(A) Going on a business trip",
+            "(B) Studying abroad",
+            "(C) Taking a vacation",
+            "(D) Searching for employees"
+         ],
+         [
+            "(A) She is surprised to see the application.",
+            "(B) She will reject the application.",
+            "(C) She doesn't understand something.",
+            "(D) She agrees with the application."
+         ],
+         [
+            "(A) They went to college together.",
+            "(B) They work in the same department.",
+            "(C) They play baseball together.",
+            "(D) They play tennis together."
+         ]
+      ],
+      "result": [
+         "A",
+         "C",
+         "D",
+         "B",
+         "C",
+         "B",
+         "C",
+         "A",
+         "D"
+      ],
+      "audio": [
+        "Part 3 12-14.wav",
+        "Part 3 15-17.wav",
+        "Part 3 18-20.wav"
+      ]
+   },
+   {
+      "type": "part 4",
+      "instruction": "Directions: You will hear some talks given by a single speaker. You will be asked to answer three questions about what the speaker says in each talk. Select the best response to each question and mark the letter (A), (B), (C), or (D) on your answer sheet. The talks will not be printed in your test book and will be spoken only one time.",
+      "question": [
+         "21. What time does the store close?",
+         "22. What are the listeners asked to do?",
+         "23. What does the speaker mean when she says, \"It will go quickly\"?",
+         "24. What will the speaker's company do next week?",
+         "25. What does the speaker remind listeners to do?",
+         "26. What does the woman mean when she says, \"Let me put it another way\"?",
+         "27. What is the purpose of the call?",
+         "28. Look at the graphic. What rental price is offered to the listener?",
+         "29. What event does the speaker mention?"
+      ],
+      "answer": [
+         [
+            "(A) 9:30 P.M.",
+            "(B) 10:00 P.M.",
+            "(C) 10:30 P.M.",
+            "(D) 11 :00 P.M."
+         ],
+         [
+            "(A) Complete purchases at the cashier",
+            "(B) Leave the store immediately",
+            "(C) Fill out a comment card",
+            "(D) Exit through a side door"
+         ],
+         [
+            "(A) Customers can get fast service.",
+            "(B) A process has been streamlined.",
+            "(C) The business will close early.",
+            "(D) Items are expected to sell out."
+         ],
+         [
+            "(A) Hire a new manager",
+            "(B) Update a travel schedule",
+            "(C) Launch a new policy",
+            "(D) Increase employee salaries"
+         ],
+         [
+            "(A) Avoid expensive purchases",
+            "(B) Sign up for a business trip",
+            "(C) Contact her for information",
+            "(D) Keep some paperwork"
+         ],
+         [
+            "(A) She is clarifying her point.",
+            "(B) She is giving up on a plan.",
+            "(C) She is making a conclusion.",
+            "(D) She is expressing her confusion."
+         ],
+         [
+            "(A) To recommend an alternative space",
+            "(B) To suggest a change of date",
+            "(C) To provide pricing information",
+            "(D) To ask for a booking receipt"
+         ],
+         [
+            "(A) $600",
+            "(B) $700",
+            "(C) $1,000",
+            "(D) $1,300"
+         ],
+         [
+            "(A) An assembly of designers",
+            "(B) A business' grand opening",
+            "(C) A ballroom dance competition",
+            "(D) A technology conference"
+         ]
+      ],
+      "result": [
+         "B",
+         "A",
+         "D",
+         "C",
+         "D",
+         "A",
+         "A",
+         "C",
+         "A"
+      ],
+      "audio": [
+        "Part 4 21-23.wav",
+        "Part 4 24-26.wav",
+        "Part 4 27-29.wav"
+      ]
+   },
+   {
+      "type": "part 5:",
+      "instruction": "Directions: A word or phrase is missing in each of the sentences below. Four answer choices are given below each sentence. Select the best answer to complete the sentence. Then mark the letter (A), (8), (C), or (D) on your answer sheet.",
+      "question": [
+         "30. The new strategy implemented by the government is intended ------- local economic growth.",
+         "31. Sign up for Times Mirror Cable Television by April 5 to get five sports channels ------- your choice of three movie channels at no extra charge.",
+         "32. The newly launched mobile services will encourage our customers to check their purchase information -------.",
+         "33. Returns of any clothing ordered from Laza Fashions online store must be made ------- 7 days of purchase for a full refund.",
+         "34. Despite the early problems of ------- the project, the construction on the new stadium is currently ahead of schedule and on budget.",
+         "35. In his speech, the dean recognized the ------- that the professors had made in enhancing the quality of the courses being offered by the university.",
+         "36. The launch of the new MP3 player was far more successful than originally -------.",
+         "37. The board of directors agreed ------- to adopt the new marketing plan at the meeting yesterday.",
+         "38. Research articles intended for publication must include descriptive statistics ------- an informed reader may accurately interpret and evaluate the findings."
+      ],
+      "answer": [
+         [
+            "(A) facilitate",
+            "(B) facilitation",
+            "(C) to facilitate",
+            "(D) to be facilitated"
+         ],
+         [
+            "(A) in addition",
+            "(B) whichever",
+            "(C) plus",
+            "(D) whenever"
+         ],
+         [
+            "(A) they",
+            "(B) them",
+            "(C) theirs",
+            "(D) themselves"
+         ],
+         [
+            "(A) every",
+            "(B) within",
+            "(C) whenever",
+            "(D) notwithstanding"
+         ],
+         [
+            "(A) fund",
+            "(B) funds",
+            "(C) to fund",
+            "(D) funding"
+         ],
+         [
+            "(A) repetitions",
+            "(B) terminations",
+            "(C) contributions",
+            "(D) acquisitions"
+         ],
+         [
+            "(A) anticipated",
+            "(B) anticipates",
+            "(C) anticipating",
+            "(D) anticipation"
+         ],
+         [
+            "(A) miscellaneously",
+            "(B) unanimously",
+            "(C) currently",
+            "(D) beneficially"
+         ],
+         [
+            "(A) in order",
+            "(B) therefore",
+            "(C) so that",
+            "(D) whereas"
+         ]
+      ],
+      "result": [
+         "C",
+         "C",
+         "D",
+         "B",
+         "D",
+         "C",
+         "A",
+         "B",
+         "C"
+      ]
+   },
+   {
+      "type": "Part 6:",
+      "instruction": "Directions: Read the texts that follow. A word, phrase, or sentence is missing in parts of each text. Four answer choices for each question are given below the text. Select the best answer to complete the text. Then mark the letter (A), (B), (C), or (D) on your answer sheet.",
+      "question": [
+         "39. ",
+         "40. ",
+         "41. ",
+         "42. ",
+         "43. ",
+         "44. ",
+         "45. ",
+         "46. "
+      ],
+      "answer": [
+         [
+            "(A) You will receive a full refund.",
+            "(B) A replacement is on backorder.",
+            "(C) Tracking your order is easy.",
+            "(D) We will answer your question soon."
+         ],
+         [
+            "(A) invited",
+            "(B) invite",
+            "(C) were inviting",
+            "(D) have invited"
+         ],
+         [
+            "(A) able",
+            "(B) skillful",
+            "(C) suitable",
+            "(D) equal"
+         ],
+         [
+            "(A) publication",
+            "(B) production",
+            "(C) introduction",
+            "(D) completion"
+         ],
+         [
+            "(A) is received",
+            "(B) receiving",
+            "(C) to receive",
+            "(D) received"
+         ],
+         [
+            "(A) move",
+            "(B) cancel",
+            "(C) change",
+            "(D) confirm"
+         ],
+         [
+            "(A) Thank you for accepting our invitation to the event.",
+            "(B) Please prepare discussion points before the meeting.",
+            "(C) Note that reservations are on a first-come, first-served basis.",
+            "(D) The time of the next meeting will be announced in due course."
+         ],
+         [
+            "(A) fortunate",
+            "(B) advisable",
+            "(C) previous",
+            "(D) flexible"
+         ]
+      ],
+      "text": [
+         "Questions 39-42 refer to the following e-mail. \n To: Bai Chang <bchang@lexrg.com> \n From: customerservice@sprtech.com \n Date: September 28 \n Subject: Order 255646 \n Dear Ms. Chang: \n Thank you for your purchase on September 27. Your package has shipped and is due to arrive on October 1. ------- (39). Simply visit www.sprtech.com/shipping/status, enter your order number, and press \"Search.\" \n When you receive your package, we-------(40) you to take a short survey at www.sprtech.com/survey. It is through customer feedback that we are -------(41) to monitor our level of service. Upon 133.-------(42) of the survey, you will receive a 10% discount toward your next order. \n Sprtech.com Customer Service \n ",
+         "Questions 43-46 refer to the following information. \n Conference Room 120 can be booked for meetings and conference calls. First, make a \n reservation request online at www.gzpoffice.com/confroom . When your request------- (43) , the system automatically checks for availability. Your request will be accepted if no other event is scheduled at that time. The system will then immediately send you an e-mail message to ---- (44) \n your reservation.However, if another meeting is scheduled that conflicts with yours, you will be notified that the request has been declined. -------(45). It is therefore------- (46) that you schedule your event well ahead of time. This way, if a given time slot is already reserved, you will be able to reschedule your meeting. \n "
+      ],
+      "number": [
+         4,
+         4
+      ],
+      "result": [
+         "C",
+         "B",
+         "A",
+         "D",
+         "A",
+         "D",
+         "C",
+         "B"
+      ]
+   },
+   {
+      "type": "Part 7:",
+      "instruction": "Directions: In this part you will read a selection of texts, such as magazine and newspaper articles, e-mails, and instant messages. Each text or set of texts is followed by several questions. Select the best answer for each question and mark the letter (A), (B), (C), or (D) on your answer sheet",
+      "question": [
+         "47. What is indicated about Tasteemix cereals?",
+         "48. What is reported about HFI?",
+         "49.In which of the positions marked [1], [2], [3],and [4] does the following sentence best belong? \n \"Yet as of yesterday morning, only Vendibles and Foodiverse reported that they had any of the item left in stock.\"",
+         "50. What is one common feature in all of Mr. Trozelli's books?",
+         "51. What book did Mr. Trozelli discuss on BTW Radio?",
+         "52. What is indicated about Candid Now?",
+         "53. In the e-mail, the word \"regular\" in paragraph 1, line 1, is closest in meaning to",
+         "54. What is probably true about Ms. Ogilvie?"
+      ],
+      "answer": [
+         [
+            "(A) They are distributed internationally.",
+            "(B) They are made in a factory in Mauritius.",
+            "(C) They are HFl's main source of revenue.",
+            "(D) They were first marketed four years ago."
+         ],
+         [
+            "(A) It has no more Tasteemix cereal in stock.",
+            "(B) It hired a consulting firm to do its accounting.",
+            "(C) It expects this year's earnings to be better than last year's.",
+            "(D) It previously offered a product for a limited time only."
+         ],
+         [
+            "(A) [1]",
+            "(B) [2]",
+            "(C) [3]",
+            "(D) [4]"
+         ],
+         [
+            "(A) They contain fashion photographs.",
+            "(B) They focus on famous models.",
+            "(C) They are set in New York City.",
+            "(D) They follow events over multiple years."
+         ],
+         [
+            "(A) The History of Jeans",
+            "(B) Look Past the Runway",
+            "(C) Growing Into Clothes: My Story",
+            "(D) Yards of Talent: A Decade of Style"
+         ],
+         [
+            "(A) It is broadcast every morning at 7:00.",
+            "(B) It was recently added to BTW Radio.",
+            "(C) It is hosted by Amanda Fry.",
+            "(D) It was moved to a new time."
+         ],
+         [
+            "(A) orderly",
+            "(B) typical",
+            "(C) frequent",
+            "(D) complete"
+         ],
+         [
+            "(A) She has worked in the fashion industry.",
+            "(B) She has interviewed Mr. Trozelli.",
+            "(C) She was featured on Tech Talk.",
+            "(D) She hosts a radio program."
+         ]
+      ],
+      "text": [
+         "Questions 47-49 refer to the following article. \n New Tasteemix Flavor a Big Hit \n By Deepanjali Jaddoo \n PORT LOUIS (2 February) -Three weeks ago, Helvetia Food Industries (HFI) announced the introduction of a new flavor of its popular Tasteemix breakfast cereal-coconut cream. - [1]-. HFI also announced that the product would be available for a limited time only, sending Tasteemix enthusiasts from Argentina to\u00c2\u00b7 Zambia into a buying frenzy. \n All six major grocery distributors here in Mauritius confirmed that they had received a large supply of coconut cream Tasteemix shortly after the new product was introduced on 8 January. - [2] -. Both wholesalers expected it to be gone by the end of the day. \n \"HFI's current campaign is reminiscent of the one it waged four years ago when it introduced its strawberry-cinnamon cereal,\"said Bina Perida, a professor of marketing at Port Louis Business College. \"Then, as now, HFI announced a product as being offered for a limited time only, resulting in that item's rapid disappearance from shelves in grocery stores across the globe.\" - [3] -. \n On 5 April, HFI's accountants will review the company's first-quarter earnings. \n Based on the initial sales, market watchers are confident that HFI's expectations will be met. -[4]-. \n ",
+         "Questions 50-54 refer to the following list, schedule, and e-mail. \u00e2\u20ac\u00a2 \n Books by James Trozelli m \n The History of Jeans \n Where did it all begin? Trozelli visually chronicles the evolution of jeans through the centuries, from working wear to high fashion. Who knew that jeans would become one of the most popular garments in countries around the world? \n Look Past the Runway \n Trozelli captures the creative process of some of the top designers from New York City to Paris. Spanning almost twenty years, the book is filled with Trozelli's photographs and shows what goes on in fashion houses before designs are ready for the runway. \n Growing Into Clothes: My Story \n An amusing memoir about growing up in the fashion world. Trozelli writes about his unconventional upbringing in New York City with parents who began as fashion models before launching their own design label. \n Yards of Talent: A Decade of Style \n A collection of Trozelli's images spanning a decade of fashion and revealing what was in style, what was out of style, and then what was back in style again. The book offers a sweeping array of some of the top trends in fashion. \n "
+      ],
+      "image": [
+         "",
+         ["3.png", "4.png"]
+      ],
+      "number": [
+         3,
+         5
+      ],
+      "result": [
+         "A",
+         "D",
+         "B",
+         "D",
+         "C",
+         "B",
+         "C",
+         "A"
+      ]
+   }
+]

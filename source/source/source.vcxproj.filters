@@ -90,6 +90,9 @@
     <ClCompile Include="FormMatrixWordGame.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FormExam.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="user\user.h">
@@ -180,6 +183,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="game\matrix_word_game.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="exam\exam.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="exam\part.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FormExam.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

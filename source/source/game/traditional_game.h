@@ -10,6 +10,7 @@ public:
     std::string Question2;
     std::string Question3;
     
+
     TopicVocabulary* topic;
     std::string answer;
 
@@ -20,6 +21,8 @@ public:
         this->Question3 = "Nghe và điền từ vào chỗ trống?";
 
         topic = t;
+        this->score = 0;
+        
     }
     int getVocabulary(){
         while(1){
