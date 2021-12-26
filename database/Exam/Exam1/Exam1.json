@@ -15,7 +15,7 @@
          "C"
       ],
       "audio": [
-          "Part 1.wav"
+          "Part 1.mp3"
       ]
    },
    {
@@ -36,7 +36,7 @@
          "C"
       ],
       "audio": [
-        "Part 2.wav"
+        "Part 2.mp3"
       ]
    },
    {
@@ -121,9 +121,9 @@
          "B"
       ],
       "audio": [
-        "Part 3 8-10.wav",
-        "Part 3 11-13.wav",
-        "Part 3 14-16.wav"
+        "Part 3 8-10.mp3",
+        "Part 3 11-13.mp3",
+        "Part 3 14-16.mp3"
       ]
    },
    {
@@ -208,9 +208,9 @@
          "C"
       ],
       "audio": [
-        "Part 4 17-19.wav",
-        "Part 4 20-22.wav",
-        "Part 4 23-25.wav"
+        "Part 4 17-19.mp3",
+        "Part 4 20-22.mp3",
+        "Part 4 23-25.mp3"
       ]
 
    },

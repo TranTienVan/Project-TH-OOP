@@ -9,6 +9,8 @@
 #include"./dictionary/dictionary.h"
 #include"FormGame.h"
 #include"./exam/exam.h"
+#include"FormAllExam.h"
+
 namespace source {
 
 	using namespace System;
@@ -528,7 +530,10 @@ namespace source {
 		openChildForm(formTopicGame);
 	}
 	private: System::Void btnExam_Click(System::Object^ sender, System::EventArgs^ e) {
-		
+		labelApp->Text = btnExam->Text;
+
+		FormAllExam^ formExam = gcnew FormAllExam(appExams, panelContent);
+		openChildForm(formExam);
 
 	}
 };

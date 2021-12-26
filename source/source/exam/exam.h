@@ -3,16 +3,20 @@
 #include"../component/component.h"
 #include"part.h"
 #include<fstream>
+#include"time_exam.h"
+#include<sstream>
 
-class Exam : public AppComponent{
+class Exam : public AppComponent{    
 public:
     std::vector<Part> parts;
+    TimeExam time;
+
     Exam() {
 
     }
     Exam(std::string path, int i){
         path += "Exam/";
-
+        time = TimeExam(0, 0);
         std::fstream f(path+ "Exam" + std::to_string(i) + "/Exam" + std::to_string(i) + ".json", std::ios::in);
         Json::Value actualJson;
         Json::Reader reader;
@@ -44,4 +48,13 @@ public:
 
         return nums;
     }
+
+    void StartExam(){
+        this->time.Start();
+    }
+
+    void updateAnswer(std::string ans, int index,int i, int j){
+        this->parts[index].updatePart(ans, i, j);
+    }
+
 };

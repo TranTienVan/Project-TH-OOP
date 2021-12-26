@@ -93,6 +93,12 @@
     <ClCompile Include="FormExam.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FormAllExam.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FormScoreExam.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="user\user.h">
@@ -192,6 +198,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="FormExam.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="exam\time_exam.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FormAllExam.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FormScoreExam.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

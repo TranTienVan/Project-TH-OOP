@@ -117,6 +117,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <Reference Include="AxInterop.WMPLib.1.0">
+      <HintPath>..\x64\Debug\AxInterop.WMPLib.1.0.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.WMPLib.1.0">
+      <HintPath>..\x64\Debug\Interop.WMPLib.1.0.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -126,6 +132,7 @@
   <ItemGroup>
     <ClCompile Include="app.cpp" />
     <ClCompile Include="dictionary\dictionary.cpp" />
+    <ClCompile Include="FormAllExam.cpp" />
     <ClCompile Include="FormContentGrammar.cpp" />
     <ClCompile Include="FormContentVocabulary.cpp" />
     <ClCompile Include="FormDictionary.cpp" />
@@ -135,6 +142,7 @@
     <ClCompile Include="FormHome.cpp" />
     <ClCompile Include="FormLogin.cpp" />
     <ClCompile Include="FormMatrixWordGame.cpp" />
+    <ClCompile Include="FormScoreExam.cpp" />
     <ClCompile Include="FormTopicGrammar.cpp" />
     <ClCompile Include="FormTopicVocabulary.cpp" />
     <ClCompile Include="FormTraditionalGame.cpp" />
@@ -161,6 +169,10 @@
     <ClInclude Include="dictionary\ViToEn.h" />
     <ClInclude Include="exam\exam.h" />
     <ClInclude Include="exam\part.h" />
+    <ClInclude Include="exam\time_exam.h" />
+    <ClInclude Include="FormAllExam.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="FormContentGrammar.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -186,6 +198,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="FormMatrixWordGame.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="FormScoreExam.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="FormTopicGrammar.h">
@@ -222,6 +237,9 @@
     <EmbeddedResource Include="app.resx">
       <DependentUpon>app.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormAllExam.resx">
+      <DependentUpon>FormAllExam.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormContentGrammar.resx">
       <DependentUpon>FormContentGrammar.h</DependentUpon>
     </EmbeddedResource>
@@ -245,6 +263,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMatrixWordGame.resx">
       <DependentUpon>FormMatrixWordGame.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormScoreExam.resx">
+      <DependentUpon>FormScoreExam.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTopicGrammar.resx">
       <DependentUpon>FormTopicGrammar.h</DependentUpon>
@@ -300,15 +321,6 @@
       <Guid>6bf52a50-394a-11d3-b153-00c04f79faa6</Guid>
       <Lcid>0</Lcid>
       <WrapperTool>tlbimp</WrapperTool>
-      <Isolated>false</Isolated>
-      <EmbedInteropTypes>true</EmbedInteropTypes>
-    </COMReference>
-    <COMReference Include="AxWMPLib.1.0">
-      <WrapperTool>aximp</WrapperTool>
-      <VersionMinor>0</VersionMinor>
-      <VersionMajor>1</VersionMajor>
-      <Guid>6bf52a50-394a-11d3-b153-00c04f79faa6</Guid>
-      <Lcid>0</Lcid>
       <Isolated>false</Isolated>
       <EmbedInteropTypes>true</EmbedInteropTypes>
     </COMReference>
