@@ -2,9 +2,10 @@
 
 #include <string>
 #include <vector>
+
 #include <Json/value.h>
-#include<Json/reader.h>
-#include<Json/writer.h>
+#include <Json/reader.h>
+#include <Json/writer.h>
 
 #include<sstream>
 class Part {
@@ -117,6 +118,30 @@ public:
                 break;
             }
         }
+
+    }
+
+    std::string ToStringAnswer() {
+        std::string res = "";
+        for (int i = 0; i < this->YourResult.size() - 1; ++i) {
+            
+            res += YourResult[i] + " ";
+        }
+
+        res += YourResult[YourResult.size() - 1];
+        return res;
+
+    }
+
+    std::string ToStringAnswer(int a, int b) {
+        std::string res = "";
+        for (int i = a; i < b; ++i) {
+
+            res += YourResult[i] + " ";
+        }
+
+        res += YourResult[b];
+        return res;
 
     }
 };

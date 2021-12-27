@@ -40,8 +40,13 @@ namespace source {
 			this->panelLeft = panelLeft;
 			this->panelRight = panelRight;
 
-			float score = roundoff(test->getScore() * 1.0 / test->getNumberOfQuestion(), 2);
-			this->labelScore->Text = gcnew System::String(std::to_string(score).c_str());
+			float score = roundoff(test->getScore() * 10.0 / test->getNumberOfQuestion(), 2);
+			std::stringstream sscore;
+			sscore << score;
+
+
+			this->labelScore->Text = gcnew System::String(sscore.str().c_str());
+			
 
 			std::string s = ExePath();
 			s = ReplaceAll(s, "\\", "/");
@@ -73,7 +78,7 @@ namespace source {
 			}
 
 			else {
-				this->labelRank->Text = "Xuất sắc";
+				this->labelRank->Text = L"Xuất sắc";
 
 				this->pictureBox1->Image = gcnew System::Drawing::Bitmap(path + L"icon_scared.png");
 				this->pictureBox2->Image = gcnew System::Drawing::Bitmap(path + L"icon_scared.png");

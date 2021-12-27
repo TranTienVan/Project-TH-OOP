@@ -3,6 +3,7 @@
 #include<vector>
 #include <json/json.h>
 #include"../process/process.h"
+
 #include<chrono>
 #include<ctime>
 class Grammar{
@@ -32,5 +33,5 @@ public:
         process.update(value, data);
     }
 
-    void Grammar::addProcess();
+    void addProcess();
 };

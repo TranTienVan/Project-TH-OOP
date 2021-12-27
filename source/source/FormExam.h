@@ -60,10 +60,10 @@ namespace source {
 			index = 0;
 			type = L"part 1";
 
-			this->direction = L"@@ Enter your answer (A, B, C, D) to the Text Box below, each answer separated by one space.\n";
-			this->direction += L"@@ If you don't have answer for each question, enter \"-\" instead.\n";
-			this->direction += L"@@ For example: Question 1: A, Question 2: B, Question 3: C ---> A B C\n";
-			this->direction += L"@@ If you don't have answer for Question 2 ---> A - C\n";
+			this->direction = L"@@ REPLACE THE \"-\" CHARACTER INTO ANY OF (A, B, C, D) TO ANSWER EACH OF QUESTION\n";
+			this->direction += L"@@ THE FIRST \"-\" REPRESENT TO THE FIRST QUESTION AND SO ON...\n";
+			this->direction += L"@@ For example: Question 1: A, Question 2: B, Question 3: \n";
+			this->direction += L"@@   => REPLACE \"- - -\" TO \"A B C\"\n";
 
 			this->btnPicture1->BackColor = System::Drawing::Color::White;
 			this->btnPicture2->BackColor = System::Drawing::Color::White;
@@ -171,6 +171,7 @@ namespace source {
 			// 
 			// panelRight
 			// 
+			this->panelRight->AutoSize = true;
 			this->panelRight->Controls->Add(this->buttonSubmit);
 			this->panelRight->Controls->Add(this->pictureBoxExit);
 			this->panelRight->Controls->Add(this->pictureBoxTurnRight);
@@ -180,9 +181,9 @@ namespace source {
 			this->panelRight->Controls->Add(this->textBoxAnswer);
 			this->panelRight->Controls->Add(this->textQuestion);
 			this->panelRight->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->panelRight->Location = System::Drawing::Point(882, 0);
+			this->panelRight->Location = System::Drawing::Point(887, 0);
 			this->panelRight->Name = L"panelRight";
-			this->panelRight->Size = System::Drawing::Size(977, 1090);
+			this->panelRight->Size = System::Drawing::Size(972, 1090);
 			this->panelRight->TabIndex = 1;
 			// 
 			// buttonSubmit
@@ -221,6 +222,7 @@ namespace source {
 			this->pictureBoxTurnRight->TabIndex = 5;
 			this->pictureBoxTurnRight->TabStop = false;
 			this->pictureBoxTurnRight->Click += gcnew System::EventHandler(this, &FormExam::pictureBoxTurnRight_Click);
+			
 			// 
 			// pictureBoxTurnLeft
 			// 
@@ -233,6 +235,7 @@ namespace source {
 			this->pictureBoxTurnLeft->TabIndex = 5;
 			this->pictureBoxTurnLeft->TabStop = false;
 			this->pictureBoxTurnLeft->Click += gcnew System::EventHandler(this, &FormExam::pictureBoxTurnLeft_Click);
+			
 			// 
 			// labelPart
 			// 
@@ -266,6 +269,7 @@ namespace source {
 			this->textBoxAnswer->TabIndex = 2;
 			this->textBoxAnswer->Text = L"ABCEDFG";
 			this->textBoxAnswer->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->textBoxAnswer->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &FormExam::textBoxAnswer_KeyDown);
 			// 
 			// textQuestion
 			// 
@@ -277,6 +281,7 @@ namespace source {
 			// 
 			// panelLeft
 			// 
+			this->panelLeft->AutoSize = true;
 			this->panelLeft->Controls->Add(this->btnPicture2);
 			this->panelLeft->Controls->Add(this->btnPicture1);
 			this->panelLeft->Controls->Add(this->panelAudio);
@@ -284,7 +289,7 @@ namespace source {
 			this->panelLeft->Dock = System::Windows::Forms::DockStyle::Left;
 			this->panelLeft->Location = System::Drawing::Point(0, 0);
 			this->panelLeft->Name = L"panelLeft";
-			this->panelLeft->Size = System::Drawing::Size(882, 1090);
+			this->panelLeft->Size = System::Drawing::Size(887, 1090);
 			this->panelLeft->TabIndex = 0;
 			// 
 			// btnPicture2
@@ -340,6 +345,8 @@ namespace source {
 			this->pictureBoxImage->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBoxImage->TabIndex = 0;
 			this->pictureBoxImage->TabStop = false;
+			this->pictureBoxImage->MouseLeave += gcnew System::EventHandler(this, &FormExam::pictureBoxImage_MouseLeave);
+			this->pictureBoxImage->MouseHover += gcnew System::EventHandler(this, &FormExam::pictureBoxImage_MouseHover);
 			// 
 			// FormExam
 			// 
@@ -351,8 +358,10 @@ namespace source {
 			this->Name = L"FormExam";
 			this->Text = L"FormExam";
 			this->panelExam->ResumeLayout(false);
+			this->panelExam->PerformLayout();
 			this->panelRight->ResumeLayout(false);
 			this->panelRight->PerformLayout();
+			
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxExit))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxTurnRight))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxTurnLeft))->EndInit();
@@ -360,7 +369,7 @@ namespace source {
 			this->panelAudio->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->audioListening))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxImage))->EndInit();
-			this->ResumeLayout(false);
+			ResumeLayout(false);
 
 		}
 #pragma endregion
@@ -436,6 +445,7 @@ namespace source {
 			this->textBoxAnswer->Text = L"";
 			this->audioListening->Ctlcontrols->stop();
 
+			this->textBoxAnswer->Text = gcnew System::String(this->test->parts[0].ToStringAnswer().c_str());
 		}
 
 		else if (type == L"part 2") {
@@ -459,6 +469,8 @@ namespace source {
 
 			this->textBoxAnswer->Text = L"";
 			this->audioListening->Ctlcontrols->stop();
+
+			this->textBoxAnswer->Text = gcnew System::String(this->test->parts[1].ToStringAnswer().c_str());
 		}
 
 		else if (type == L"part 3") {
@@ -487,6 +499,8 @@ namespace source {
 			this->textQuestion->Text = cnt;
 			this->textBoxAnswer->Text = L"";
 			this->audioListening->Ctlcontrols->stop();
+
+			this->textBoxAnswer->Text = gcnew System::String(this->test->parts[2].ToStringAnswer(index *3, index *3 + 2).c_str());
 		}
 
 		else if (type == L"part 4") {
@@ -513,6 +527,7 @@ namespace source {
 			this->textQuestion->Text = cnt;
 			this->textBoxAnswer->Text = L"";
 			this->audioListening->Ctlcontrols->stop();
+			this->textBoxAnswer->Text = gcnew System::String(this->test->parts[3].ToStringAnswer(index * 3, index * 3 + 2).c_str());
 		}
 
 		else if (type == L"part 5") {
@@ -539,7 +554,7 @@ namespace source {
 			this->textQuestion->Text = cnt;
 			this->textBoxAnswer->Text = L"";
 
-
+			this->textBoxAnswer->Text = gcnew System::String(this->test->parts[4].ToStringAnswer().c_str());
 		}
 
 		else if (type == L"part 6") {
@@ -558,7 +573,7 @@ namespace source {
 			for (int k = 0; k < index; ++k) {
 				t += this->test->parts[5].number[k];
 			}
-
+			this->textBoxAnswer->Text = gcnew System::String(this->test->parts[5].ToStringAnswer(t, t + this->test->parts[5].number[index] - 1).c_str());
 			for (int i = t; i < t + this->test->parts[5].number[index]; ++i) {
 				cnt += gcnew System::String(this->test->parts[5].question[i].c_str()) + "\n";
 				for each (std::string ans in this->test->parts[5].answer[i]) {
@@ -569,7 +584,7 @@ namespace source {
 
 			cnt += this->direction;
 			this->textQuestion->Text = cnt;
-			this->textBoxAnswer->Text = L"";
+			
 
 		}
 
@@ -606,7 +621,7 @@ namespace source {
 			for (int k = 0; k < index; ++k) {
 				t += this->test->parts[6].number[k];
 			}
-
+			this->textBoxAnswer->Text = gcnew System::String(this->test->parts[6].ToStringAnswer(t, t + this->test->parts[6].number[index] - 1).c_str());
 			for (int i = t; i < t + this->test->parts[6].number[index]; ++i) {
 				cnt += gcnew System::String(this->test->parts[6].question[i].c_str()) + "\n";
 				for each (std::string ans in this->test->parts[6].answer[i]) {
@@ -617,7 +632,7 @@ namespace source {
 
 			cnt += this->direction;
 			this->textQuestion->Text = cnt;
-			this->textBoxAnswer->Text = L"";
+			
 		}
 	}
 	private: System::Void btnPart_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -651,6 +666,7 @@ private: System::Void btnPicture2_Click(System::Object^ sender, System::EventArg
 	if (type == L"part 1") {
 		this->pictureBoxImage->Image = gcnew System::Drawing::Bitmap(path + gcnew System::String(this->test->parts[0].image[1][0].c_str()));
 	}
+
 
 	else {
 		this->pictureBoxImage->Image = gcnew System::Drawing::Bitmap(path + gcnew System::String(this->test->parts[6].image[index][1].c_str()));
@@ -693,16 +709,15 @@ std::string reduce(const std::string& str)
 
 	return result;
 }
-
-private: System::Void pictureBoxTurnLeft_Click(System::Object^ sender, System::EventArgs^ e) {
+void TurnLeft() {
 	if (type == L"part 1") {
-
+		this->test->updateAnswer(reduce(toStandardString(this->textBoxAnswer->Text)), 0, 0, this->test->parts[0].question.size() - 1);
 	}
 
 	else if (type == L"part 2") {
 		type = L"part 1";
-		this->test->updateAnswer(reduce(toStandardString(this->textBoxAnswer->Text)), 1, 0, 1);
-		
+		this->test->updateAnswer(reduce(toStandardString(this->textBoxAnswer->Text)), 1, 0, this->test->parts[1].question.size() - 1);
+
 	}
 
 	else if (type == L"part 3") {
@@ -713,12 +728,12 @@ private: System::Void pictureBoxTurnLeft_Click(System::Object^ sender, System::E
 		}
 
 		else {
-			this->test->updateAnswer(reduce(toStandardString(this->textBoxAnswer->Text)), 2, index*3, index*3 + 2);
+			this->test->updateAnswer(reduce(toStandardString(this->textBoxAnswer->Text)), 2, index * 3, index * 3 + 2);
 			index -= 1;
-			
+
 		}
-		
-		
+
+
 	}
 	else if (type == L"part 4") {
 		if (index == 0) {
@@ -728,7 +743,7 @@ private: System::Void pictureBoxTurnLeft_Click(System::Object^ sender, System::E
 		}
 
 		else {
-			this->test->updateAnswer(reduce(toStandardString(this->textBoxAnswer->Text)), 3, index * 3, index*3 + 2);
+			this->test->updateAnswer(reduce(toStandardString(this->textBoxAnswer->Text)), 3, index * 3, index * 3 + 2);
 			index -= 1;
 		}
 	}
@@ -743,7 +758,7 @@ private: System::Void pictureBoxTurnLeft_Click(System::Object^ sender, System::E
 		if (index == 0) {
 			type = L"part 5";
 			this->test->updateAnswer(reduce(toStandardString(this->textBoxAnswer->Text)), 5, 0, this->test->parts[5].number[0] - 1);
-			
+
 		}
 
 		else {
@@ -774,8 +789,11 @@ private: System::Void pictureBoxTurnLeft_Click(System::Object^ sender, System::E
 	}
 	LoadQuestion();
 }
-private: System::Void pictureBoxTurnRight_Click(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void pictureBoxTurnLeft_Click(System::Object^ sender, System::EventArgs^ e) {
+	TurnLeft();
+}
 
+void TurnRight() {
 	if (type == L"part 1") {
 		type = L"part 2";
 		this->test->updateAnswer(reduce(toStandardString(this->textBoxAnswer->Text)), 0, 0, this->test->parts[0].question.size() - 1);
@@ -834,7 +852,7 @@ private: System::Void pictureBoxTurnRight_Click(System::Object^ sender, System::
 		}
 
 		else {
-			
+
 			this->test->updateAnswer(reduce(toStandardString(this->textBoxAnswer->Text)), 5, t, t + this->test->parts[5].number[index] - 1);
 			index += 1;
 		}
@@ -846,17 +864,21 @@ private: System::Void pictureBoxTurnRight_Click(System::Object^ sender, System::
 			t += this->test->parts[6].number[k];
 		}
 		if (index == this->test->parts[6].number.size() - 1) {
-			
+			this->test->updateAnswer(reduce(toStandardString(this->textBoxAnswer->Text)), 6, t, t + this->test->parts[6].number[index] - 1);
 		}
 
 		else {
 
-			this->test->updateAnswer(reduce(toStandardString(this->textBoxAnswer->Text)), 6, t, t + this->test->parts[5].number[index] - 1);
+			this->test->updateAnswer(reduce(toStandardString(this->textBoxAnswer->Text)), 6, t, t + this->test->parts[6].number[index] - 1);
 			index += 1;
 		}
 	}
 
 	LoadQuestion();
+}
+private: System::Void pictureBoxTurnRight_Click(System::Object^ sender, System::EventArgs^ e) {
+	TurnRight();
+	
 }	
 	   System::Windows::Forms::Form^ activeForm;
 
@@ -946,12 +968,39 @@ private: System::Void buttonSubmit_Click(System::Object^ sender, System::EventAr
 		for (int k = 0; k < index; ++k) {
 			t += this->test->parts[6].number[k];
 		}
-		this->test->updateAnswer(reduce(toStandardString(this->textBoxAnswer->Text)), 6, t, t + this->test->parts[5].number[index] - 1);
+		this->test->updateAnswer(reduce(toStandardString(this->textBoxAnswer->Text)), 6, t, t + this->test->parts[6].number[index] - 1);
 
 	}
 
 	FormScoreExam^ sc = gcnew FormScoreExam(this->test, indexOfTest, this->panelLeft, this->panelRight);
 	openChildForm(sc);
+}
+
+private: void pictureBoxImage_MouseHover(System::Object^ sender, System::EventArgs^ e) {
+	this->pictureBoxImage->Size = System::Drawing::Size(882 * 2, 878);
+	this->AutoScaleDimensions = System::Drawing::SizeF(240, 240);
+}
+private: void pictureBoxImage_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+	
+	this->pictureBoxImage->Size = System::Drawing::Size(882, 878);
+	this->textQuestion->Size = System::Drawing::Size(883, 862);
+	this->AutoScaleDimensions = System::Drawing::SizeF(240, 240);
+}
+
+
+
+private: System::Void textBoxAnswer_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
+	if (e->Shift) {
+		if (e->KeyCode == Keys::Enter) {
+			TurnLeft();
+			return;
+		}
+	}
+	if (e->KeyCode == Keys::Enter) {
+		TurnRight();
+	}
+	
+
 }
 };
 }
