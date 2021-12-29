@@ -3,17 +3,21 @@
 #include<vector>
 
 class TimeExam{
-public:
+private:
     int m;
     int s;
-
+public:
     TimeExam(){
-
+        this->m = 0;
+        this->s = 0;
     }
 
     TimeExam(int m, int s){
         this->m = m;
         this->s = s;
+    }
+    bool isTimesUp(){
+        return this->m == 0 && this->s == 0;
     }
 
     std::string toString(){

@@ -72,7 +72,8 @@ namespace source {
 			std::string s = ExePath();
 			this->indexOfTest = k;
 			s = ReplaceAll(s, "\\", "/");
-			s = ReplaceAll(s, "/source/x64/Debug", "/database/Exam/Exam");
+			// s = ReplaceAll(s, "/source/x64/Debug", "/database/Exam/Exam");
+			s = ReplaceAll(s, "/release/E-Learning", "/database/Exam/Exam");
 			s += std::to_string(k) + "/";
 
 			this->path = gcnew System::String(s.c_str());
@@ -641,9 +642,19 @@ namespace source {
 
 	private: System::Void time_Tick(System::Object^ sender, System::EventArgs^ e) {
 
-		this->test->time.decrease(1);
+		if (this->test->time.isTimesUp()) {
+			Submit();
+			delete this->labelTime;
+			this->labelTime = nullptr;
 
-		this->labelTime->Text = gcnew System::String(this->test->time.toString().c_str());
+		}
+
+		else {
+			this->test->time.decrease(1);
+
+			this->labelTime->Text = gcnew System::String(this->test->time.toString().c_str());
+		}
+		
 
 	}
 
@@ -929,10 +940,9 @@ private: System::Void pictureBoxExit_Click(System::Object^ sender, System::Event
 }
 
 
-private: System::Void buttonSubmit_Click(System::Object^ sender, System::EventArgs^ e) {
-
+void Submit() {
 	if (type == L"part 1") {
-		
+
 		this->test->updateAnswer(reduce(toStandardString(this->textBoxAnswer->Text)), 0, 0, this->test->parts[0].question.size() - 1);
 	}
 
@@ -941,17 +951,17 @@ private: System::Void buttonSubmit_Click(System::Object^ sender, System::EventAr
 	}
 	else if (type == L"part 3") {
 		this->test->updateAnswer(reduce(toStandardString(this->textBoxAnswer->Text)), 2, index * 3, index * 3 + 2);
-		
+
 	}
 	else if (type == L"part 4") {
 		this->test->updateAnswer(reduce(toStandardString(this->textBoxAnswer->Text)), 3, index * 3, index * 3 + 2);
-		
+
 	}
 
 	else if (type == L"part 5") {
-		
+
 		this->test->updateAnswer(reduce(toStandardString(this->textBoxAnswer->Text)), 4, 0, this->test->parts[4].result.size() - 1);
-		
+
 	}
 
 	else if (type == L"part 6") {
@@ -974,6 +984,11 @@ private: System::Void buttonSubmit_Click(System::Object^ sender, System::EventAr
 
 	FormScoreExam^ sc = gcnew FormScoreExam(this->test, indexOfTest, this->panelLeft, this->panelRight);
 	openChildForm(sc);
+}
+
+private: System::Void buttonSubmit_Click(System::Object^ sender, System::EventArgs^ e) {
+	Submit();
+	
 }
 
 private: void pictureBoxImage_MouseHover(System::Object^ sender, System::EventArgs^ e) {

@@ -55,6 +55,9 @@ namespace source {
 			openChildForm(formHome);
 
 			me = new User(obj);
+			this->labelName->Text = L"Name : " + gcnew System::String(me->getUserName().c_str());
+			this->labelScore->Text = L"Score : " + gcnew System::String(std::to_string(me->score / 10).c_str());
+
 
 			appTopics = new Topic("../../database/");
 			appTopics->initTopics("../../database/", obj);
@@ -70,12 +73,15 @@ namespace source {
 			appGames = new Game();
 			appGames->initGame(appTopics->getChildren(), appEnToVi, obj["game"]);
 
-			appExams = new Exam*[2];
+			appExams = new Exam*[10];
 
 			for (int i = 0; i < 2; ++i) {
 				appExams[i] = new Exam("../../database/", i + 1);
 			}
 			
+			for (int i = 2; i < 10; ++i) {
+				appExams[i] = new Exam();
+			}
 
 		}
 
@@ -121,6 +127,8 @@ namespace source {
 	private: System::Windows::Forms::Panel^ panelLabel;
 	private: System::Windows::Forms::Panel^ panelContent;
 	private: System::Windows::Forms::Button^ btnGame;
+	private: System::Windows::Forms::Label^ labelScore;
+	private: System::Windows::Forms::Label^ labelName;
 
 
 
@@ -151,7 +159,10 @@ namespace source {
 			   this->labelApp = (gcnew System::Windows::Forms::Label());
 			   this->panelLabel = (gcnew System::Windows::Forms::Panel());
 			   this->panelContent = (gcnew System::Windows::Forms::Panel());
+			   this->labelName = (gcnew System::Windows::Forms::Label());
+			   this->labelScore = (gcnew System::Windows::Forms::Label());
 			   this->options->SuspendLayout();
+			   this->inforUser->SuspendLayout();
 			   this->panelLabel->SuspendLayout();
 			   this->SuspendLayout();
 			   // 
@@ -219,6 +230,7 @@ namespace source {
 			   // 
 			   this->options->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(192)),
 				   static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			   this->options->Controls->Add(this->labelScore);
 			   this->options->Controls->Add(this->btnExit);
 			   this->options->Controls->Add(this->btnExam);
 			   this->options->Controls->Add(this->btnDictionary);
@@ -283,6 +295,7 @@ namespace source {
 			   // 
 			   this->inforUser->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(192)),
 				   static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			   this->inforUser->Controls->Add(this->labelName);
 			   this->inforUser->Dock = System::Windows::Forms::DockStyle::Top;
 			   this->inforUser->Location = System::Drawing::Point(0, 0);
 			   this->inforUser->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
@@ -321,6 +334,28 @@ namespace source {
 			   this->panelContent->Size = System::Drawing::Size(1893, 1092);
 			   this->panelContent->TabIndex = 5;
 			   // 
+			   // labelName
+			   // 
+			   this->labelName->AutoSize = true;
+			   this->labelName->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->labelName->Location = System::Drawing::Point(25, 58);
+			   this->labelName->Name = L"labelName";
+			   this->labelName->Size = System::Drawing::Size(172, 46);
+			   this->labelName->TabIndex = 0;
+			   this->labelName->Text = L"username";
+			   // 
+			   // labelScore
+			   // 
+			   this->labelScore->AutoSize = true;
+			   this->labelScore->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->labelScore->Location = System::Drawing::Point(59, 1136);
+			   this->labelScore->Name = L"labelScore";
+			   this->labelScore->Size = System::Drawing::Size(138, 46);
+			   this->labelScore->TabIndex = 6;
+			   this->labelScore->Text = L"Level : ";
+			   // 
 			   // app
 			   // 
 			   this->AutoScaleDimensions = System::Drawing::SizeF(240, 240);
@@ -337,6 +372,9 @@ namespace source {
 			   this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			   this->Text = L"app";
 			   this->options->ResumeLayout(false);
+			   this->options->PerformLayout();
+			   this->inforUser->ResumeLayout(false);
+			   this->inforUser->PerformLayout();
 			   this->panelLabel->ResumeLayout(false);
 			   this->panelLabel->PerformLayout();
 			   this->ResumeLayout(false);
@@ -511,7 +549,9 @@ namespace source {
 		this->appTopics->updateTopic(me->obj);
 		this->appGames->updateGame(me->obj);
 		this->me->updateScore(this->appTopics, this->appGames);
-
+		for (int i = 0; i < 10; ++i) {
+			this->appExams[i]->updateExam(me->obj, i);
+		}
 
 		this->me->obj["score"] = this->me->score;
 

@@ -209,6 +209,9 @@
     <ClInclude Include="FormScoreExam.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="exam\process_exam.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="pictureTopic1.Image.png">

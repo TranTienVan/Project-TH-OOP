@@ -169,6 +169,7 @@
     <ClInclude Include="dictionary\ViToEn.h" />
     <ClInclude Include="exam\exam.h" />
     <ClInclude Include="exam\part.h" />
+    <ClInclude Include="exam\process_exam.h" />
     <ClInclude Include="exam\time_exam.h" />
     <ClInclude Include="FormAllExam.h">
       <FileType>CppForm</FileType>
@@ -313,17 +314,6 @@
     <Image Include="..\..\data\Vocabulary\Topic\transport.png" />
     <Image Include="..\..\data\Vocabulary\Topic\travel.png" />
     <Image Include="pictureTopic1.Image.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <COMReference Include="WMPLib.1.0">
-      <VersionMinor>0</VersionMinor>
-      <VersionMajor>1</VersionMajor>
-      <Guid>6bf52a50-394a-11d3-b153-00c04f79faa6</Guid>
-      <Lcid>0</Lcid>
-      <WrapperTool>tlbimp</WrapperTool>
-      <Isolated>false</Isolated>
-      <EmbedInteropTypes>true</EmbedInteropTypes>
-    </COMReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -36,11 +36,13 @@ namespace source {
 			//
 			//TODO: Add the constructor code here
 			//
-
+			this->test = test;
+			
 			this->panelLeft = panelLeft;
 			this->panelRight = panelRight;
 
 			float score = roundoff(test->getScore() * 10.0 / test->getNumberOfQuestion(), 2);
+			this->test->updateProcess(score);
 			std::stringstream sscore;
 			sscore << score;
 
@@ -50,8 +52,8 @@ namespace source {
 
 			std::string s = ExePath();
 			s = ReplaceAll(s, "\\", "/");
-			s = ReplaceAll(s, "/source/x64/Debug", "/assets/");
-
+			// s = ReplaceAll(s, "/source/x64/Debug", "/assets/");
+			s = ReplaceAll(s, "/release/E-Learning", "/assets/");
 			this->path = gcnew System::String(s.c_str());
 			if (score < 5) {
 				this->labelRank->Text = L"Yếu";
@@ -110,6 +112,10 @@ namespace source {
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	private: System::Windows::Forms::Label^ labelScore;
 	private: System::Windows::Forms::PictureBox^ pictureBoxExit;
+
+
+
+
 	protected:
 
 	private:
@@ -157,7 +163,7 @@ namespace source {
 			// 
 			this->pictureBoxExit->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->pictureBoxExit->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxExit.Image")));
-			this->pictureBoxExit->Location = System::Drawing::Point(847, 258);
+			this->pictureBoxExit->Location = System::Drawing::Point(840, 213);
 			this->pictureBoxExit->Name = L"pictureBoxExit";
 			this->pictureBoxExit->Size = System::Drawing::Size(141, 140);
 			this->pictureBoxExit->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -169,7 +175,7 @@ namespace source {
 			// 
 			this->btnCheck->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btnCheck->Location = System::Drawing::Point(766, 741);
+			this->btnCheck->Location = System::Drawing::Point(772, 694);
 			this->btnCheck->Name = L"btnCheck";
 			this->btnCheck->Size = System::Drawing::Size(293, 76);
 			this->btnCheck->TabIndex = 3;
@@ -182,7 +188,7 @@ namespace source {
 			this->labelRank->AutoSize = true;
 			this->labelRank->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->labelRank->Location = System::Drawing::Point(766, 594);
+			this->labelRank->Location = System::Drawing::Point(759, 549);
 			this->labelRank->Name = L"labelRank";
 			this->labelRank->Size = System::Drawing::Size(293, 76);
 			this->labelRank->TabIndex = 2;
@@ -213,7 +219,7 @@ namespace source {
 			this->labelScore->AutoSize = true;
 			this->labelScore->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 35, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->labelScore->Location = System::Drawing::Point(776, 420);
+			this->labelScore->Location = System::Drawing::Point(769, 375);
 			this->labelScore->Name = L"labelScore";
 			this->labelScore->Size = System::Drawing::Size(283, 132);
 			this->labelScore->TabIndex = 0;
@@ -286,9 +292,13 @@ private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArg
 private: System::Void btnCheck_Click(System::Object^ sender, System::EventArgs^ e) {
 	std::string s = ExePath();
 	s = ReplaceAll(s, "\\", "/");
-	s = ReplaceAll(s, "/source/x64/Debug", "/database/Exam/Exam");
+	// s = ReplaceAll(s, "/source/x64/Debug", "/database/Exam/Exam");
+	s = ReplaceAll(s, "/release/E-Learning", "/database/Exam/Exam");
 	s += std::to_string(k) + "/Key.pdf";
 	system(s.c_str());
 }
+
+
+
 };
 }
