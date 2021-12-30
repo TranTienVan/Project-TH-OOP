@@ -9,7 +9,7 @@ public:
     std::string Question1;
     std::string Question2;
     std::string Question3;
-    
+    int prev;
 
     TopicVocabulary* topic;
     std::string answer;
@@ -22,13 +22,18 @@ public:
 
         topic = t;
         this->score = 0;
+        this->prev = 0;
+
+        
         
     }
     int getVocabulary(){
+        int k;
         while(1){
-            int k = rand() % this->topic->getVocabs().size();
+            
+            k = rand() % this->topic->getVocabs().size();
 
-            if (this->topic->getVocabs()[k].getAudio() != "" && this->topic->getVocabs()[k].getImage() != ""){
+            if (this->topic->getVocabs()[k].getAudio() != "" && this->topic->getVocabs()[k].getImage() != "" && k != prev){
                 return k;
             }
 
@@ -38,47 +43,74 @@ public:
 
     }
 
-    std::vector<std::string> getAnswer(int id){
+    std::vector<std::string> getAnswerForQuestion1(){
         
-        std::vector<int> nums;
+        std::vector<int> nums(3, -1);
         std::vector<std::string> answer;
-        while (1){
-            int k = rand() % this->topic->getVocabs().size();
+        int i = 0, k;
+        while (i < nums.size()){
+            
+            k = rand() % this->topic->getVocabs().size();
 
-            if (find(nums.begin(), nums.end(), k) == nums.end()){
-                nums.push_back(k);
-                if (id <= 2 && this->topic->getVocabs()[k].getDefinition() != "")
-                    answer.push_back(this->topic->getVocabs()[k].getDefinition());
+            if (find(nums.begin(), nums.end(), k) == nums.end() && this->topic->getVocabs()[k].getDefinition() != ""){
+                nums[i++] = k;
+                
+                answer.push_back(this->topic->getVocabs()[k].getDefinition());
                 
             }
-            if (nums.size() == 3){
-                break;
+            
+        }
+
+        return answer;
+    }
+
+    std::vector<std::string> getAnswerForQuestion2(){
+        
+        std::vector<int> nums(3, -1);
+        std::vector<std::string> answer;
+        int i = 0, k;
+        while (i < nums.size()){
+            
+            k = rand() % this->topic->getVocabs().size();
+
+            if (find(nums.begin(), nums.end(), k) == nums.end() && this->topic->getVocabs()[k].getWord() != ""){
+                nums[i++] = k;
+                
+                answer.push_back(this->topic->getVocabs()[k].getWord());
+                
             }
+            
         }
 
         return answer;
     }
     std::vector<std::string> getQuestion(){
-        srand(time(0));
+        
         int id = rand() % 3;
         int i = getVocabulary();
+        this->prev = i;
         std::vector<std::string> res;
         if (id == 1){
             int id_answer = rand()%4;
-            res = getAnswer(id);
-            res.insert(res.begin() + id_answer, this->topic->getVocabs()[i].getDefinition());
+            res = getAnswerForQuestion1();
+            res.push_back(this->topic->getVocabs()[i].getDefinition());
+            swap(res[id_answer], res[3]);
             res.push_back(this->Question1 + this->topic->getVocabs()[i].getWord());
             res.push_back(this->topic->getVocabs()[i].getDefinition());
+            
             res.push_back(this->topic->getVocabs()[i].getWord());
             
         }
 
         else if (id == 2){
             int id_answer = rand()%4;
-            res = getAnswer(id);
-            res.insert(res.begin() + id_answer, this->topic->getVocabs()[i].getDefinition());
-            res.push_back(this->Question1 + this->topic->getVocabs()[i].getWord());
-            res.push_back(this->topic->getVocabs()[i].getDefinition());
+            res = getAnswerForQuestion2();
+            res.push_back(this->topic->getVocabs()[i].getWord());
+
+            swap(res[id_answer], res[3]);
+            res.push_back(this->Question2 + this->topic->getVocabs()[i].getDefinition());
+            
+            res.push_back(this->topic->getVocabs()[i].getWord());
             res.push_back(this->topic->getVocabs()[i].getWord());   
         }
 

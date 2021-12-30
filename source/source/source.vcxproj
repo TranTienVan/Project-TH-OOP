@@ -132,27 +132,11 @@
   <ItemGroup>
     <ClCompile Include="app.cpp" />
     <ClCompile Include="dictionary\dictionary.cpp" />
-    <ClCompile Include="FormAllExam.cpp" />
-    <ClCompile Include="FormContentGrammar.cpp" />
-    <ClCompile Include="FormContentVocabulary.cpp" />
-    <ClCompile Include="FormDictionary.cpp" />
-    <ClCompile Include="FormExam.cpp" />
-    <ClCompile Include="FormGame.cpp" />
-    <ClCompile Include="FormGrammar.cpp" />
     <ClCompile Include="FormHome.cpp" />
-    <ClCompile Include="FormLogin.cpp" />
-    <ClCompile Include="FormMatrixWordGame.cpp" />
-    <ClCompile Include="FormScoreExam.cpp" />
-    <ClCompile Include="FormTopicGrammar.cpp" />
-    <ClCompile Include="FormTopicVocabulary.cpp" />
-    <ClCompile Include="FormTraditionalGame.cpp" />
-    <ClCompile Include="FormVocabulary.cpp" />
     <ClCompile Include="game\game.cpp" />
     <ClCompile Include="grammar\grammar.cpp" />
     <ClCompile Include="jsoncpp.cpp" />
-    <ClCompile Include="ListWordsGame.cpp" />
     <ClCompile Include="process\process.cpp" />
-    <ClCompile Include="Temp.cpp" />
     <ClCompile Include="topic\topic.cpp" />
     <ClCompile Include="topic\topic_grammar.cpp" />
     <ClCompile Include="topic\topic_vocabulary.cpp" />
@@ -225,9 +209,6 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="process\process.h" />
-    <ClInclude Include="Temp.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
     <ClInclude Include="topic\topic.h" />
     <ClInclude Include="topic\topic_grammar.h" />
     <ClInclude Include="topic\topic_vocabulary.h" />
@@ -282,9 +263,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ListWordsGame.resx">
       <DependentUpon>ListWordsGame.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Temp.resx">
-      <DependentUpon>Temp.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

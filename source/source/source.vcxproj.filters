@@ -42,61 +42,13 @@
     <ClCompile Include="process\process.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FormTopicVocabulary.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="FormHome.cpp">
       <Filter>Header Files</Filter>
-    </ClCompile>
-    <ClCompile Include="FormVocabulary.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="FormContentVocabulary.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="FormTopicGrammar.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="FormGrammar.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="FormLogin.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Temp.cpp">
-      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="game\game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FormTraditionalGame.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="FormDictionary.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="dictionary\dictionary.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="FormGame.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ListWordsGame.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="FormContentGrammar.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="FormMatrixWordGame.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="FormExam.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="FormAllExam.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="FormScoreExam.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -141,9 +93,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="FormLogin.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Temp.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="component\component.h">

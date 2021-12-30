@@ -644,8 +644,7 @@ namespace source {
 
 		if (this->test->time.isTimesUp()) {
 			Submit();
-			delete this->labelTime;
-			this->labelTime = nullptr;
+			this->labelTime->Enabled = false;
 
 		}
 

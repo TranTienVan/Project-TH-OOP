@@ -1,5 +1,5 @@
 ﻿#pragma once
-#include"Temp.h"
+#include"app.h"
 
 namespace source {
 
@@ -276,6 +276,7 @@ namespace source {
 			this->panelExecute->ResumeLayout(false);
 			this->panelExecute->PerformLayout();
 			this->panel2->ResumeLayout(false);
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->ResumeLayout(false);
 
 		}
@@ -313,6 +314,8 @@ namespace source {
 			Marshal::FreeHGlobal(IntPtr((void*)chars));
 			return os;
 		}
+
+		System::Windows::Forms::Form^ activeForm;
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		if (activePage != 0) {
 			activePage = 0;
@@ -339,12 +342,27 @@ namespace source {
 
 					if (ToHex(SHF(pass)) == actualJson[i]["password"].asString()) {
 
-
-						Temp^ software = gcnew Temp(actualJson[i]);
-						software->BringToFront();
-
-						software->Show();
-						this->Hide();
+						
+						app^ software = gcnew app(actualJson[i]);
+						this->labelEmail->Visible = false;
+						this->labelPassword->Visible = false;
+						this->labelUsername->Visible = false;
+						this->labelRetypePassword->Visible = false;
+						this->loginLabel->Visible = false;
+						this->textEmail->Visible = false;
+						this->textPasword->Visible = false;
+						this->textUsername->Visible = false;
+						this->txtRetypePassword->Visible = false;
+						this->button1->Visible = false;
+						this->button2->Visible = false;
+						this->button3->Visible = false;
+						this->AutoScaleDimensions = System::Drawing::SizeF(10, 17);
+						this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Dpi;
+						this->ClientSize = System::Drawing::Size(850, 500);
+						this->CenterToParent();
+						this->ResumeLayout();
+						openChildForm(software);
+						
 						return;
 
 
@@ -358,6 +376,23 @@ namespace source {
 			System::Windows::Forms::MessageBox::Show(L"Tên đăng nhập hoặc mật khẩu không đúng!");
 		}
 		
+
+	}
+		   
+	private: void openChildForm(System::Windows::Forms::Form^ form) {
+		if (activeForm != nullptr) {
+			activeForm->Close();
+		}
+
+		activeForm = form;
+		form->TopLevel = false;
+		form->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+		form->Dock = System::Windows::Forms::DockStyle::Fill;
+		panelExecute->Controls->Add(form);
+		panelExecute->Tag = form;
+		form->BringToFront();
+		form->Show();
+
 
 	}
 private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
