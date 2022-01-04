@@ -47,7 +47,7 @@ namespace source {
 			//TODO: Add the constructor code here
 			//
 
-			
+			this->isStopped = false;
 
 			this->test = test;
 			this->time = gcnew Timer();
@@ -90,6 +90,7 @@ namespace source {
 				delete components;
 			}
 		}
+	private: bool isStopped;
 	private: int indexOfTest;
 	private: System::String^ path;
 	private: System::String^ type;
@@ -223,7 +224,6 @@ namespace source {
 			this->pictureBoxTurnRight->TabIndex = 5;
 			this->pictureBoxTurnRight->TabStop = false;
 			this->pictureBoxTurnRight->Click += gcnew System::EventHandler(this, &FormExam::pictureBoxTurnRight_Click);
-			
 			// 
 			// pictureBoxTurnLeft
 			// 
@@ -236,7 +236,6 @@ namespace source {
 			this->pictureBoxTurnLeft->TabIndex = 5;
 			this->pictureBoxTurnLeft->TabStop = false;
 			this->pictureBoxTurnLeft->Click += gcnew System::EventHandler(this, &FormExam::pictureBoxTurnLeft_Click);
-			
 			// 
 			// labelPart
 			// 
@@ -340,9 +339,9 @@ namespace source {
 			// pictureBoxImage
 			// 
 			this->pictureBoxImage->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxImage.Image")));
-			this->pictureBoxImage->Location = System::Drawing::Point(0, 110);
+			this->pictureBoxImage->Location = System::Drawing::Point(0, 126);
 			this->pictureBoxImage->Name = L"pictureBoxImage";
-			this->pictureBoxImage->Size = System::Drawing::Size(882, 878);
+			this->pictureBoxImage->Size = System::Drawing::Size(882, 862);
 			this->pictureBoxImage->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBoxImage->TabIndex = 0;
 			this->pictureBoxImage->TabStop = false;
@@ -362,7 +361,6 @@ namespace source {
 			this->panelExam->PerformLayout();
 			this->panelRight->ResumeLayout(false);
 			this->panelRight->PerformLayout();
-			
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxExit))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxTurnRight))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxTurnLeft))->EndInit();
@@ -370,7 +368,7 @@ namespace source {
 			this->panelAudio->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->audioListening))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxImage))->EndInit();
-			ResumeLayout(false);
+			this->ResumeLayout(false);
 
 		}
 #pragma endregion
@@ -641,18 +639,21 @@ namespace source {
 	}
 
 	private: System::Void time_Tick(System::Object^ sender, System::EventArgs^ e) {
-
+		
 		if (this->test->time.isTimesUp()) {
 			Submit();
-			this->labelTime->Enabled = false;
+
 
 		}
 
 		else {
-			this->test->time.decrease(1);
+			if (isStopped == false)
+				this->test->time.decrease(1);
 
 			this->labelTime->Text = gcnew System::String(this->test->time.toString().c_str());
 		}
+		
+		
 		
 
 	}
@@ -721,11 +722,13 @@ std::string reduce(const std::string& str)
 }
 void TurnLeft() {
 	if (type == L"part 1") {
+		if (isStopped == false)
 		this->test->updateAnswer(reduce(toStandardString(this->textBoxAnswer->Text)), 0, 0, this->test->parts[0].question.size() - 1);
 	}
 
 	else if (type == L"part 2") {
 		type = L"part 1";
+		if (isStopped == false)
 		this->test->updateAnswer(reduce(toStandardString(this->textBoxAnswer->Text)), 1, 0, this->test->parts[1].question.size() - 1);
 
 	}
@@ -733,11 +736,13 @@ void TurnLeft() {
 	else if (type == L"part 3") {
 		if (index == 0) {
 			type = L"part 2";
+			if (isStopped == false)
 			this->test->updateAnswer(reduce(toStandardString(this->textBoxAnswer->Text)), 2, 0, 2);
 
 		}
 
 		else {
+			if (isStopped == false)
 			this->test->updateAnswer(reduce(toStandardString(this->textBoxAnswer->Text)), 2, index * 3, index * 3 + 2);
 			index -= 1;
 
@@ -748,11 +753,13 @@ void TurnLeft() {
 	else if (type == L"part 4") {
 		if (index == 0) {
 			type = L"part 3";
+			if (isStopped == false)
 			this->test->updateAnswer(reduce(toStandardString(this->textBoxAnswer->Text)), 3, 0, 2);
 			index = this->test->parts[2].audio.size() - 1;
 		}
 
 		else {
+			if (isStopped == false)
 			this->test->updateAnswer(reduce(toStandardString(this->textBoxAnswer->Text)), 3, index * 3, index * 3 + 2);
 			index -= 1;
 		}
@@ -760,6 +767,7 @@ void TurnLeft() {
 
 	else if (type == L"part 5") {
 		type = L"part 4";
+		if (isStopped == false)
 		this->test->updateAnswer(reduce(toStandardString(this->textBoxAnswer->Text)), 4, 0, this->test->parts[4].result.size() - 1);
 		index = this->test->parts[3].audio.size() - 1;
 	}
@@ -767,6 +775,7 @@ void TurnLeft() {
 	else if (type == L"part 6") {
 		if (index == 0) {
 			type = L"part 5";
+			if (isStopped == false)
 			this->test->updateAnswer(reduce(toStandardString(this->textBoxAnswer->Text)), 5, 0, this->test->parts[5].number[0] - 1);
 
 		}
@@ -776,6 +785,7 @@ void TurnLeft() {
 			for (int k = 0; k < index; ++k) {
 				t += this->test->parts[5].number[k];
 			}
+			if (isStopped == false)
 			this->test->updateAnswer(reduce(toStandardString(this->textBoxAnswer->Text)), 5, t, t + this->test->parts[5].number[index] - 1);
 			index -= 1;
 		}
@@ -784,6 +794,7 @@ void TurnLeft() {
 	else {
 		if (index == 0) {
 			type = L"part 6";
+			if (isStopped == false)
 			this->test->updateAnswer(reduce(toStandardString(this->textBoxAnswer->Text)), 6, 0, this->test->parts[6].number[0] - 1);
 			index = this->test->parts[5].number.size() - 1;
 		}
@@ -793,6 +804,7 @@ void TurnLeft() {
 			for (int k = 0; k < index; ++k) {
 				t += this->test->parts[6].number[k];
 			}
+			if (isStopped == false)
 			this->test->updateAnswer(reduce(toStandardString(this->textBoxAnswer->Text)), 6, t, t + this->test->parts[6].number[index] - 1);
 			index -= 1;
 		}
@@ -806,11 +818,14 @@ private: System::Void pictureBoxTurnLeft_Click(System::Object^ sender, System::E
 void TurnRight() {
 	if (type == L"part 1") {
 		type = L"part 2";
+
+		if (isStopped == false)
 		this->test->updateAnswer(reduce(toStandardString(this->textBoxAnswer->Text)), 0, 0, this->test->parts[0].question.size() - 1);
 	}
 
 	else if (type == L"part 2") {
 		type = L"part 3";
+		if (isStopped == false)
 		this->test->updateAnswer(reduce(toStandardString(this->textBoxAnswer->Text)), 1, 0, this->test->parts[1].question.size() - 1);
 		index = 0;
 	}
@@ -818,11 +833,13 @@ void TurnRight() {
 	else if (type == L"part 3") {
 		if (index == this->test->parts[2].audio.size() - 1) {
 			type = L"part 4";
+			if (isStopped == false)
 			this->test->updateAnswer(reduce(toStandardString(this->textBoxAnswer->Text)), 2, index * 3, index * 3 + 2);
 			index = 0;
 		}
 
 		else {
+			if (isStopped == false)
 			this->test->updateAnswer(reduce(toStandardString(this->textBoxAnswer->Text)), 2, index * 3, index * 3 + 2);
 			index += 1;
 
@@ -833,11 +850,13 @@ void TurnRight() {
 	else if (type == L"part 4") {
 		if (index == this->test->parts[3].audio.size() - 1) {
 			type = L"part 5";
+			if (isStopped == false)
 			this->test->updateAnswer(reduce(toStandardString(this->textBoxAnswer->Text)), 3, index * 3, index * 3 + 2);
 			index = 0;
 		}
 
 		else {
+			if (isStopped == false)
 			this->test->updateAnswer(reduce(toStandardString(this->textBoxAnswer->Text)), 3, index * 3, index * 3 + 2);
 			index += 1;
 
@@ -846,6 +865,7 @@ void TurnRight() {
 
 	else if (type == L"part 5") {
 		type = L"part 6";
+		if (isStopped == false)
 		this->test->updateAnswer(reduce(toStandardString(this->textBoxAnswer->Text)), 4, 0, this->test->parts[4].result.size() - 1);
 		index = 0;
 	}
@@ -857,12 +877,13 @@ void TurnRight() {
 		}
 		if (index == this->test->parts[5].number.size() - 1) {
 			type = L"part 7";
+			if (isStopped == false)
 			this->test->updateAnswer(reduce(toStandardString(this->textBoxAnswer->Text)), 5, t, t + this->test->parts[5].number[index] - 1);
 			index = 0;
 		}
 
 		else {
-
+			if (isStopped == false)
 			this->test->updateAnswer(reduce(toStandardString(this->textBoxAnswer->Text)), 5, t, t + this->test->parts[5].number[index] - 1);
 			index += 1;
 		}
@@ -874,11 +895,12 @@ void TurnRight() {
 			t += this->test->parts[6].number[k];
 		}
 		if (index == this->test->parts[6].number.size() - 1) {
+			if (isStopped == false)
 			this->test->updateAnswer(reduce(toStandardString(this->textBoxAnswer->Text)), 6, t, t + this->test->parts[6].number[index] - 1);
 		}
 
 		else {
-
+			if (isStopped == false)
 			this->test->updateAnswer(reduce(toStandardString(this->textBoxAnswer->Text)), 6, t, t + this->test->parts[6].number[index] - 1);
 			index += 1;
 		}
@@ -904,7 +926,7 @@ private: System::Void pictureBoxTurnRight_Click(System::Object^ sender, System::
 		   panelExam->Controls->Add(form);
 		   panelExam->Tag = form;
 		   this->panelLeft->Visible = false;
-		   this->panelRight->Visible = true;
+		   this->panelRight->Visible = false;
 		   form->BringToFront();
 		   form->Show();
 
@@ -939,26 +961,33 @@ private: System::Void pictureBoxExit_Click(System::Object^ sender, System::Event
 }
 
 
-void Submit() {
-	if (type == L"part 1") {
 
+void Submit() {
+	
+	
+	
+	if (type == L"part 1") {
+		if (isStopped == false)
 		this->test->updateAnswer(reduce(toStandardString(this->textBoxAnswer->Text)), 0, 0, this->test->parts[0].question.size() - 1);
 	}
 
 	else if (type == L"part 2") {
+		if (isStopped == false)
 		this->test->updateAnswer(reduce(toStandardString(this->textBoxAnswer->Text)), 1, 0, this->test->parts[1].question.size() - 1);
 	}
 	else if (type == L"part 3") {
+		if (isStopped == false)
 		this->test->updateAnswer(reduce(toStandardString(this->textBoxAnswer->Text)), 2, index * 3, index * 3 + 2);
 
 	}
 	else if (type == L"part 4") {
+		if (isStopped == false)
 		this->test->updateAnswer(reduce(toStandardString(this->textBoxAnswer->Text)), 3, index * 3, index * 3 + 2);
 
 	}
 
 	else if (type == L"part 5") {
-
+		if (isStopped == false)
 		this->test->updateAnswer(reduce(toStandardString(this->textBoxAnswer->Text)), 4, 0, this->test->parts[4].result.size() - 1);
 
 	}
@@ -968,6 +997,7 @@ void Submit() {
 		for (int k = 0; k < index; ++k) {
 			t += this->test->parts[5].number[k];
 		}
+		if (isStopped == false)
 		this->test->updateAnswer(reduce(toStandardString(this->textBoxAnswer->Text)), 5, t, t + this->test->parts[5].number[index] - 1);
 
 	}
@@ -977,10 +1007,12 @@ void Submit() {
 		for (int k = 0; k < index; ++k) {
 			t += this->test->parts[6].number[k];
 		}
+		if (isStopped == false)
 		this->test->updateAnswer(reduce(toStandardString(this->textBoxAnswer->Text)), 6, t, t + this->test->parts[6].number[index] - 1);
 
 	}
 
+	isStopped = true;
 	FormScoreExam^ sc = gcnew FormScoreExam(this->test, indexOfTest, this->panelLeft, this->panelRight);
 	openChildForm(sc);
 }
@@ -991,14 +1023,20 @@ private: System::Void buttonSubmit_Click(System::Object^ sender, System::EventAr
 }
 
 private: void pictureBoxImage_MouseHover(System::Object^ sender, System::EventArgs^ e) {
-	this->pictureBoxImage->Size = System::Drawing::Size(882 * 2, 878);
-	this->AutoScaleDimensions = System::Drawing::SizeF(240, 240);
+	if (isStopped == false) {
+		this->pictureBoxImage->Size = System::Drawing::Size(882 * 2, 878);
+		this->AutoScaleDimensions = System::Drawing::SizeF(240, 240);
+	}
+	
 }
 private: void pictureBoxImage_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
 	
-	this->pictureBoxImage->Size = System::Drawing::Size(882, 878);
-	this->textQuestion->Size = System::Drawing::Size(883, 862);
-	this->AutoScaleDimensions = System::Drawing::SizeF(240, 240);
+	if (isStopped == false) {
+		this->pictureBoxImage->Size = System::Drawing::Size(882, 878);
+		this->textQuestion->Size = System::Drawing::Size(883, 862);
+		this->AutoScaleDimensions = System::Drawing::SizeF(240, 240);
+	}
+	
 }
 
 

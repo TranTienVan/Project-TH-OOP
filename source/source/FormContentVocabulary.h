@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include"vocabulary/vocabulary.h"
 #include <windows.h>
 #include<stringapiset.h>
@@ -77,7 +77,7 @@ namespace source {
 			}
 
 			else {
-				pictureContent->Image = gcnew System::Drawing::Bitmap(L"../../assets/ball.png");
+				pictureContent->Image = gcnew System::Drawing::Bitmap(L"../../assets/icon_nothing.png");
 			}
 
 			pictureContent->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -105,6 +105,14 @@ namespace source {
 				content += "- " + gcnew System::String(UTF8ToUnicode(vocab->getExamples()[i]).c_str()) + L"\n";
 			}
 
+			content += "\n\n\n\n";
+			if (vocab->getProcess().getIsCompleted() != 0) {
+				content += L"++++++ ĐÃ HỌC ++++++\n";
+				content += L"Lần học gần nhất : \n" + gcnew System::String(UTF8ToUnicode(vocab->getProcess().getDateCompleted()).c_str());
+
+			}
+
+			vocab->addProcess();
 			txtContent->Text = content;
 		}
 	private: Vocabulary* vocab;
@@ -205,7 +213,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox1;
 			this->txtSpelling->Name = L"txtSpelling";
 			this->txtSpelling->Size = System::Drawing::Size(500, 45);
 			this->txtSpelling->TabIndex = 4;
-			this->txtSpelling->Text = L"phi�n �m";
+			this->txtSpelling->Text = L"phiên âm";
 			this->txtSpelling->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			// 
 			// audioSource

@@ -50,7 +50,7 @@ namespace source {
 				}
 
 				else {
-					imgLists->Images->Add(gcnew Bitmap("../../assets/ball.png"));
+					imgLists->Images->Add(gcnew Bitmap("../../assets/icon_nothing.png"));
 				}
 
 
@@ -87,7 +87,7 @@ namespace source {
 				}
 
 				else {
-					imgLists->Images->Add(gcnew Bitmap("../../assets/ball.png"));
+					imgLists->Images->Add(gcnew Bitmap("../../assets/icon_nothing.png"));
 				}
 				
 				
@@ -227,7 +227,7 @@ namespace source {
 				
 			}
 
-			vocabs[i_vocabs]->addProcess();
+			
 
 			FormContentVocabulary^ nextForm = gcnew FormContentVocabulary(vocabs[i_vocabs], listVocabs);
 

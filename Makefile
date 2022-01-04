@@ -31,4 +31,4 @@ main.o: main.cpp
 	$(CC) -g -c main.cpp
 
 clean:
-	del -f *.o *.log *.exe
+	del -f *.o *.log *.exe *.txt

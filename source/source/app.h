@@ -56,7 +56,7 @@ namespace source {
 
 			me = new User(obj);
 			this->labelName->Text = L"Name : " + gcnew System::String(me->getUserName().c_str());
-			this->labelScore->Text = L"Score : " + gcnew System::String(std::to_string(me->score / 10).c_str());
+			this->labelScore->Text = L"Score : " + gcnew System::String(std::to_string(me->score).c_str());
 
 
 			appTopics = new Topic("../../database/");

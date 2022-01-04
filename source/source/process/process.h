@@ -10,7 +10,10 @@ protected:
     std::string dateCompleted;
 public:
     Process();
-    
+    std::string getDateCompleted(){
+        return this->dateCompleted;
+        
+    }
     int getIsCompleted(){
         return this->isCompleted;
     }

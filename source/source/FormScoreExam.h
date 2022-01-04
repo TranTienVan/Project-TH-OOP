@@ -278,6 +278,8 @@ namespace source {
 	private: System::Void pictureBoxExit_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->panelLeft->Visible = true;
 		this->panelRight->Visible = true;
+		
+
 		this->Close();
 	}
 		   float roundoff(float value, unsigned char prec)

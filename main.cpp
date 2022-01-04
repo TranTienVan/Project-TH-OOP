@@ -1,6 +1,6 @@
 #include"./source/source/user/user.h"
 #include"./source/source/topic/topic_vocabulary.h"
-
+#include<regex>
 
 void demoUser() {
     std::fstream f("./database/user.json", std::ios::in);
@@ -100,6 +100,53 @@ void lengthALlWord(){
 
 }
 
+void getVocabs(){
+    std::fstream f("vc.txt", std::ios::in);
+    std::fstream fout("out.txt", std::ios::out);
+    
+    std::string str;
+    std::regex exp (" ?[0-9]+[)] \\w+");
+    std::cout<<regex_match("1) the", exp);
+    while (std::getline(f, str)){
+        // std::cout<<str;
+        
+        if (regex_match(str.begin(), str.end(), exp)){
+            str = regex_replace(str, std::regex("\\d+\\) "), "");
+            if (str[0] == ' ')
+                str.erase(str.begin());
+            fout<<str<<std::endl;
+        }
+    }
+
+    
+}
+
+
+void mergeVocab(){
+    std::fstream f1("out.txt", std::ios::in);
+    std::fstream f2("vc2.txt", std::ios::in);
+    std::string str;
+    std::vector<std::string> res;
+    while (std::getline(f1, str)){
+        res.push_back(str);
+    }
+    std::cout<<res.size()<<std::endl;
+    while (std::getline(f2, str)){
+        if (find(res.begin(), res.end(), str) == res.end()){
+            res.push_back(str);
+        }
+    }
+
+    std::fstream fout("out2.txt", std::ios::out);
+
+    for (int i = 0; i < res.size(); ++i){
+        fout<<res[i]<<std::endl;
+    }
+
+
+}
 int main(){
-    std::cout<<("j" == "king");
+    getVocabs();
+
+
 }
